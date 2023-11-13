@@ -3,7 +3,6 @@
 
 #include <stdbool.h>
 
-
 // CNN Parameters
 #define WEIGHT_TYPE double
 #define DATA_TYPE double
