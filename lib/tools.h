@@ -11,10 +11,8 @@
 // GPU parameters
 #define GPU_GRANULARITY 10
 
-
 // CPU parallel parameters
 #define CPU_GRANULARITY 50
-
 
 typedef enum
 {

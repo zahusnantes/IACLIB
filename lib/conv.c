@@ -4,22 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-ConvolutionLayer(int output_channels, int kernel_size, double alpha) : output_channels(output_channels), kernel_size(kernel_size), alpha(alpha) {
-    kernels.resize(output_channels, image2D(kernel_size, image1D(kernel_size, 0.0)));
-    // Random number generator with a normal distribution
-    std::default_random_engine generator;
-    std::normal_distribution<double> distribution(0.0, 1.0);
+/*
+ * Performs a convolution of the input vector with the kernel hels in the layer_t
+ * and returns a new vector, allocated on the stack.
+ */
 
-    for (int f = 0; f < output_channels; ++f) {
-        for (int i = 0; i < kernel_size; ++i) {
-            for (int j = 0; j < kernel_size; ++j) {
-                kernels[f][i][j] = distribution(generator);;
-            }
-        }
-    }
-}
-
-image3D forward_prop(const image3D& image) override {
+conv_output conv(DATA3D *input, DATA3D *output, CNNKernels *kernel)
+{
     int image_h = image.size();
     int image_w = image[0].size();
     int input_channels = image[0][0].size();
@@ -35,8 +26,7 @@ image3D forward_prop(const image3D& image) override {
             }
         }
     }
-
-    return convolution_output;
+    return conv_output;
 }
 
 bool conv2D(DATA3D *input, DATA3D *output, CNNKernels *kernel)

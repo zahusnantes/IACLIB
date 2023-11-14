@@ -3,6 +3,6 @@
 
 #include "tools.h"
 
-bool conv(Layer * layer);
+void conv(Layer * layer);
 
 #endif
