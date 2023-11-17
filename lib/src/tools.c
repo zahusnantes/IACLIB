@@ -105,10 +105,10 @@ bool parse_CNN(char *filename, CNN *cnn)
             newLayer->top = NULL;
             newLayer->bottom = NULL;
 
-            int size = 0;
+            int kernel_size = 0;
             int stride = 1;
             int padding = 1;
-            int outchannels = 1;
+            int num_output = 1;
             PoolingType poolType = -1;
             // Read and parse the layer definition
             while (fgets(line, sizeof(line), file) != NULL)
@@ -145,11 +145,11 @@ bool parse_CNN(char *filename, CNN *cnn)
                 }
                 else if (strcmp(token, "num_output:") == 0)
                 {
-                    outchannels = atoi(strtok(NULL, " \t\n"));
+                    num_output = atoi(strtok(NULL, " \t\n"));
                 }
                 else if (strcmp(token, "kernel_size:") == 0)
                 {
-                    size = atoi(strtok(NULL, " \t\n"));
+                    kernel_size = atoi(strtok(NULL, " \t\n"));
                 }
                 else if (strcmp(token, "stride:") == 0)
                 {
@@ -175,9 +175,9 @@ bool parse_CNN(char *filename, CNN *cnn)
                     {
                     case CONVOLUTION:
 
-                        if (!initialize_CNNKernels(&newLayer->params.kernels, size, size, outchannels, stride, padding))
+                        if (!initialize_CNNKernels(&newLayer->params.kernels, kernel_size, kernel_size, num_output, stride, padding))
                         {
-                            fatal_error(-44, "can't initialize CNNPool");
+                            fatal_error(-44, "can't initialize CNNKernels");
                         }
                         break;
 
@@ -225,7 +225,7 @@ bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
     iterator->data.shape.height = ((shape.height + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.height) / iterator->params.kernels.stride) + 1;
 
     int weight_size = (iterator->bottom == NULL) ? CNN_kernels_params_count(iterator->params.kernels, 1) : CNN_kernels_params_count(iterator->params.kernels, iterator->bottom->data.shape.depth);
-    printf("Nik ta mere %s -> %d \n", iterator->name, weight_size);
+    printf("Nik %s -> %d \n", iterator->name, weight_size);
 
     iterator->params.kernels.values_size = weight_size;
     if ((iterator->params.kernels.values = (WEIGHT_TYPE *)malloc(sizeof(WEIGHT_TYPE) * weight_size)) == NULL)

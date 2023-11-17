@@ -15,5 +15,4 @@ int main(int argc, char **argv)
     else
         fatal_error(-111, "Model parameters loading failed");
 
-
 }
