@@ -105,10 +105,10 @@ bool parse_CNN(char *filename, CNN *cnn)
             newLayer->top = NULL;
             newLayer->bottom = NULL;
 
-            int kernel_size = 0;
+            int size = 0;
             int stride = 1;
             int padding = 1;
-            int num_output = 1;
+            int outchannels = 1;
             PoolingType poolType = -1;
             // Read and parse the layer definition
             while (fgets(line, sizeof(line), file) != NULL)
@@ -145,11 +145,11 @@ bool parse_CNN(char *filename, CNN *cnn)
                 }
                 else if (strcmp(token, "num_output:") == 0)
                 {
-                    num_output = atoi(strtok(NULL, " \t\n"));
+                    outchannels = atoi(strtok(NULL, " \t\n"));
                 }
                 else if (strcmp(token, "kernel_size:") == 0)
                 {
-                    kernel_size = atoi(strtok(NULL, " \t\n"));
+                    size = atoi(strtok(NULL, " \t\n"));
                 }
                 else if (strcmp(token, "stride:") == 0)
                 {
@@ -175,7 +175,7 @@ bool parse_CNN(char *filename, CNN *cnn)
                     {
                     case CONVOLUTION:
 
-                        if (!initialize_CNNKernels(&newLayer->params.kernels, kernel_size, kernel_size, num_output, stride, padding))
+                        if (!initialize_CNNKernels(&newLayer->params.kernels, size, size, outchannels, stride, padding))
                         {
                             fatal_error(-44, "can't initialize CNNKernels");
                         }

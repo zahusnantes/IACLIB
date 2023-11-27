@@ -9,7 +9,7 @@
  * and returns a new vector, allocated on the stack.
  */
 
-void conv(DATA3D *input, DATA3D *output, CNNKernels *kernel)
+bool conv(DATA3D *input, DATA3D *output, CNNKernels *kernel)
 {
     int image_h = image.size();
     int image_w = image[0].size();

@@ -117,89 +117,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named IALIB
+# Target rules for targets named test
 
 # Build rule for target.
-IALIB: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IALIB
-.PHONY : IALIB
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-IALIB/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/build
-.PHONY : IALIB/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
-cnn_ops.o: cnn_ops.c.o
-.PHONY : cnn_ops.o
-
-# target to build an object file
-cnn_ops.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/cnn_ops.c.o
-.PHONY : cnn_ops.c.o
-
-cnn_ops.i: cnn_ops.c.i
-.PHONY : cnn_ops.i
-
-# target to preprocess a source file
-cnn_ops.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/cnn_ops.c.i
-.PHONY : cnn_ops.c.i
-
-cnn_ops.s: cnn_ops.c.s
-.PHONY : cnn_ops.s
-
-# target to generate assembly for a file
-cnn_ops.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/cnn_ops.c.s
-.PHONY : cnn_ops.c.s
-
-main.o: main.c.o
-.PHONY : main.o
+src/tools.o: src/tools.c.o
+.PHONY : src/tools.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/main.c.o
-.PHONY : main.c.o
+src/tools.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.o
+.PHONY : src/tools.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+src/tools.i: src/tools.c.i
+.PHONY : src/tools.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/main.c.i
-.PHONY : main.c.i
+src/tools.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.i
+.PHONY : src/tools.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+src/tools.s: src/tools.c.s
+.PHONY : src/tools.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/main.c.s
-.PHONY : main.c.s
+src/tools.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.s
+.PHONY : src/tools.c.s
 
-tools.o: tools.c.o
-.PHONY : tools.o
+tests/test.o: tests/test.c.o
+.PHONY : tests/test.o
 
 # target to build an object file
-tools.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/tools.c.o
-.PHONY : tools.c.o
+tests/test.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.o
+.PHONY : tests/test.c.o
 
-tools.i: tools.c.i
-.PHONY : tools.i
+tests/test.i: tests/test.c.i
+.PHONY : tests/test.i
 
 # target to preprocess a source file
-tools.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/tools.c.i
-.PHONY : tools.c.i
+tests/test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.i
+.PHONY : tests/test.c.i
 
-tools.s: tools.c.s
-.PHONY : tools.s
+tests/test.s: tests/test.c.s
+.PHONY : tests/test.s
 
 # target to generate assembly for a file
-tools.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IALIB.dir/build.make CMakeFiles/IALIB.dir/tools.c.s
-.PHONY : tools.c.s
+tests/test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.s
+.PHONY : tests/test.c.s
 
 # Help Target
 help:
@@ -209,16 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... IALIB"
-	@echo "... cnn_ops.o"
-	@echo "... cnn_ops.i"
-	@echo "... cnn_ops.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... tools.o"
-	@echo "... tools.i"
-	@echo "... tools.s"
+	@echo "... test"
+	@echo "... src/tools.o"
+	@echo "... src/tools.i"
+	@echo "... src/tools.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 .PHONY : help
 
 
