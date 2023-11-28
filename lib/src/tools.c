@@ -225,7 +225,7 @@ bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
     iterator->data.shape.height = ((shape.height + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.height) / iterator->params.kernels.stride) + 1;
 
     int weight_size = (iterator->bottom == NULL) ? CNN_kernels_params_count(iterator->params.kernels, 1) : CNN_kernels_params_count(iterator->params.kernels, iterator->bottom->data.shape.depth);
-    printf("Nik %s -> %d \n", iterator->name, weight_size);
+    printf("Layer %s -> %d \n", iterator->name, weight_size);
 
     iterator->params.kernels.values_size = weight_size;
     if ((iterator->params.kernels.values = (WEIGHT_TYPE *)malloc(sizeof(WEIGHT_TYPE) * weight_size)) == NULL)
@@ -453,7 +453,6 @@ void display_cnn(CNN *cnn)
 }
 Layer *find_layer(CNN *cnn, char *layer_name)
 {
-
     Layer *iterator = cnn->layers;
     while (iterator != NULL)
     {
@@ -508,9 +507,15 @@ bool fill_array(int size, char *token, WEIGHT_TYPE *array)
 
 int CNN_kernels_params_count(CNNKernels kernels, int previous_channel_count)
 {
-    printf("%d,  %d,  %d,  %d, \n", previous_channel_count , kernels.shape.depth , kernels.shape.height , kernels.shape.width);
+    printf("Calculating kernel parameters:\n");
+    printf("  Previous Channel Count: %d\n", previous_channel_count);
+    printf("  Depth: %d\n", kernels.shape.depth);
+    printf("  Height: %d\n", kernels.shape.height);
+    printf("  Width: %d\n", kernels.shape.width);
+    
     return previous_channel_count * kernels.shape.depth * kernels.shape.height * kernels.shape.width;
 }
+
 
 int layer_data_size(Layer *layer)
 {

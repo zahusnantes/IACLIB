@@ -6,6 +6,9 @@
         "string_view": "c",
         "initializer_list": "c",
         "span": "c",
-        "utility": "c"
+        "utility": "c",
+        "stdio.h": "c",
+        "images.h": "c",
+        "read_mnist.h": "c"
     }
 }

@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/main.dir/tests/test.c.o CMakeFiles/main.dir/src/tools.c.o CMakeFiles/main.dir/src/read_mnist.c.o -o main 

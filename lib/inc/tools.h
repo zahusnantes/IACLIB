@@ -2,6 +2,7 @@
 #define TOOLS_H
 
 #include <stdbool.h>
+#include <images.h>
 
 // CNN Parameters
 #define WEIGHT_TYPE double
@@ -38,21 +39,6 @@ typedef enum
 
 typedef struct
 {
-    int length;
-} Shape1D;
-
-typedef struct
-{
-    int width, height;
-} Shape2D;
-
-typedef struct
-{
-    int width, height, depth;
-} Shape3D;
-
-typedef struct
-{
     Shape3D shape;
     int padding, stride;
     int values_size;
@@ -83,24 +69,6 @@ union LayerPars
 };
 
 typedef union LayerPars LayerParams;
-
-typedef struct
-{
-    Shape2D shape;
-    DATA_TYPE *raw_data;
-} DATA2D;
-
-typedef struct
-{
-    Shape1D shape;
-    DATA_TYPE *raw_data;
-} DATA1D;
-
-typedef struct
-{
-    Shape3D shape;
-    DATA_TYPE *raw_data;
-} DATA3D;
 
 struct Layer
 {
