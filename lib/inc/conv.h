@@ -3,6 +3,5 @@
 
 #include "tools.h"
 
-bool convolution2D(DATA_TYPE *input, WEIGHT_TYPE *kernel, DATA_TYPE *output);
-
+bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_data, int input_height, int input_width);
 #endif

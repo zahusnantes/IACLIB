@@ -51,6 +51,6 @@ typedef struct
 {
     Shape4D shape;
     DATA_TYPE *raw_data;
-} DATA4D;
+} DATA4D; // CHIARA: DATA4D is for the batch of images
 
 #endif

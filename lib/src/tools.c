@@ -80,6 +80,8 @@ bool initialize_DATA1D(DATA1D *data, int length)
 
 int output_size(Layer *layer)
 {
+
+    // CHIARA : to do??
 }
 
 bool parse_CNN(char *filename, CNN *cnn)

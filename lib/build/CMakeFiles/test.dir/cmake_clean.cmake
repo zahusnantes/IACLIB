@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/src/conv.c.o"
+  "CMakeFiles/test.dir/src/conv.c.o.d"
   "CMakeFiles/test.dir/src/tools.c.o"
   "CMakeFiles/test.dir/src/tools.c.o.d"
   "CMakeFiles/test.dir/tests/test.c.o"

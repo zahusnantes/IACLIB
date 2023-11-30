@@ -9,6 +9,7 @@ project(IALIB)
 
 set(SOURCE_FILES
     tests/test.c
+    src/conv.c
     src/tools.c
 )
 

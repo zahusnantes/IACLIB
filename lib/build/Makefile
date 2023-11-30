@@ -129,6 +129,30 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+src/conv.o: src/conv.c.o
+.PHONY : src/conv.o
+
+# target to build an object file
+src/conv.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.o
+.PHONY : src/conv.c.o
+
+src/conv.i: src/conv.c.i
+.PHONY : src/conv.i
+
+# target to preprocess a source file
+src/conv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.i
+.PHONY : src/conv.c.i
+
+src/conv.s: src/conv.c.s
+.PHONY : src/conv.s
+
+# target to generate assembly for a file
+src/conv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.s
+.PHONY : src/conv.c.s
+
 src/tools.o: src/tools.c.o
 .PHONY : src/tools.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... src/conv.o"
+	@echo "... src/conv.i"
+	@echo "... src/conv.s"
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
