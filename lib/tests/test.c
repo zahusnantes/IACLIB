@@ -4,22 +4,10 @@
 #include "../inc/tools.h"
 #include "../inc/images.h"
 #include "../inc/conv.h"
+#include "../inc/pooling.h"
 
 #define MATRIX_SIZE 3
 #define KERNEL_SIZE 2
-
-void print3DMatrix(DATA3D *matrix) {
-    for (int d = 0; d < matrix->shape.depth; ++d) {
-        printf("Depth %d:\n", d);
-        for (int i = 0; i < matrix->shape.width; ++i) {
-            for (int j = 0; j < matrix->shape.height; ++j) {
-                printf("%5.0f ", matrix->raw_data[d * matrix->shape.width * matrix->shape.height + i * matrix->shape.height + j]);
-            }
-            printf("\n");
-        }
-        printf("\n");
-    }
-}
 
 int main() {
 // Create a 3D matrix with 2 channels (3x3x2)
@@ -27,61 +15,31 @@ int main() {
     matrix.shape.width = 3;
     matrix.shape.height = 3;
     matrix.shape.depth = 1;
-    matrix.raw_data = malloc(matrix.shape.width * matrix.shape.height * matrix.shape.depth * sizeof(DATA_TYPE));
-
-    // Initialize the matrix with some values
+    initialize_DATA3D(&matrix, matrix.shape.height, matrix.shape.width, matrix.shape.depth);
+    initialize_DATA1D(&matrix.linearized_data, matrix.shape.width * matrix.shape.height * matrix.shape.depth);
+    // Initialize the 3D matrix
     for (int i = 0; i < matrix.shape.width * matrix.shape.height * matrix.shape.depth; ++i) {
         matrix.raw_data[i] = i;
     }
-
-    // Create a linearized version of the matrix
-    matrix.linearized_data.shape.length = matrix.shape.width * matrix.shape.height * matrix.shape.depth;
-    matrix.linearized_data.raw_data = malloc(matrix.linearized_data.shape.length * sizeof(DATA_TYPE));
-
     // Copy data from the 3D matrix to the linearized version
     for (int i = 0; i < matrix.linearized_data.shape.length; ++i) {
         matrix.linearized_data.raw_data[i] = matrix.raw_data[i];
     }
 
-    // printf("Non-Linearized Matrix:\n");
-    // print3DMatrix(&matrix);
-
-    // // Print the linearized version
-    // printf("Linearized Matrix:\n");
-    // for (int i = 0; i < matrix.linearized_data.shape.length; ++i) {
-    //     printf("%f ", matrix.linearized_data.raw_data[i]);
-    // }
-    // printf("\n\n");
-
     DATA3D kernel;
     kernel.shape.width = 2;
     kernel.shape.height = 2;
     kernel.shape.depth = 2;
-    kernel.raw_data = malloc(kernel.shape.width * kernel.shape.height * kernel.shape.depth * sizeof(DATA_TYPE));
-
-    // Initialize the kernel with some values (you can replace this with your actual data)
+    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    initialize_DATA1D(&kernel.linearized_data, kernel.shape.width * kernel.shape.height * kernel.shape.depth);
+    // Initialize the 3D kernel 
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }
-
-    // Create a linearized version of the kernel
-    kernel.linearized_data.shape.length = kernel.shape.width * kernel.shape.height * kernel.shape.depth;
-    kernel.linearized_data.raw_data = malloc(kernel.linearized_data.shape.length * sizeof(DATA_TYPE));
-
     // Copy data from the 3D kernel to the linearized version
     for (int i = 0; i < kernel.linearized_data.shape.length; ++i) {
         kernel.linearized_data.raw_data[i] = kernel.raw_data[i];
     }
-
-    // printf("Non-Linearized Kernel:\n");
-    // print3DMatrix(&kernel);
-
-    // // Print the linearized version
-    // printf("\nLinearized Kernel:\n");
-    // for (int i = 0; i < kernel.linearized_data.shape.length; ++i) {
-    //     printf("%f ", kernel.linearized_data.raw_data[i]);
-    // }
-    // printf("\n");
 
     // Create linearized versions of matrix and kernel
     DATA1D linearized_matrix, linearized_kernel;
@@ -102,32 +60,62 @@ int main() {
     CNN *cnn = read_model("../model/MNIST/model_cnn.dat", matrix.shape.height, kernel.shape.width, nb_classes);
 
     Layer *conv_layer = find_layer(cnn, "conv1");
+    Layer *pooling_layer = find_layer(cnn, "pool1");
 
     int input_height = matrix.shape.height;
     int input_width = matrix.shape.width;
     int kernel_size = conv_layer->params.kernels.shape.height;
     int padding = conv_layer->params.kernels.padding;
     int stride = conv_layer->params.kernels.stride;
-    int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
-    int output_width = (input_width - kernel_size + 2 * padding) / stride + 1;
-    int output_depth = conv_layer->params.kernels.shape.depth;
+    int conv_output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
+    int conv_output_width = (input_width - kernel_size + 2 * padding) / stride + 1;
+    int conv_output_depth = conv_layer->params.kernels.shape.depth;
+    int conv_output_size = conv_output_width * conv_output_height * conv_output_depth;
+    DATA1D conv_output_data;
+    initialize_DATA1D(&conv_output_data, conv_output_size);
 
-    int output_size = output_width * output_height * output_depth;
-
-    printf("output_size = %d\n", output_size);
-    DATA1D output_data;
-    initialize_DATA1D(&output_data, output_size);
-
-    bool success = conv(conv_layer, &linearized_matrix, &linearized_kernel, &output_data, input_height, input_width);
-
-    // Print the output
-    printf("\nConvolution Output:\n");
-    for (int i = 0; i < output_data.shape.length; ++i) {
-        printf("%f ", output_data.raw_data[i]);
+    if (conv(conv_layer, &linearized_matrix, &linearized_kernel, &conv_output_data, input_height, input_width)) {
+        printf("Convolution successful!\n");
+        printf("Convolution Output:\n");
+        for (int i = 0; i < conv_output_data.shape.length; ++i) {
+            printf("%f ", conv_output_data.raw_data[i]);
+        }
+        printf("\n");
+    } else {
+        fprintf(stderr, "Convolution failed!\n");
+        return EXIT_FAILURE;
     }
-    printf("\n");
 
-    // Free allocated memory
+    int pool_size = pooling_layer->params.pool.shape.height;
+    int pool_stride = pooling_layer->params.pool.stride;
+    int pool_padding = pooling_layer->params.pool.padding;
+    PoolingType pool_type = pooling_layer->params.pool.type;
+
+    printf("Pooling Layer Parameters:\n");
+    printf("  Pool Size: %d\n", pooling_layer->params.pool.shape.height);
+    printf("  Pool Stride: %d\n", pooling_layer->params.pool.stride);
+    printf("  Pool Padding: %d\n", pooling_layer->params.pool.padding);
+    printf("  Pool Type: %d\n", pooling_layer->params.pool.type);
+    printf("Pooling Type: %s\n", poolingType_to_str(pool_type));
+
+    // int pool_output_width = conv_output_width / 
+    // int pool_output_size = pool_output_width * pool_output_height * pool_output_depth;
+    // DATA1D pool_output_data;
+    // initialize_DATA1D(&pool_output_data, pool_output_size);
+
+
+    // if (pooling(pooling_layer, &linearized_matrix, &pool_output_data)) {
+    //     printf("Pooling successful!\n");
+    //     printf("Pooling Output:\n");
+    //     for (int i = 0; i < pool_output_data.shape.length; ++i) {
+    //         printf("%f ", pool_output_data.raw_data[i]);
+    //     }
+    //     printf("\n");
+    // } else {
+    //     fprintf(stderr, "Pooling failed!\n");
+    //     return EXIT_FAILURE;
+    // }
+
     free(matrix.raw_data);
     free(matrix.linearized_data.raw_data);
     free(kernel.raw_data);

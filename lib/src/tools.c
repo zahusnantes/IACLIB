@@ -48,10 +48,12 @@ bool initialize_DATA3D(DATA3D *data, int width, int height, int depth)
     data->shape.width = width;
     data->shape.height = height;
     data->shape.depth = depth;
-    if (data == NULL)
+    
+    if (data->raw_data == NULL)
     {
         return false;
     }
+    
     return true;
 }
 
@@ -161,14 +163,21 @@ bool parse_CNN(char *filename, CNN *cnn)
                 {
                     padding = atoi(strtok(NULL, " \t\n"));
                 }
+
                 else if (strcmp(token, "pool:") == 0)
                 {
                     char poolTypestr[64];
-                    strncpy(poolTypestr, strtok(NULL, " \t\n"), sizeof(poolTypestr));
-                    poolType = str_to_poolingType(poolTypestr);
+                    char poolTypeValue[64];
 
-                    //   print_warning("POOLING is not parsed and is set to MAX");
-                    // Houssam: to be completed to extract the pooling type
+                    strncpy(poolTypeValue, strtok(NULL, " \t\n"), sizeof(poolTypeValue));
+                    
+                    poolType = str_to_poolingType(poolTypeValue);
+
+                    if (poolType == -1)
+                    {
+                        print_warning("Unknown pooling type. Setting it to MAX by default.");
+                        poolType = MAX; // Set to MAX pooling by default
+                    }
                 }
 
                 else if (strcmp(token, "}") == 0)
@@ -251,6 +260,7 @@ bool compute_layer_pool_params(Layer *iterator)
     iterator->data.shape.height = floor((shape.width - iterator->params.pool.shape.width) / iterator->params.pool.stride) + 1;
     return true;
 }
+
 bool compute_layer_fc_params(Layer *iterator)
 {
     int weight_size = iterator->params.fc.shape.length * layer_data_size(iterator->bottom);
@@ -370,13 +380,14 @@ char *poolingType_to_str(PoolingType type)
     }
     return "UNKNOWN";
 }
+
 PoolingType str_to_poolingType(char *str)
 {
     if (strcmp(str, "MAX") == 0)
         return MAX;
-    if (strcmp(str, "AVG") == 0)
+    if (strcmp(str, "AVG") == 1) //CHIARA: before everything was 0, i change it, is it correct?
         return AVG;
-    if (strcmp(str, "SOFTMAX") == 0)
+    if (strcmp(str, "SOFTMAX") == 2) //CHIARA: before everything was 0, i change it, is it correct?
         return SOFTMAX;
     printf("%s \n", str);
     fatal_error(-11, "Uknown Poolin type");
@@ -517,7 +528,6 @@ int CNN_kernels_params_count(CNNKernels kernels, int previous_channel_count)
     
     return previous_channel_count * kernels.shape.depth * kernels.shape.height * kernels.shape.width;
 }
-
 
 int layer_data_size(Layer *layer)
 {

@@ -190,8 +190,11 @@ CMakeFiles/test.dir/tests/test.c.o: ../tests/test.c \
   ../inc/images.h \
   ../inc/images.h \
   ../inc/conv.h \
-  ../inc/tools.h
+  ../inc/tools.h \
+  ../inc/pooling.h
 
+
+../inc/pooling.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 

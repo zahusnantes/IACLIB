@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// CHIARA: I need to get rid of the int input_height, int input_width and find another way of pass it to the function
 bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_data, int input_height, int input_width) {
     if (conv_layer->type != CONVOLUTION) {
         fprintf(stderr, "Error: Layer is not a convolution layer.\n");
@@ -20,6 +21,12 @@ bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
     int output_width = (input_width - kernel_size + 2 * padding) / stride + 1;
     int input_channels = 1;
+
+    // CHIARA: check here id the convolution works
+    // if (output_size != num_channels * output_width * output_height) {
+    //     fprintf(stderr, "Error: Output data size does not match expected size.\n");
+    //     return false;
+    // }
 
     for (int out = 0; out < output_size; ++out){
         for (int c_output = 0; c_output < num_channels; ++c_output) {
@@ -40,6 +47,7 @@ bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_
                             }
                         }
                     }
+
 
                     int output_idx = c_output * output_width * output_height + h * output_width + w;
                     output_data->raw_data[output_idx] = sum;

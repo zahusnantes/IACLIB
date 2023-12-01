@@ -30,6 +30,7 @@ typedef enum
     SIGMOID,
     SOFTMAX
 } Activation;
+
 typedef enum
 {
     MAX,
