@@ -90,31 +90,25 @@ int main() {
     int pool_stride = pooling_layer->params.pool.stride;
     int pool_padding = pooling_layer->params.pool.padding;
     PoolingType pool_type = pooling_layer->params.pool.type;
+    printf("pooling type main = %s\n", poolingType_to_str(pool_type));
 
-    printf("Pooling Layer Parameters:\n");
-    printf("  Pool Size: %d\n", pooling_layer->params.pool.shape.height);
-    printf("  Pool Stride: %d\n", pooling_layer->params.pool.stride);
-    printf("  Pool Padding: %d\n", pooling_layer->params.pool.padding);
-    printf("  Pool Type: %d\n", pooling_layer->params.pool.type);
-    printf("Pooling Type: %s\n", poolingType_to_str(pool_type));
+    int pool_output_width = conv_output_width / pool_size;
+    int pool_output_height = conv_output_width / pool_size;
+    int pool_output_size = pool_output_width * pool_output_height * conv_output_depth;
+    DATA1D pool_output_data;
+    initialize_DATA1D(&pool_output_data, pool_output_size);
 
-    // int pool_output_width = conv_output_width / 
-    // int pool_output_size = pool_output_width * pool_output_height * pool_output_depth;
-    // DATA1D pool_output_data;
-    // initialize_DATA1D(&pool_output_data, pool_output_size);
-
-
-    // if (pooling(pooling_layer, &linearized_matrix, &pool_output_data)) {
-    //     printf("Pooling successful!\n");
-    //     printf("Pooling Output:\n");
-    //     for (int i = 0; i < pool_output_data.shape.length; ++i) {
-    //         printf("%f ", pool_output_data.raw_data[i]);
-    //     }
-    //     printf("\n");
-    // } else {
-    //     fprintf(stderr, "Pooling failed!\n");
-    //     return EXIT_FAILURE;
-    // }
+    if (pooling(pooling_layer, &conv_output_data, &pool_output_data, conv_output_height, conv_output_width, conv_output_depth)) {
+        printf("Pooling successful!\n");
+        printf("Pooling Output:\n");
+        for (int i = 0; i < pool_output_data.shape.length; ++i) {
+            printf("%f ", pool_output_data.raw_data[i]);
+        }
+        printf("\n");
+    } else {
+        fprintf(stderr, "Pooling failed!\n");
+        return EXIT_FAILURE;
+    }
 
     free(matrix.raw_data);
     free(matrix.linearized_data.raw_data);

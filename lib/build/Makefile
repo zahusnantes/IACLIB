@@ -153,6 +153,30 @@ src/conv.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.s
 .PHONY : src/conv.c.s
 
+src/pooling.o: src/pooling.c.o
+.PHONY : src/pooling.o
+
+# target to build an object file
+src/pooling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/pooling.c.o
+.PHONY : src/pooling.c.o
+
+src/pooling.i: src/pooling.c.i
+.PHONY : src/pooling.i
+
+# target to preprocess a source file
+src/pooling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/pooling.c.i
+.PHONY : src/pooling.c.i
+
+src/pooling.s: src/pooling.c.s
+.PHONY : src/pooling.s
+
+# target to generate assembly for a file
+src/pooling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/pooling.c.s
+.PHONY : src/pooling.c.s
+
 src/tools.o: src/tools.c.o
 .PHONY : src/tools.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... src/conv.o"
 	@echo "... src/conv.i"
 	@echo "... src/conv.s"
+	@echo "... src/pooling.o"
+	@echo "... src/pooling.i"
+	@echo "... src/pooling.s"
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"

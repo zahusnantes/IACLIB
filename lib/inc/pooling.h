@@ -3,6 +3,6 @@
 
 #include "tools.h"
 
-bool pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data);
+bool pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels);
 
 #endif

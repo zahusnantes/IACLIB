@@ -236,7 +236,6 @@ bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
     iterator->data.shape.height = ((shape.height + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.height) / iterator->params.kernels.stride) + 1;
 
     int weight_size = (iterator->bottom == NULL) ? CNN_kernels_params_count(iterator->params.kernels, 1) : CNN_kernels_params_count(iterator->params.kernels, iterator->bottom->data.shape.depth);
-    printf("Layer %s -> %d \n", iterator->name, weight_size);
 
     iterator->params.kernels.values_size = weight_size;
     if ((iterator->params.kernels.values = (WEIGHT_TYPE *)malloc(sizeof(WEIGHT_TYPE) * weight_size)) == NULL)
@@ -265,7 +264,6 @@ bool compute_layer_fc_params(Layer *iterator)
 {
     int weight_size = iterator->params.fc.shape.length * layer_data_size(iterator->bottom);
     iterator->params.fc.values_size = weight_size;
-    printf("weight_size -> %d \n", weight_size);
     iterator->params.fc.values = (WEIGHT_TYPE *)malloc(sizeof(WEIGHT_TYPE) * weight_size);
     iterator->params.fc.bias = (WEIGHT_TYPE *)malloc(sizeof(WEIGHT_TYPE) * iterator->params.fc.shape.length);
     
@@ -347,12 +345,11 @@ LayerType str_to_layerType(char *str)
     printf("%s \n", str);
     fatal_error(-11, "Uknown Layer type");
     return UNKOWN;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                  
 char *layerType_to_str(LayerType type)
 {
     if (type == CONVOLUTION)
         return "Convolution";
-
     if (type == POOLING)
         return "Pooling";
     if (type == FC)
@@ -367,14 +364,10 @@ char *poolingType_to_str(PoolingType type)
     {
     case MAX:
         return "MAX";
-        break;
     case AVG:
         return "AVG";
-        break;
-    case SOFTMAX:
-        return "SOFTMAX";
-        break;
-
+    case MIN:
+        return "MIN";
     default:
         break;
     }
@@ -384,15 +377,23 @@ char *poolingType_to_str(PoolingType type)
 PoolingType str_to_poolingType(char *str)
 {
     if (strcmp(str, "MAX") == 0)
+    {
         return MAX;
-    if (strcmp(str, "AVG") == 1) //CHIARA: before everything was 0, i change it, is it correct?
+    }
+    else if (strcmp(str, "AVG") == 0)
+    {
         return AVG;
-    if (strcmp(str, "SOFTMAX") == 2) //CHIARA: before everything was 0, i change it, is it correct?
-        return SOFTMAX;
+    }
+    else if (strcmp(str, "MIN") == 0)
+    {
+        return MIN;
+    }
+
     printf("%s \n", str);
-    fatal_error(-11, "Uknown Poolin type");
+    fatal_error(-11, "Unknown Pooling type");
     return -1;
 }
+
 
 void display_kernels_minimal(CNNKernels *kernels)
 {
@@ -520,11 +521,11 @@ bool fill_array(int size, char *token, WEIGHT_TYPE *array)
 
 int CNN_kernels_params_count(CNNKernels kernels, int previous_channel_count)
 {
-    printf("Calculating kernel parameters:\n");
-    printf("  Previous Channel Count: %d\n", previous_channel_count);
-    printf("  Depth: %d\n", kernels.shape.depth);
-    printf("  Height: %d\n", kernels.shape.height);
-    printf("  Width: %d\n", kernels.shape.width);
+    // printf("Calculating kernel parameters:\n");
+    // printf("  Previous Channel Count: %d\n", previous_channel_count);
+    // printf("  Depth: %d\n", kernels.shape.depth);
+    // printf("  Height: %d\n", kernels.shape.height);
+    // printf("  Width: %d\n", kernels.shape.width);
     
     return previous_channel_count * kernels.shape.depth * kernels.shape.height * kernels.shape.width;
 }

@@ -20,7 +20,7 @@ bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_
     int stride = conv_layer->params.kernels.stride;
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
     int output_width = (input_width - kernel_size + 2 * padding) / stride + 1;
-    int input_channels = 1;
+    int input_channels = 1; // CHIARA: to verify this parameter, it is set to one because it one output_channel
 
     // CHIARA: check here id the convolution works
     // if (output_size != num_channels * output_width * output_height) {
@@ -47,7 +47,6 @@ bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_
                             }
                         }
                     }
-
 
                     int output_idx = c_output * output_width * output_height + h * output_width + w;
                     output_data->raw_data[output_idx] = sum;
