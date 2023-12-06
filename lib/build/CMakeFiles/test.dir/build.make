@@ -111,10 +111,52 @@ CMakeFiles/test.dir/src/pooling.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/pooling.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/pooling.c -o CMakeFiles/test.dir/src/pooling.c.s
 
+CMakeFiles/test.dir/src/max_pooling.c.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/max_pooling.c.o: ../src/max_pooling.c
+CMakeFiles/test.dir/src/max_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/test.dir/src/max_pooling.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/max_pooling.c.o -MF CMakeFiles/test.dir/src/max_pooling.c.o.d -o CMakeFiles/test.dir/src/max_pooling.c.o -c /home/cdaini/IACLIB/lib/src/max_pooling.c
+
+CMakeFiles/test.dir/src/max_pooling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/max_pooling.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/max_pooling.c > CMakeFiles/test.dir/src/max_pooling.c.i
+
+CMakeFiles/test.dir/src/max_pooling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/max_pooling.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/max_pooling.c -o CMakeFiles/test.dir/src/max_pooling.c.s
+
+CMakeFiles/test.dir/src/avg_pooling.c.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/avg_pooling.c.o: ../src/avg_pooling.c
+CMakeFiles/test.dir/src/avg_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/test.dir/src/avg_pooling.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/avg_pooling.c.o -MF CMakeFiles/test.dir/src/avg_pooling.c.o.d -o CMakeFiles/test.dir/src/avg_pooling.c.o -c /home/cdaini/IACLIB/lib/src/avg_pooling.c
+
+CMakeFiles/test.dir/src/avg_pooling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/avg_pooling.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/avg_pooling.c > CMakeFiles/test.dir/src/avg_pooling.c.i
+
+CMakeFiles/test.dir/src/avg_pooling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/avg_pooling.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/avg_pooling.c -o CMakeFiles/test.dir/src/avg_pooling.c.s
+
+CMakeFiles/test.dir/src/min_pooling.c.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/min_pooling.c.o: ../src/min_pooling.c
+CMakeFiles/test.dir/src/min_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/test.dir/src/min_pooling.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/min_pooling.c.o -MF CMakeFiles/test.dir/src/min_pooling.c.o.d -o CMakeFiles/test.dir/src/min_pooling.c.o -c /home/cdaini/IACLIB/lib/src/min_pooling.c
+
+CMakeFiles/test.dir/src/min_pooling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/min_pooling.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/min_pooling.c > CMakeFiles/test.dir/src/min_pooling.c.i
+
+CMakeFiles/test.dir/src/min_pooling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/min_pooling.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/min_pooling.c -o CMakeFiles/test.dir/src/min_pooling.c.s
+
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/tools.c.o: ../src/tools.c
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/test.dir/src/tools.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/test.dir/src/tools.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/tools.c.o -MF CMakeFiles/test.dir/src/tools.c.o.d -o CMakeFiles/test.dir/src/tools.c.o -c /home/cdaini/IACLIB/lib/src/tools.c
 
 CMakeFiles/test.dir/src/tools.c.i: cmake_force
@@ -130,6 +172,9 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/tests/test.c.o" \
 "CMakeFiles/test.dir/src/conv.c.o" \
 "CMakeFiles/test.dir/src/pooling.c.o" \
+"CMakeFiles/test.dir/src/max_pooling.c.o" \
+"CMakeFiles/test.dir/src/avg_pooling.c.o" \
+"CMakeFiles/test.dir/src/min_pooling.c.o" \
 "CMakeFiles/test.dir/src/tools.c.o"
 
 # External object files for target test
@@ -138,10 +183,13 @@ test_EXTERNAL_OBJECTS =
 test: CMakeFiles/test.dir/tests/test.c.o
 test: CMakeFiles/test.dir/src/conv.c.o
 test: CMakeFiles/test.dir/src/pooling.c.o
+test: CMakeFiles/test.dir/src/max_pooling.c.o
+test: CMakeFiles/test.dir/src/avg_pooling.c.o
+test: CMakeFiles/test.dir/src/min_pooling.c.o
 test: CMakeFiles/test.dir/src/tools.c.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

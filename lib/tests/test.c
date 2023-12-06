@@ -74,7 +74,7 @@ int main() {
     DATA1D conv_output_data;
     initialize_DATA1D(&conv_output_data, conv_output_size);
 
-    if (conv(conv_layer, &linearized_matrix, &linearized_kernel, &conv_output_data, input_height, input_width)) {
+    if (conv(conv_layer, &linearized_matrix, &kernel, &conv_output_data, input_height, input_width)) {
         printf("Convolution successful!\n");
         printf("Convolution Output:\n");
         for (int i = 0; i < conv_output_data.shape.length; ++i) {
@@ -90,7 +90,7 @@ int main() {
     int pool_stride = pooling_layer->params.pool.stride;
     int pool_padding = pooling_layer->params.pool.padding;
     PoolingType pool_type = pooling_layer->params.pool.type;
-    printf("pooling type main = %s\n", poolingType_to_str(pool_type));
+    // printf("pooling type main = %s\n", poolingType_to_str(pool_type));
 
     int pool_output_width = conv_output_width / pool_size;
     int pool_output_height = conv_output_width / pool_size;

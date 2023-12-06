@@ -3,5 +3,6 @@
 
 #include "tools.h"
 
-bool conv(Layer *conv_layer, DATA1D *input_data, DATA1D *kernel, DATA1D *output_data, int input_height, int input_width);
+bool conv(Layer *conv_layer, DATA1D *input_data, DATA3D *kernel, DATA1D *output_data, int input_height, int input_width);
+
 #endif

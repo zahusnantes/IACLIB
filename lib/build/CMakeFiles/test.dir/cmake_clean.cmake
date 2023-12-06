@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/src/avg_pooling.c.o"
+  "CMakeFiles/test.dir/src/avg_pooling.c.o.d"
   "CMakeFiles/test.dir/src/conv.c.o"
   "CMakeFiles/test.dir/src/conv.c.o.d"
+  "CMakeFiles/test.dir/src/max_pooling.c.o"
+  "CMakeFiles/test.dir/src/max_pooling.c.o.d"
+  "CMakeFiles/test.dir/src/min_pooling.c.o"
+  "CMakeFiles/test.dir/src/min_pooling.c.o.d"
   "CMakeFiles/test.dir/src/pooling.c.o"
   "CMakeFiles/test.dir/src/pooling.c.o.d"
   "CMakeFiles/test.dir/src/tools.c.o"

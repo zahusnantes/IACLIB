@@ -11,6 +11,9 @@ set(SOURCE_FILES
     tests/test.c
     src/conv.c
     src/pooling.c
+    src/max_pooling.c
+    src/avg_pooling.c
+    src/min_pooling.c
     src/tools.c
 )
 

@@ -129,6 +129,30 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+src/avg_pooling.o: src/avg_pooling.c.o
+.PHONY : src/avg_pooling.o
+
+# target to build an object file
+src/avg_pooling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.o
+.PHONY : src/avg_pooling.c.o
+
+src/avg_pooling.i: src/avg_pooling.c.i
+.PHONY : src/avg_pooling.i
+
+# target to preprocess a source file
+src/avg_pooling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.i
+.PHONY : src/avg_pooling.c.i
+
+src/avg_pooling.s: src/avg_pooling.c.s
+.PHONY : src/avg_pooling.s
+
+# target to generate assembly for a file
+src/avg_pooling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.s
+.PHONY : src/avg_pooling.c.s
+
 src/conv.o: src/conv.c.o
 .PHONY : src/conv.o
 
@@ -152,6 +176,54 @@ src/conv.s: src/conv.c.s
 src/conv.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.s
 .PHONY : src/conv.c.s
+
+src/max_pooling.o: src/max_pooling.c.o
+.PHONY : src/max_pooling.o
+
+# target to build an object file
+src/max_pooling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.o
+.PHONY : src/max_pooling.c.o
+
+src/max_pooling.i: src/max_pooling.c.i
+.PHONY : src/max_pooling.i
+
+# target to preprocess a source file
+src/max_pooling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.i
+.PHONY : src/max_pooling.c.i
+
+src/max_pooling.s: src/max_pooling.c.s
+.PHONY : src/max_pooling.s
+
+# target to generate assembly for a file
+src/max_pooling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.s
+.PHONY : src/max_pooling.c.s
+
+src/min_pooling.o: src/min_pooling.c.o
+.PHONY : src/min_pooling.o
+
+# target to build an object file
+src/min_pooling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.o
+.PHONY : src/min_pooling.c.o
+
+src/min_pooling.i: src/min_pooling.c.i
+.PHONY : src/min_pooling.i
+
+# target to preprocess a source file
+src/min_pooling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.i
+.PHONY : src/min_pooling.c.i
+
+src/min_pooling.s: src/min_pooling.c.s
+.PHONY : src/min_pooling.s
+
+# target to generate assembly for a file
+src/min_pooling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.s
+.PHONY : src/min_pooling.c.s
 
 src/pooling.o: src/pooling.c.o
 .PHONY : src/pooling.o
@@ -234,9 +306,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... src/avg_pooling.o"
+	@echo "... src/avg_pooling.i"
+	@echo "... src/avg_pooling.s"
 	@echo "... src/conv.o"
 	@echo "... src/conv.i"
 	@echo "... src/conv.s"
+	@echo "... src/max_pooling.o"
+	@echo "... src/max_pooling.i"
+	@echo "... src/max_pooling.s"
+	@echo "... src/min_pooling.o"
+	@echo "... src/min_pooling.i"
+	@echo "... src/min_pooling.s"
 	@echo "... src/pooling.o"
 	@echo "... src/pooling.i"
 	@echo "... src/pooling.s"
