@@ -18,7 +18,7 @@ network {
     bottom: "conv1"
     top: "fc1"
     pooling_param {
-      pool: AVG
+      pool: MAX
       kernel_size: 2
       stride: 1
     }

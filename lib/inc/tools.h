@@ -57,7 +57,7 @@ typedef struct
 
 typedef struct
 {
-    Shape2D shape;
+    Shape3D shape;
     int padding, stride;
     PoolingType type;
 } CNNPool;
@@ -86,7 +86,7 @@ typedef struct Layer Layer;
 
 typedef struct
 {
-    DATA2D in_data;
+    DATA3D in_data;
     DATA1D out_classes;
     Layer *layers;
 } CNN;
@@ -108,7 +108,7 @@ bool initialize_DATA3D(DATA3D *data, int width, int height, int depth);
 
 int CNN_kernels_params_count(CNNKernels kernels, int previous_channel_count);
 
-CNN *read_model(char *filename, int in_h, int in_w, int nb_classes);
+CNN *read_model(char *filename, int in_h, int in_w, int int_d, int nb_classes);
 
 Layer *find_layer(CNN *cnn, char *layer_name);
 void parse_first_column(char *token, char *p1, char *p2);

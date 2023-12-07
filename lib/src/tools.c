@@ -111,7 +111,7 @@ bool parse_CNN(char *filename, CNN *cnn)
 
             int size = 0;
             int stride = 1;
-            int padding = 1;
+            int padding = 0;
             int outchannels = 1;
             PoolingType poolType = -1;
             // Read and parse the layer definition
@@ -229,12 +229,10 @@ bool parse_CNN(char *filename, CNN *cnn)
 
 bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
 {
-
     iterator->data.shape.depth = shape.depth;
-
+    printf("Iterator Data Shape Depth: %d\n", iterator->data.shape.depth);
     iterator->data.shape.width = ((shape.width + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.width) / iterator->params.kernels.stride) + 1;
     iterator->data.shape.height = ((shape.height + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.height) / iterator->params.kernels.stride) + 1;
-
     int weight_size = (iterator->bottom == NULL) ? CNN_kernels_params_count(iterator->params.kernels, 1) : CNN_kernels_params_count(iterator->params.kernels, iterator->bottom->data.shape.depth);
 
     iterator->params.kernels.values_size = weight_size;
@@ -252,11 +250,12 @@ bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
 
 bool compute_layer_pool_params(Layer *iterator)
 {
-
     Shape3D shape = iterator->bottom->data.shape;
     iterator->data.shape.depth = iterator->bottom->params.kernels.shape.depth;
-    iterator->data.shape.width = floor((shape.width - iterator->params.pool.shape.width) / iterator->params.pool.stride) + 1;
-    iterator->data.shape.height = floor((shape.width - iterator->params.pool.shape.width) / iterator->params.pool.stride) + 1;
+    // iterator->data.shape.width = floor(iterator->bottom->data.shape.width / iterator->params.pool.shape.width);
+    // iterator->data.shape.height = floor(iterator->bottom->data.shape.height / iterator->params.pool.shape.height);
+    iterator->data.shape.width = floor((shape.width - iterator->params.pool.shape.width + 2 * iterator->params.pool.padding) / iterator->params.pool.stride) + 1;
+    iterator->data.shape.height = floor((shape.height - iterator->params.pool.shape.height + 2 * iterator->params.pool.padding) / iterator->params.pool.stride) + 1;
     return true;
 }
 
@@ -285,12 +284,12 @@ bool calculate_check_params(CNN *cnn)
         bottom = bottom->top;
         iterator = iterator->top;
     }
-    // Calcululating the different sizes
+    // Calculating the different sizes
 
     iterator = cnn->layers;
 
     // We must calculate the depth and the shape of the output
-    Shape3D shape = {cnn->in_data.shape.width, cnn->in_data.shape.height, 1};
+    Shape3D shape = {cnn->in_data.shape.width, cnn->in_data.shape.height, cnn->in_data.shape.width};
     compute_layer_conv_params(iterator, shape);
     iterator = iterator->top;
     while (iterator != NULL)
@@ -316,17 +315,16 @@ bool calculate_check_params(CNN *cnn)
         iterator = iterator->top;
     }
 }
-CNN *read_model(char *filename, int in_h, int in_w, int nb_classes)
+CNN *read_model(char *filename, int in_h, int in_w, int in_d, int nb_classes)
 {
     CNN *cnn = (CNN *)malloc(sizeof(CNN));
     if (cnn == NULL)
         return NULL;
     cnn->layers = NULL;
     // initialize the input data
-    initialize_DATA2D(&cnn->in_data, in_w, in_h);
+    initialize_DATA3D(&cnn->in_data, in_w, in_h, in_d);
     // intialize the output classes vector
     initialize_DATA1D(&cnn->out_classes, nb_classes);
-
     // parsing the file
     parse_CNN(filename, cnn);
     // calculating the CNN parameters
@@ -431,7 +429,7 @@ void display_layer(Layer *layer)
     if (layer->bottom != NULL)
         printf("\t bottom: %s\n", layer->bottom->name);
 
-    printf("\t DATA shape:");
+    printf("\t DATA output shape:");
     display_Shape3D(&layer->data.shape);
     printf("\n \t ");
     switch (layer->type)

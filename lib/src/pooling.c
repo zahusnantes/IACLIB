@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 
-bool pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels) {
+bool pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) {
     if (pooling_layer->type != MAX && pooling_layer->type != AVG && pooling_layer->type != MIN) {
         fprintf(stderr, "Error: Unsupported pooling type.\n");
         return false;  
@@ -16,15 +16,15 @@ bool pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int 
     switch (pool_type)
     {
     case MAX:
-        max_pooling(pooling_layer, input_data, output_data, input_height, input_width, num_channels);
+        max_pooling(pooling_layer, input_data, output_data);
         break;
 
         case AVG:
-        avg_pooling(pooling_layer, input_data, output_data, input_height, input_width, num_channels);
+        avg_pooling(pooling_layer, input_data, output_data);
         break;
 
         case MIN:
-        min_pooling(pooling_layer, input_data, output_data, input_height, input_width, num_channels);
+        min_pooling(pooling_layer, input_data, output_data);
         break;
 
         default:

@@ -5,17 +5,21 @@
 #include <stdio.h>
 #include <math.h>
 
-void min_pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels) {
+void min_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) {
 
     CNNPool *pooling_params = &(pooling_layer->params.pool);
 
-    int input_size = input_data->shape.length;
-    int output_size = output_data->shape.length;
+    int input_width = input_data->shape.width;
+    int input_height = input_data->shape.height;
+    int input_depth = input_data->shape.depth;
+    int input_size = input_height * input_width * input_depth;
     int pool_size = pooling_params->shape.width;
     int padding = pooling_params->padding;
     int stride = pooling_params->stride;
-    int output_height = input_height / pool_size;
-    int output_width = input_width / pool_size;
+    int output_height = pooling_layer->params.pool.shape.height;
+    int output_width = pooling_layer->params.pool.shape.width;
+    int num_channels = pooling_layer->params.pool.shape.depth;
+    int output_size = output_height * output_width * num_channels;
     PoolingType pool_type = pooling_layer->params.pool.type;
 
     WEIGHT_TYPE result_value = 0.0;

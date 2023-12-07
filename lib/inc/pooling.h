@@ -3,9 +3,9 @@
 
 #include "tools.h"
 
-bool pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels);
-void max_pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels);
-void avg_pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels);
-void min_pooling(Layer *pooling_layer, DATA1D *input_data, DATA1D *output_data, int input_height, int input_width, int num_channels);
+bool pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data);
+void max_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data);
+void avg_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data);
+void min_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data);
 
 #endif
