@@ -66,11 +66,10 @@ int main() {
     }
 
     PoolingType pool_type = pooling_layer->params.pool.type;
-    printf("Pooling type = %s\n", poolingType_to_str(pool_type));
 
-    int pool_output_width = pooling_layer->params.pool.shape.height;
-    int pool_output_height = pooling_layer->params.pool.shape.height;
-    int pool_output_depth = pooling_layer->params.pool.shape.depth;
+    int pool_output_width = pooling_layer->data.shape.height;
+    int pool_output_height = pooling_layer->data.shape.height;
+    int pool_output_depth = pooling_layer->data.shape.depth;
     int pool_output_size = pool_output_width * pool_output_height * pool_output_depth;
     DATA3D pool_output_data;
     initialize_DATA3D(&pool_output_data, pool_output_width, pool_output_height, pool_output_depth);

@@ -16,9 +16,9 @@ void max_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) 
     int pool_size = pooling_params->shape.width;
     int padding = pooling_params->padding;
     int stride = pooling_params->stride;
-    int output_height = pooling_layer->params.pool.shape.height;
-    int output_width = pooling_layer->params.pool.shape.width;
-    int num_channels = pooling_layer->params.pool.shape.depth;
+    int output_height = pooling_layer->data.shape.height;
+    int output_width = pooling_layer->data.shape.width;
+    int num_channels = pooling_layer->data.shape.depth;
     int output_size = output_height * output_width * num_channels;
     PoolingType pool_type = pooling_layer->params.pool.type;
 
