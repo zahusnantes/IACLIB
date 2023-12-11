@@ -251,8 +251,6 @@ bool compute_layer_pool_params(Layer *iterator)
 {
     Shape3D shape = iterator->bottom->data.shape;
     iterator->data.shape.depth = iterator->bottom->params.kernels.shape.depth;
-    // iterator->data.shape.width = floor(iterator->bottom->data.shape.width / iterator->params.pool.shape.width);
-    // iterator->data.shape.height = floor(iterator->bottom->data.shape.height / iterator->params.pool.shape.height);
     iterator->data.shape.width = floor((shape.width - iterator->params.pool.shape.width + 2 * iterator->params.pool.padding) / iterator->params.pool.stride) + 1;
     iterator->data.shape.height = floor((shape.height - iterator->params.pool.shape.height + 2 * iterator->params.pool.padding) / iterator->params.pool.stride) + 1;
     return true;

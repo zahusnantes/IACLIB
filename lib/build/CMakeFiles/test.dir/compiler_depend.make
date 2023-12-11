@@ -244,6 +244,10 @@ CMakeFiles/test.dir/src/inference.c.o: ../src/inference.c \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/string.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/strings.h \
   ../inc/tools.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../inc/images.h \
@@ -605,11 +609,11 @@ CMakeFiles/test.dir/tests/test.c.o: ../tests/test.c \
   ../inc/fc.h
 
 
+../src/min_pooling.c:
+
 /usr/include/strings.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-../src/min_pooling.c:
 
 ../src/inference.c:
 

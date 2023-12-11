@@ -19,12 +19,6 @@ bool fc(Layer *fc_layer, DATA3D *input_data, DATA2D *weights, DATA1D *biases, DA
         return false;
     }
 
-    // Initialize output_data if not already initialized
-    if (!initialize_DATA3D(output_data, 1, 1, num_neurons)) {
-        fprintf(stderr, "Error: Failed to initialize FC layer output data.\n");
-        return false;
-    }
-
     // Perform FC layer computation
     for (int neuron_idx = 0; neuron_idx < num_neurons; ++neuron_idx) {
         WEIGHT_TYPE sum = 0.0;

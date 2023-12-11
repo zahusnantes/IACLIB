@@ -9,7 +9,6 @@
 #include "../inc/inference.h"
 
 int main() {
-// Create a 3D matrix with 2 channels (3x3x2)
     DATA3D matrix;
     matrix.shape.width = 3;
     matrix.shape.height = 3;
