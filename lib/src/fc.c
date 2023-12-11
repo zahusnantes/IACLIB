@@ -1,49 +1,44 @@
-#include "fc.h"
-#include "tools.h"
+#include "../inc/fc.h"
+#include "../inc/tools.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 
-FCLayer(int input_units, int output_units, double alpha) : input_units(input_units), output_units(output_units), alpha(alpha) {
-    weight.resize(input_units, image1D(output_units, 0.0));
-    bias.resize(output_units, 0.0);
+bool fc(Layer *fc_layer, DATA3D *input_data, DATA2D *weights, DATA1D *biases, DATA3D *output_data) {
+    if (fc_layer->type != FC) {
+        fprintf(stderr, "Error: Layer is not a fully connected (FC) layer.\n");
+        return false;
+    }
 
-    // Random number generator with a normal distribution
-    std::default_random_engine generator;
-    std::normal_distribution<double> distribution(0.0, 1.0);
+    int num_neurons = fc_layer->params.fc.shape.length;
+    int input_size = layer_data_size(fc_layer->bottom);
+    
+    // Check dimensions compatibility
+    if (weights->shape.height != num_neurons || weights->shape.width != input_size) {
+        fprintf(stderr, "Error: FC layer dimensions mismatch.\n");
+        return false;
+    }
 
-    // Generate random numbers and store them in the output vector
-    for (int i = 0; i < input_units; ++i) {
-        for (int j = 0; j < output_units; ++j) {
-            weight[i][j] = distribution(generator);
+    // Initialize output_data if not already initialized
+    if (!initialize_DATA3D(output_data, 1, 1, num_neurons)) {
+        fprintf(stderr, "Error: Failed to initialize FC layer output data.\n");
+        return false;
+    }
+
+    // Perform FC layer computation
+    for (int neuron_idx = 0; neuron_idx < num_neurons; ++neuron_idx) {
+        WEIGHT_TYPE sum = 0.0;
+
+        for (int input_idx = 0; input_idx < input_size; ++input_idx) {
+            sum += input_data->raw_data[input_idx] * weights->raw_data[neuron_idx * input_size + input_idx];
         }
-    }
-}
 
-image1D forward_prop(const image1D& flattened_input) override {
+        // Add bias
+        sum += biases->raw_data[neuron_idx];
 
-    output.resize(output_units, 0.0);
-    for (int j = 0; j < output_units; ++j) {
-        for (int l = 0; l < input_units; ++l) {
-            output[j] += flattened_input[l] * weight[l][j];
-        }
-        output[j] += bias[j];
+        // Assign the result to the output
+        output_data->raw_data[neuron_idx] = sum;
     }
 
-    // Apply softmax activation
-    double max_val = std::numeric_limits<double>::lowest();
-    for (double val : output) {
-        max_val = std::max(max_val, val);
-    }
-    double exp_sum = 0.0;
-    std::vector<double> softmax_output(output_units, 0.0);
-    for (int i = 0; i < output_units; ++i) {
-        softmax_output[i] = exp(output[i] - max_val);
-        exp_sum += softmax_output[i];
-    }
-    for (int i = 0; i < output_units; ++i) {
-        softmax_output[i] /= exp_sum;
-    }
-
-    return softmax_output;
+    return true;
 }

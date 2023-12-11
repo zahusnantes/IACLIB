@@ -229,8 +229,7 @@ bool parse_CNN(char *filename, CNN *cnn)
 
 bool compute_layer_conv_params(Layer *iterator, Shape3D shape)
 {
-    iterator->data.shape.depth = shape.depth;
-    printf("Iterator Data Shape Depth: %d\n", iterator->data.shape.depth);
+    iterator->data.shape.depth = iterator->params.kernels.shape.depth;
     iterator->data.shape.width = ((shape.width + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.width) / iterator->params.kernels.stride) + 1;
     iterator->data.shape.height = ((shape.height + 2 * iterator->params.kernels.padding - iterator->params.kernels.shape.height) / iterator->params.kernels.stride) + 1;
     int weight_size = (iterator->bottom == NULL) ? CNN_kernels_params_count(iterator->params.kernels, 1) : CNN_kernels_params_count(iterator->params.kernels, iterator->bottom->data.shape.depth);
@@ -289,7 +288,7 @@ bool calculate_check_params(CNN *cnn)
     iterator = cnn->layers;
 
     // We must calculate the depth and the shape of the output
-    Shape3D shape = {cnn->in_data.shape.width, cnn->in_data.shape.height, cnn->in_data.shape.width};
+    Shape3D shape = {cnn->in_data.shape.width, cnn->in_data.shape.height, cnn->in_data.shape.depth};
     compute_layer_conv_params(iterator, shape);
     iterator = iterator->top;
     while (iterator != NULL)

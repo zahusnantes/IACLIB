@@ -9,7 +9,9 @@
         "utility": "c",
         "stdio.h": "c",
         "images.h": "c",
-        "read_mnist.h": "c"
+        "read_mnist.h": "c",
+        "input_idx.h": "c",
+        "fc.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

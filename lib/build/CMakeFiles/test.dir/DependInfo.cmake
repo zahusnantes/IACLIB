@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cdaini/IACLIB/lib/src/avg_pooling.c" "CMakeFiles/test.dir/src/avg_pooling.c.o" "gcc" "CMakeFiles/test.dir/src/avg_pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/conv.c" "CMakeFiles/test.dir/src/conv.c.o" "gcc" "CMakeFiles/test.dir/src/conv.c.o.d"
+  "/home/cdaini/IACLIB/lib/src/fc.c" "CMakeFiles/test.dir/src/fc.c.o" "gcc" "CMakeFiles/test.dir/src/fc.c.o.d"
+  "/home/cdaini/IACLIB/lib/src/inference.c" "CMakeFiles/test.dir/src/inference.c.o" "gcc" "CMakeFiles/test.dir/src/inference.c.o.d"
   "/home/cdaini/IACLIB/lib/src/max_pooling.c" "CMakeFiles/test.dir/src/max_pooling.c.o" "gcc" "CMakeFiles/test.dir/src/max_pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/min_pooling.c" "CMakeFiles/test.dir/src/min_pooling.c.o" "gcc" "CMakeFiles/test.dir/src/min_pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/pooling.c" "CMakeFiles/test.dir/src/pooling.c.o" "gcc" "CMakeFiles/test.dir/src/pooling.c.o.d"

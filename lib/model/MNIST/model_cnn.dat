@@ -30,7 +30,7 @@ layer {
     bottom: "pool1" 
     top: "output"
     inner_product_param {
-      num_output: 64  
+      num_output: 2  
     }
 }
 

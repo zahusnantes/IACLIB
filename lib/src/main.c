@@ -7,9 +7,10 @@ int main(int argc, char **argv)
 {
     int in_h = 28;
     int in_w = 28;
+    int in_d = 1;
     int nb_classes = 10;
 
-    CNN *cnn = read_model("../model/model.dat", in_h, in_w, nb_classes);
+    CNN *cnn = read_model("../model/model.dat", in_h, in_w, in_d, nb_classes);
     //display_cnn(cnn);
     bool success = read_weights(cnn, "../model/model_parameters.csv");
 

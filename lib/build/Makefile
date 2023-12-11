@@ -177,6 +177,54 @@ src/conv.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/conv.c.s
 .PHONY : src/conv.c.s
 
+src/fc.o: src/fc.c.o
+.PHONY : src/fc.o
+
+# target to build an object file
+src/fc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/fc.c.o
+.PHONY : src/fc.c.o
+
+src/fc.i: src/fc.c.i
+.PHONY : src/fc.i
+
+# target to preprocess a source file
+src/fc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/fc.c.i
+.PHONY : src/fc.c.i
+
+src/fc.s: src/fc.c.s
+.PHONY : src/fc.s
+
+# target to generate assembly for a file
+src/fc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/fc.c.s
+.PHONY : src/fc.c.s
+
+src/inference.o: src/inference.c.o
+.PHONY : src/inference.o
+
+# target to build an object file
+src/inference.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/inference.c.o
+.PHONY : src/inference.c.o
+
+src/inference.i: src/inference.c.i
+.PHONY : src/inference.i
+
+# target to preprocess a source file
+src/inference.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/inference.c.i
+.PHONY : src/inference.c.i
+
+src/inference.s: src/inference.c.s
+.PHONY : src/inference.s
+
+# target to generate assembly for a file
+src/inference.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/inference.c.s
+.PHONY : src/inference.c.s
+
 src/max_pooling.o: src/max_pooling.c.o
 .PHONY : src/max_pooling.o
 
@@ -312,6 +360,12 @@ help:
 	@echo "... src/conv.o"
 	@echo "... src/conv.i"
 	@echo "... src/conv.s"
+	@echo "... src/fc.o"
+	@echo "... src/fc.i"
+	@echo "... src/fc.s"
+	@echo "... src/inference.o"
+	@echo "... src/inference.i"
+	@echo "... src/inference.s"
 	@echo "... src/max_pooling.o"
 	@echo "... src/max_pooling.i"
 	@echo "... src/max_pooling.s"

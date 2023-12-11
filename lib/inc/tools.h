@@ -131,5 +131,4 @@ PoolingType str_to_poolingType(char *str);
 void display_layer(Layer *layer);
 void display_cnn(CNN *cnn);
 
-
 #endif

@@ -10,11 +10,13 @@ project(IALIB)
 set(SOURCE_FILES
     tests/test.c
     src/conv.c
+    src/fc.c
     src/pooling.c
     src/max_pooling.c
     src/avg_pooling.c
     src/min_pooling.c
     src/tools.c
+    src/inference.c
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)

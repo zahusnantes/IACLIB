@@ -1,5 +1,6 @@
-CMakeFiles/test.dir/tests/test.c.o: /home/cdaini/IACLIB/lib/tests/test.c \
- /usr/include/stdc-predef.h /usr/include/stdio.h \
+CMakeFiles/test.dir/src/inference.c.o: \
+ /home/cdaini/IACLIB/lib/src/inference.c /usr/include/stdc-predef.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -47,18 +48,18 @@ CMakeFiles/test.dir/tests/test.c.o: /home/cdaini/IACLIB/lib/tests/test.c \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
+ /home/cdaini/IACLIB/lib/src/../inc/tools.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
  /home/cdaini/IACLIB/lib/inc/images.h \
- /home/cdaini/IACLIB/lib/tests/../inc/images.h \
- /home/cdaini/IACLIB/lib/tests/../inc/conv.h \
- /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
- /home/cdaini/IACLIB/lib/tests/../inc/pooling.h \
- /home/cdaini/IACLIB/lib/tests/../inc/fc.h \
- /home/cdaini/IACLIB/lib/tests/../inc/images.h \
- /home/cdaini/IACLIB/lib/tests/../inc/inference.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/tools.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/images.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/conv.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/pooling.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/fc.h
+ /home/cdaini/IACLIB/lib/src/../inc/images.h \
+ /home/cdaini/IACLIB/lib/src/../inc/conv.h \
+ /home/cdaini/IACLIB/lib/src/../inc/tools.h \
+ /home/cdaini/IACLIB/lib/src/../inc/pooling.h \
+ /home/cdaini/IACLIB/lib/src/../inc/fc.h \
+ /home/cdaini/IACLIB/lib/src/../inc/images.h \
+ /home/cdaini/IACLIB/lib/src/../inc/inference.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/tools.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/images.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/conv.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/pooling.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/fc.h
