@@ -55,3 +55,5 @@ Welcome to the CUDA Convolutional Neural Network (CNN) Inference Library!
 
 ## Requirements
 
+For detailed functional and non-functional requirements, please refer to the [Requirements](requirements.md) document.
+
