@@ -53,7 +53,7 @@
 
 - Specify Linux-specific requirements.
 
-###### Bare Metal
+##### Bare Metal
 
 - If applicable, include requirements for running on bare metal.
 
