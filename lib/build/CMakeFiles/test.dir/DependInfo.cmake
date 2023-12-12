@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/cdaini/IACLIB/lib/src/activation.c" "CMakeFiles/test.dir/src/activation.c.o" "gcc" "CMakeFiles/test.dir/src/activation.c.o.d"
   "/home/cdaini/IACLIB/lib/src/avg_pooling.c" "CMakeFiles/test.dir/src/avg_pooling.c.o" "gcc" "CMakeFiles/test.dir/src/avg_pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/conv.c" "CMakeFiles/test.dir/src/conv.c.o" "gcc" "CMakeFiles/test.dir/src/conv.c.o.d"
   "/home/cdaini/IACLIB/lib/src/fc.c" "CMakeFiles/test.dir/src/fc.c.o" "gcc" "CMakeFiles/test.dir/src/fc.c.o.d"

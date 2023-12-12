@@ -1,7 +1,7 @@
 #include "../inc/tools.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <../inc/images.h>
+#include <../inc/data.h>
 
 int main(int argc, char **argv)
 {

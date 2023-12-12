@@ -1,7 +1,7 @@
 #include "../inc/tools.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <../inc/images.h>
+#include <../inc/data.h>
 #include <../inc/read_mnist.h>
 
 Image read_mnist_images(const char *filename) {

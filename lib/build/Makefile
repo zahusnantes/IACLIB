@@ -129,6 +129,30 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+src/activation.o: src/activation.c.o
+.PHONY : src/activation.o
+
+# target to build an object file
+src/activation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/activation.c.o
+.PHONY : src/activation.c.o
+
+src/activation.i: src/activation.c.i
+.PHONY : src/activation.i
+
+# target to preprocess a source file
+src/activation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/activation.c.i
+.PHONY : src/activation.c.i
+
+src/activation.s: src/activation.c.s
+.PHONY : src/activation.s
+
+# target to generate assembly for a file
+src/activation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/activation.c.s
+.PHONY : src/activation.c.s
+
 src/avg_pooling.o: src/avg_pooling.c.o
 .PHONY : src/avg_pooling.o
 
@@ -354,6 +378,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... src/activation.o"
+	@echo "... src/activation.i"
+	@echo "... src/activation.s"
 	@echo "... src/avg_pooling.o"
 	@echo "... src/avg_pooling.i"
 	@echo "... src/avg_pooling.s"

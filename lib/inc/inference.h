@@ -2,7 +2,7 @@
 #define INFERENCE_H
 
 #include "../inc/tools.h"
-#include "../inc/images.h"
+#include "../inc/data.h"
 #include "../inc/conv.h"
 #include "../inc/pooling.h"
 #include "../inc/fc.h"

@@ -1,9 +1,10 @@
-CMakeFiles/test.dir/src/avg_pooling.c.o: \
- /home/cdaini/IACLIB/lib/src/avg_pooling.c /usr/include/stdc-predef.h \
- /home/cdaini/IACLIB/lib/src/../inc/pooling.h \
+CMakeFiles/test.dir/src/activation.c.o: \
+ /home/cdaini/IACLIB/lib/src/activation.c /usr/include/stdc-predef.h \
+ /home/cdaini/IACLIB/lib/src/../inc/activation.h \
  /home/cdaini/IACLIB/lib/src/../inc/tools.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
  /home/cdaini/IACLIB/lib/inc/data.h \
+ /home/cdaini/IACLIB/lib/src/../inc/data.h \
  /home/cdaini/IACLIB/lib/src/../inc/tools.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

@@ -3,11 +3,12 @@
 #include <string.h>
 
 #include "../inc/tools.h"
-#include "../inc/images.h"
+#include "../inc/data.h"
 #include "../inc/conv.h"
 #include "../inc/pooling.h"
 #include "../inc/fc.h"
 #include "../inc/inference.h"
+#include "../inc/activation.h"
 
 bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, DATA1D *biases) {
     bool status = true;
@@ -32,7 +33,7 @@ bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, D
                 else {
                 fprintf(stderr, "Convolution failed!\n");
             }
-
+            apply_activation(&output[output_idx], iterator->activation);
             input = &output[output_idx];
             output_idx = (output_idx + 1) % 2;
             break;
@@ -49,7 +50,7 @@ bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, D
             } else {
                 fprintf(stderr, "Pooling failed!\n");
             }
-
+            apply_activation(&output[output_idx], iterator->activation);
             input = &output[output_idx];
             output_idx = (output_idx + 1) % 2;
             break;
@@ -65,10 +66,11 @@ bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, D
                 printf("\n"); 
             } else {
                 fprintf(stderr, "FC Layer failed!\n");
+            }
+            apply_activation(&output[output_idx], iterator->activation);
             input = &output[output_idx];
             output_idx = (output_idx + 1) % 2;
             break;
-            }
 
         default:
             break;

@@ -2,6 +2,7 @@ network {
   layer {
     name: "conv1"
     type: "Convolution"
+    activation: RELU
     bottom: "data"
     top: "conv1"
     convolution_param {
@@ -15,6 +16,7 @@ network {
   layer {
     name: "pool1"
     type: "Pooling"
+    activation: RELU
     bottom: "conv1"
     top: "fc1"
     pooling_param {
@@ -27,6 +29,7 @@ network {
 layer {
     name: "fc1"
     type: "InnerProduct"
+    activation: SOFTMAX
     bottom: "pool1" 
     top: "output"
     inner_product_param {

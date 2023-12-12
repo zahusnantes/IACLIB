@@ -2,7 +2,7 @@
 #define TOOLS_H
 
 #include <stdbool.h>
-#include <images.h>
+#include <data.h>
 
 // CNN Parameters
 #define WEIGHT_TYPE double
@@ -22,7 +22,6 @@ typedef enum
     FC,
     UNKOWN
 } LayerType;
-
 
 typedef enum
 {
@@ -74,19 +73,19 @@ typedef union LayerPars LayerParams;
 struct Layer
 {
     char name[32];
-    Activation activation;
     DATA3D data;
     struct Layer *top;
     struct Layer *bottom;
     LayerType type;
     LayerParams params;
+    Activation activation;
 };
 
 typedef struct Layer Layer;
 
 typedef struct
 {
-    DATA3D in_data;
+DATA3D in_data;
     DATA1D out_classes;
     Layer *layers;
 } CNN;
@@ -130,5 +129,6 @@ PoolingType str_to_poolingType(char *str);
 
 void display_layer(Layer *layer);
 void display_cnn(CNN *cnn);
+Activation str_to_activationType(char *str);
 
 #endif

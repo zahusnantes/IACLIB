@@ -49,16 +49,15 @@ CMakeFiles/test.dir/tests/test.c.o: /home/cdaini/IACLIB/lib/tests/test.c \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/cdaini/IACLIB/lib/inc/images.h \
- /home/cdaini/IACLIB/lib/tests/../inc/images.h \
+ /home/cdaini/IACLIB/lib/inc/data.h \
+ /home/cdaini/IACLIB/lib/tests/../inc/data.h \
  /home/cdaini/IACLIB/lib/tests/../inc/conv.h \
  /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
  /home/cdaini/IACLIB/lib/tests/../inc/pooling.h \
  /home/cdaini/IACLIB/lib/tests/../inc/fc.h \
- /home/cdaini/IACLIB/lib/tests/../inc/images.h \
  /home/cdaini/IACLIB/lib/tests/../inc/inference.h \
  /home/cdaini/IACLIB/lib/tests/../inc/../inc/tools.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/images.h \
+ /home/cdaini/IACLIB/lib/tests/../inc/../inc/data.h \
  /home/cdaini/IACLIB/lib/tests/../inc/../inc/conv.h \
  /home/cdaini/IACLIB/lib/tests/../inc/../inc/pooling.h \
  /home/cdaini/IACLIB/lib/tests/../inc/../inc/fc.h

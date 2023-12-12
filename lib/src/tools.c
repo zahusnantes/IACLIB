@@ -113,6 +113,7 @@ bool parse_CNN(char *filename, CNN *cnn)
             int stride = 1;
             int padding = 0;
             int outchannels = 1;
+            Activation activation = -1;
             PoolingType poolType = -1;
             // Read and parse the layer definition
             while (fgets(line, sizeof(line), file) != NULL)
@@ -132,6 +133,19 @@ bool parse_CNN(char *filename, CNN *cnn)
                     char type[64];
                     strncpy(type, strtok(NULL, " \t\n"), sizeof(type));
                     newLayer->type = str_to_layerType(type);
+                }
+                else if (strcmp(token, "activation:") == 0)
+                {
+                    char activationType[64];
+                    strncpy(activationType, strtok(NULL, " \t\n"), sizeof(activationType));
+                    newLayer->activation = str_to_activationType(activationType);
+
+
+                    if (newLayer->activation == -1)
+                    {
+                        print_warning("Unknown activation type. Setting it to RELU by default.");
+                        newLayer->activation = RELU; // Set to RELU activation by default
+                    }
                 }
                 else if (strcmp(token, "bottom:") == 0)
                 {
@@ -353,6 +367,46 @@ char *layerType_to_str(LayerType type)
         return "Unknown";
 }
 
+Activation str_to_activationType(char *str)
+{
+    if (strcmp(str, "RELU") == 0)
+    {
+        printf("activation = %s\n", str);
+        return RELU;
+    }
+    else if (strcmp(str, "SIGMOID") == 0)
+    {
+        printf("activation = %s\n", str);
+        return SIGMOID;
+    }
+    else if (strcmp(str, "SOFTMAX") == 0)
+    {
+        printf("activation = %s\n", str);
+        return SOFTMAX;
+    }
+
+    printf("%s \n", str);
+    fatal_error(-11, "Unknown Activation type");
+    return -1;
+}
+
+char *activationType_to_str(Activation activation)
+{
+    switch (activation)
+    {
+    case RELU:
+        return "ReLU";
+    case SIGMOID:
+        return "Sigmoid";
+    case SOFTMAX:
+        return "Softmax";
+    default:
+        break;
+    }
+    return "UNKNOWN";
+}
+
+
 char *poolingType_to_str(PoolingType type)
 {
     switch (type)
@@ -423,6 +477,7 @@ void display_layer(Layer *layer)
     printf("[Layer: \n");
     printf("\t Name: %s\n", layer->name);
     printf("\t Type: %s\n", layerType_to_str(layer->type));
+    printf("\t Activation Type: %s\n", activationType_to_str(layer->activation));
     if (layer->bottom != NULL)
         printf("\t bottom: %s\n", layer->bottom->name);
 

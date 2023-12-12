@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <../inc/images.h>
+#include <../inc/data.h>
 #include "../inc/tools.h"
 
 typedef struct {

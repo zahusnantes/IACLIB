@@ -52,16 +52,17 @@ CMakeFiles/test.dir/src/inference.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /home/cdaini/IACLIB/lib/src/../inc/tools.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/cdaini/IACLIB/lib/inc/images.h \
- /home/cdaini/IACLIB/lib/src/../inc/images.h \
+ /home/cdaini/IACLIB/lib/inc/data.h \
+ /home/cdaini/IACLIB/lib/src/../inc/data.h \
  /home/cdaini/IACLIB/lib/src/../inc/conv.h \
  /home/cdaini/IACLIB/lib/src/../inc/tools.h \
  /home/cdaini/IACLIB/lib/src/../inc/pooling.h \
  /home/cdaini/IACLIB/lib/src/../inc/fc.h \
- /home/cdaini/IACLIB/lib/src/../inc/images.h \
  /home/cdaini/IACLIB/lib/src/../inc/inference.h \
  /home/cdaini/IACLIB/lib/src/../inc/../inc/tools.h \
- /home/cdaini/IACLIB/lib/src/../inc/../inc/images.h \
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/data.h \
  /home/cdaini/IACLIB/lib/src/../inc/../inc/conv.h \
  /home/cdaini/IACLIB/lib/src/../inc/../inc/pooling.h \
- /home/cdaini/IACLIB/lib/src/../inc/../inc/fc.h
+ /home/cdaini/IACLIB/lib/src/../inc/../inc/fc.h \
+ /home/cdaini/IACLIB/lib/src/../inc/activation.h \
+ /home/cdaini/IACLIB/lib/src/../inc/data.h
