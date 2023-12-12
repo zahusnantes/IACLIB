@@ -9,28 +9,6 @@
 #include "../inc/fc.h"
 #include "../inc/inference.h"
 
-// bool inference (CNN * cnn, Data3D const * const image, Data3D * const output) {
-//   bool status = true;
-//   Layer * layer = cnn->layer;
-//   Data3D const * input = image;
-
-//   while (NULL != layer && true == status) {
-//     switch (layer->type) {
-//       case conv:
-//         status = conv(layer, input, output);
-//         break;
-//       case pool:
-//         status = pool(layer, input, output);
-//         break;
-//     }
-
-//     layer = layer->next;
-//     input = output;
-//   }
-
-//   return status;
-// }
-
 bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, DATA1D *biases) {
     bool status = true;
     Layer *iterator = cnn->layers;
@@ -98,6 +76,6 @@ bool inference(CNN *cnn, DATA3D *image, DATA3D *kernel, DATA2D *weight_matrix, D
 
         iterator = iterator->top;
     }
-    
+
     return status;
 }
