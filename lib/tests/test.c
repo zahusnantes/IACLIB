@@ -54,6 +54,8 @@ int main() {
 
     CNN *cnn = read_model("../model/MNIST/model_cnn.dat", matrix.shape.height, matrix.shape.width, matrix.shape.depth, nb_classes);
     
+    //bool success = read_weights(cnn, "../model/model_parameters.csv");
+
     inference(cnn, &matrix, &kernel, &weight_matrix, &biases);
 
     free(matrix.raw_data);

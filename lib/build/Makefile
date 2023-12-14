@@ -345,29 +345,29 @@ src/tools.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.s
 .PHONY : src/tools.c.s
 
-tests/test.o: tests/test.c.o
-.PHONY : tests/test.o
+tests/test_conv.o: tests/test_conv.cpp.o
+.PHONY : tests/test_conv.o
 
 # target to build an object file
-tests/test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.o
-.PHONY : tests/test.c.o
+tests/test_conv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_conv.cpp.o
+.PHONY : tests/test_conv.cpp.o
 
-tests/test.i: tests/test.c.i
-.PHONY : tests/test.i
+tests/test_conv.i: tests/test_conv.cpp.i
+.PHONY : tests/test_conv.i
 
 # target to preprocess a source file
-tests/test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.i
-.PHONY : tests/test.c.i
+tests/test_conv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_conv.cpp.i
+.PHONY : tests/test_conv.cpp.i
 
-tests/test.s: tests/test.c.s
-.PHONY : tests/test.s
+tests/test_conv.s: tests/test_conv.cpp.s
+.PHONY : tests/test_conv.s
 
 # target to generate assembly for a file
-tests/test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.c.s
-.PHONY : tests/test.c.s
+tests/test_conv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_conv.cpp.s
+.PHONY : tests/test_conv.cpp.s
 
 # Help Target
 help:
@@ -405,9 +405,9 @@ help:
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
+	@echo "... tests/test_conv.o"
+	@echo "... tests/test_conv.i"
+	@echo "... tests/test_conv.s"
 .PHONY : help
 
 

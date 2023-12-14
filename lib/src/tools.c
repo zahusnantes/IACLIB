@@ -371,17 +371,14 @@ Activation str_to_activationType(char *str)
 {
     if (strcmp(str, "RELU") == 0)
     {
-        printf("activation = %s\n", str);
         return RELU;
     }
     else if (strcmp(str, "SIGMOID") == 0)
     {
-        printf("activation = %s\n", str);
         return SIGMOID;
     }
     else if (strcmp(str, "SOFTMAX") == 0)
     {
-        printf("activation = %s\n", str);
         return SOFTMAX;
     }
 
