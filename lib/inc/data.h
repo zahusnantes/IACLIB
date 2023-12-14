@@ -44,7 +44,6 @@ typedef struct
 {
     Shape3D shape;
     DATA_TYPE *raw_data;
-    DATA1D linearized_data;  // CHIARA: New field for linearized data
 } DATA3D;
 
 typedef struct

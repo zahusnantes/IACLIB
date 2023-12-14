@@ -90,6 +90,10 @@ DATA3D in_data;
     Layer *layers;
 } CNN;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void fatal_error(int errorCode, const char *message);
 void print_warning(const char *message);
 
@@ -130,5 +134,9 @@ PoolingType str_to_poolingType(char *str);
 void display_layer(Layer *layer);
 void display_cnn(CNN *cnn);
 Activation str_to_activationType(char *str);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
