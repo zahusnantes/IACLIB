@@ -7,25 +7,26 @@
 #include "../inc/data.h"
 #include "../inc/conv.h"
 
-constexpr int matrix_shape_width = 3;
-constexpr int matrix_shape_height = 3;
-constexpr int matrix_shape_depth = 1;
+constexpr int input_shape_width = 3;
+constexpr int input_shape_height = 3;
+constexpr int input_shape_depth = 1;
 constexpr int kernel_shape_width = 2;
 constexpr int kernel_shape_height = 2;
 constexpr int kernel_shape_depth = 2;
 constexpr int num_output_neurons = 2;
 constexpr int nb_classes = 2;
 char model_path[] = "../model/MNIST/model_cnn.dat";
+char conv1[] = "conv1";
 
 TEST(ConvTest, BasicConvTest) {
 
-    DATA3D matrix;
-    matrix.shape.width = matrix_shape_width;
-    matrix.shape.height = matrix_shape_height;
-    matrix.shape.depth = matrix_shape_depth;
-    initialize_DATA3D(&matrix, matrix.shape.height, matrix.shape.width, matrix.shape.depth);
-    for (int i = 0; i < matrix.shape.width * matrix.shape.height * matrix.shape.depth; ++i) {
-        matrix.raw_data[i] = i;
+    DATA3D input;
+    input.shape.width = input_shape_width;
+    input.shape.height = input_shape_height;
+    input.shape.depth = input_shape_depth;
+    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+        input.raw_data[i] = i;
     }
 
     DATA3D kernel;
@@ -36,22 +37,33 @@ TEST(ConvTest, BasicConvTest) {
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }
+    
+    CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
 
-    DATA2D weight_matrix;
-    initialize_DATA2D(&weight_matrix, 1 * 1 * 2, num_output_neurons);
-    for (int i = 0; i < weight_matrix.shape.height; ++i) {
-        for (int j = 0; j < weight_matrix.shape.width; ++j) {
-            weight_matrix.raw_data[i * weight_matrix.shape.width + j] = i + j;
-        }
-    }
+    Layer *conv_layer = find_layer(cnn, conv1);
 
-    DATA1D biases;
-    initialize_DATA1D(&biases, num_output_neurons);
+    CNNKernels *conv_params = &(conv_layer->params.kernels);
 
-    int nb_classes = 2;
+    int output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int num_channels = kernel.shape.depth;
+    int output_size = output_height * num_channels * output_width;
 
-    CNN *cnn = read_model(model_path, matrix.shape.height, matrix.shape.width, matrix.shape.depth, nb_classes);
+    int conv_output_height = conv_params->shape.height;
+    int conv_output_width = conv_params->shape.width;
+    int conv_num_channels = conv_params->shape.depth;
+    int conv_output_size = conv_layer->data.shape.height * conv_layer->data.shape.width * conv_layer->data.shape.depth;
+    DATA3D conv_output;
+    initialize_DATA3D(&conv_output, conv_output_height, conv_output_width, conv_num_channels);
 
+    bool result = conv(conv_layer, &input, &kernel, &conv_output);
+
+    ASSERT_TRUE(result);
+
+    EXPECT_EQ(output_height, conv_output_height);
+    EXPECT_EQ(output_width, conv_output_height);
+    EXPECT_EQ(num_channels, conv_num_channels);
+    EXPECT_EQ(output_size, conv_output_size);
 }
 
 int main(int argc, char **argv) {
