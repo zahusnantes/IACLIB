@@ -17,7 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cdaini/IACLIB/lib/src/min_pooling.c" "CMakeFiles/test.dir/src/min_pooling.c.o" "gcc" "CMakeFiles/test.dir/src/min_pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/pooling.c" "CMakeFiles/test.dir/src/pooling.c.o" "gcc" "CMakeFiles/test.dir/src/pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/tools.c" "CMakeFiles/test.dir/src/tools.c.o" "gcc" "CMakeFiles/test.dir/src/tools.c.o.d"
-  "/home/cdaini/IACLIB/lib/tests/test_conv.cpp" "CMakeFiles/test.dir/tests/test_conv.cpp.o" "gcc" "CMakeFiles/test.dir/tests/test_conv.cpp.o.d"
+  "/home/cdaini/IACLIB/lib/tests/test.c" "CMakeFiles/test.dir/tests/test.c.o" "gcc" "CMakeFiles/test.dir/tests/test.c.o.d"
   )
 
 # Targets to which this target links.

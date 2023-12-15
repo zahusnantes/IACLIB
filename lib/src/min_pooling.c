@@ -9,16 +9,16 @@ void min_pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) 
 
     CNNPool *pooling_params = &(pooling_layer->params.pool);
 
-    int input_width = input_data->shape.width;
-    int input_height = input_data->shape.height;
-    int input_depth = input_data->shape.depth;
+    int input_width = pooling_layer->bottom->data.shape.width;
+    int input_height = pooling_layer->bottom->data.shape.height;
+    int input_depth = pooling_layer->bottom->data.shape.depth;
     int input_size = input_height * input_width * input_depth;
     int pool_size = pooling_params->shape.width;
     int padding = pooling_params->padding;
     int stride = pooling_params->stride;
-    int output_height = pooling_layer->params.pool.shape.height;
-    int output_width = pooling_layer->params.pool.shape.width;
-    int num_channels = pooling_layer->params.pool.shape.depth;
+    int output_height = pooling_layer->data.shape.height;
+    int output_width = pooling_layer->data.shape.width;
+    int num_channels = pooling_layer->data.shape.depth;
     int output_size = output_height * output_width * num_channels;
     PoolingType pool_type = pooling_layer->params.pool.type;
 
