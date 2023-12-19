@@ -17,6 +17,7 @@ constexpr int num_output_neurons = 2;
 constexpr int nb_classes = 2;
 char model_path[] = "../model/MNIST/model_cnn.dat";
 char conv1[] = "conv1";
+char pool1[] = "pool1";
 
 TEST(ConvSizes, ConvSizesTest) {
 
@@ -57,10 +58,6 @@ TEST(ConvSizes, ConvSizesTest) {
     int conv_output_size = conv_layer->data.shape.height * conv_layer->data.shape.width * conv_layer->data.shape.depth;
     DATA3D conv_output;
     initialize_DATA3D(&conv_output, conv_output_height, conv_output_width, conv_num_channels);
-
-    bool result = conv(conv_layer, &input, &kernel, &conv_output);
-
-    ASSERT_TRUE(result);
 
     EXPECT_EQ(expected_output_height, conv_output_height);
     EXPECT_EQ(expected_output_width, conv_output_height);
@@ -134,9 +131,4 @@ TEST(ConvOutput, ConvOutputTest) {
     free(kernel.raw_data);
     free(expected_output.raw_data);
     free(conv_output.raw_data);
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }

@@ -21,7 +21,8 @@
         "ratio": "c",
         "tuple": "c",
         "type_traits": "c",
-        "variant": "c"
+        "variant": "c",
+        "cmath": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
