@@ -277,6 +277,10 @@ CMakeFiles/test.dir/tests/test_main.cpp.o: \
  /home/cdaini/IACLIB/lib/tests/../inc/data.h \
  /home/cdaini/IACLIB/lib/tests/../inc/conv.h \
  /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
+ /home/cdaini/IACLIB/lib/tests/test_tools.hpp /usr/include/c++/11/fstream \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
  /home/cdaini/IACLIB/lib/tests/test_pooling.cpp /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -299,4 +303,6 @@ CMakeFiles/test.dir/tests/test_main.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/cdaini/IACLIB/lib/tests/../inc/pooling.h
+ /home/cdaini/IACLIB/lib/tests/../inc/pooling.h \
+ /home/cdaini/IACLIB/lib/tests/test_fc.cpp \
+ /home/cdaini/IACLIB/lib/tests/../inc/fc.h

@@ -36,11 +36,10 @@ bool pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) {
                     case MAX:
                     for (int i = 0; i < pool_size; ++i) {
                         for (int j = 0; j < pool_size; ++j) {
-                            int input_idx = (h * stride + i) * input_width * num_channels + (w * stride + j) * num_channels + c_output;
+                            int input_idx = c_output * input_width * input_height + (h * pool_size + i) * input_width + w * pool_size + j;
                             if (input_idx >= 0 && input_idx < input_size) {
                                 double input_pixel = input_data->raw_data[input_idx];
                                 result_value = fmax(result_value, input_pixel);
-
                             }
                         }
                     }
@@ -49,7 +48,7 @@ bool pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) {
                     case AVG:
                     for (int i = 0; i < pool_size; ++i) {
                         for (int j = 0; j < pool_size; ++j) {
-                            int input_idx = (h * stride + i) * input_width * num_channels + (w * stride + j) * num_channels + c_output;
+                            int input_idx = c_output * input_width * input_height + (h * pool_size + i) * input_width + w * pool_size + j;
                             if (input_idx >= 0 && input_idx < input_size) {
                                 double input_pixel = input_data->raw_data[input_idx];
                                 result_value += input_pixel;
@@ -62,7 +61,7 @@ bool pooling(Layer *pooling_layer, DATA3D *input_data, DATA3D *output_data) {
                     case MIN:
                     for (int i = 0; i < pool_size; ++i) {
                         for (int j = 0; j < pool_size; ++j) {
-                            int input_idx = (h * stride + i) * input_width * num_channels + (w * stride + j) * num_channels + c_output;
+                            int input_idx = c_output * input_width * input_height + (h * pool_size + i) * input_width + w * pool_size + j;
                             if (input_idx >= 0 && input_idx < input_size) {
                                 double input_pixel = input_data->raw_data[input_idx];
                                 result_value = (i == 0 && j == 0) ? input_pixel : fmin(result_value, input_pixel);

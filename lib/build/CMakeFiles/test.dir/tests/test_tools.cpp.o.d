@@ -1,5 +1,5 @@
-CMakeFiles/test.dir/tests/test_mnist.c.o: \
- /home/cdaini/IACLIB/lib/tests/test_mnist.c /usr/include/stdc-predef.h \
+CMakeFiles/test.dir/tests/test_tools.cpp.o: \
+ /home/cdaini/IACLIB/lib/tests/test_tools.cpp /usr/include/stdc-predef.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -20,11 +20,19 @@ CMakeFiles/test.dir/tests/test_mnist.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/c++/11/stdlib.h /usr/include/c++/11/cstdlib \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+ /usr/include/c++/11/pstl/pstl_config.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
@@ -48,14 +56,8 @@ CMakeFiles/test.dir/tests/test_mnist.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/cdaini/IACLIB/lib/inc/data.h \
+ /usr/include/c++/11/bits/std_abs.h \
  /home/cdaini/IACLIB/lib/tests/../inc/data.h \
- /home/cdaini/IACLIB/lib/tests/../inc/inference.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/tools.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/data.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/conv.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/tools.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/pooling.h \
- /home/cdaini/IACLIB/lib/tests/../inc/../inc/fc.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/cdaini/IACLIB/lib/tests/../inc/tools.h \
+ /home/cdaini/IACLIB/lib/inc/data.h

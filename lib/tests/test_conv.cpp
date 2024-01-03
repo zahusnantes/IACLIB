@@ -6,35 +6,18 @@
 #include "../inc/tools.h"
 #include "../inc/data.h"
 #include "../inc/conv.h"
-
-constexpr int input_shape_width = 3;
-constexpr int input_shape_height = 3;
-constexpr int input_shape_depth = 1;
-constexpr int kernel_shape_width = 2;
-constexpr int kernel_shape_height = 2;
-constexpr int kernel_shape_depth = 2;
-constexpr int num_output_neurons = 2;
-constexpr int nb_classes = 2;
-char model_path[] = "../model/MNIST/model_cnn.dat";
-char conv1[] = "conv1";
-char pool1[] = "pool1";
+#include "test_tools.hpp"
 
 TEST(ConvSizes, ConvSizesTest) {
 
     DATA3D input;
-    input.shape.width = input_shape_width;
-    input.shape.height = input_shape_height;
-    input.shape.depth = input_shape_depth;
-    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
     for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
         input.raw_data[i] = i;
     }
 
     DATA3D kernel;
-    kernel.shape.width = kernel_shape_width;
-    kernel.shape.height = kernel_shape_height;
-    kernel.shape.depth = kernel_shape_depth;
-    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }
@@ -73,19 +56,13 @@ TEST(ConvSizes, ConvSizesTest) {
 TEST(ConvOutput, ConvOutputTest) {
 
     DATA3D input;
-    input.shape.width = input_shape_width;
-    input.shape.height = input_shape_height;
-    input.shape.depth = input_shape_depth;
-    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
     for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
         input.raw_data[i] = i;
     }
 
     DATA3D kernel;
-    kernel.shape.width = kernel_shape_width;
-    kernel.shape.height = kernel_shape_height;
-    kernel.shape.depth = kernel_shape_depth;
-    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }

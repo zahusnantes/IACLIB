@@ -69,10 +69,38 @@ include CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test.dir/flags.make
 
+CMakeFiles/test.dir/tests/test_mnist.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp
+CMakeFiles/test.dir/tests/test_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/tests/test_mnist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_mnist.cpp.o -MF CMakeFiles/test.dir/tests/test_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/test_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_mnist.cpp
+
+CMakeFiles/test.dir/tests/test_mnist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test_mnist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_mnist.cpp > CMakeFiles/test.dir/tests/test_mnist.cpp.i
+
+CMakeFiles/test.dir/tests/test_mnist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test_mnist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_mnist.cpp -o CMakeFiles/test.dir/tests/test_mnist.cpp.s
+
+CMakeFiles/test.dir/tests/read_mnist.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/read_mnist.cpp.o: ../tests/read_mnist.cpp
+CMakeFiles/test.dir/tests/read_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/tests/read_mnist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/read_mnist.cpp.o -MF CMakeFiles/test.dir/tests/read_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/read_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/read_mnist.cpp
+
+CMakeFiles/test.dir/tests/read_mnist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/read_mnist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/read_mnist.cpp > CMakeFiles/test.dir/tests/read_mnist.cpp.i
+
+CMakeFiles/test.dir/tests/read_mnist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/read_mnist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/read_mnist.cpp -o CMakeFiles/test.dir/tests/read_mnist.cpp.s
+
 CMakeFiles/test.dir/src/conv.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/conv.c.o: ../src/conv.c
 CMakeFiles/test.dir/src/conv.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test.dir/src/conv.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/test.dir/src/conv.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/conv.c.o -MF CMakeFiles/test.dir/src/conv.c.o.d -o CMakeFiles/test.dir/src/conv.c.o -c /home/cdaini/IACLIB/lib/src/conv.c
 
 CMakeFiles/test.dir/src/conv.c.i: cmake_force
@@ -86,7 +114,7 @@ CMakeFiles/test.dir/src/conv.c.s: cmake_force
 CMakeFiles/test.dir/src/fc.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/fc.c.o: ../src/fc.c
 CMakeFiles/test.dir/src/fc.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test.dir/src/fc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/test.dir/src/fc.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/fc.c.o -MF CMakeFiles/test.dir/src/fc.c.o.d -o CMakeFiles/test.dir/src/fc.c.o -c /home/cdaini/IACLIB/lib/src/fc.c
 
 CMakeFiles/test.dir/src/fc.c.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/test.dir/src/fc.c.s: cmake_force
 CMakeFiles/test.dir/src/pooling.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/pooling.c.o: ../src/pooling.c
 CMakeFiles/test.dir/src/pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/test.dir/src/pooling.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/test.dir/src/pooling.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/pooling.c.o -MF CMakeFiles/test.dir/src/pooling.c.o.d -o CMakeFiles/test.dir/src/pooling.c.o -c /home/cdaini/IACLIB/lib/src/pooling.c
 
 CMakeFiles/test.dir/src/pooling.c.i: cmake_force
@@ -111,52 +139,10 @@ CMakeFiles/test.dir/src/pooling.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/pooling.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/pooling.c -o CMakeFiles/test.dir/src/pooling.c.s
 
-CMakeFiles/test.dir/src/max_pooling.c.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/max_pooling.c.o: ../src/max_pooling.c
-CMakeFiles/test.dir/src/max_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/test.dir/src/max_pooling.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/max_pooling.c.o -MF CMakeFiles/test.dir/src/max_pooling.c.o.d -o CMakeFiles/test.dir/src/max_pooling.c.o -c /home/cdaini/IACLIB/lib/src/max_pooling.c
-
-CMakeFiles/test.dir/src/max_pooling.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/max_pooling.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/max_pooling.c > CMakeFiles/test.dir/src/max_pooling.c.i
-
-CMakeFiles/test.dir/src/max_pooling.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/max_pooling.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/max_pooling.c -o CMakeFiles/test.dir/src/max_pooling.c.s
-
-CMakeFiles/test.dir/src/avg_pooling.c.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/avg_pooling.c.o: ../src/avg_pooling.c
-CMakeFiles/test.dir/src/avg_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/test.dir/src/avg_pooling.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/avg_pooling.c.o -MF CMakeFiles/test.dir/src/avg_pooling.c.o.d -o CMakeFiles/test.dir/src/avg_pooling.c.o -c /home/cdaini/IACLIB/lib/src/avg_pooling.c
-
-CMakeFiles/test.dir/src/avg_pooling.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/avg_pooling.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/avg_pooling.c > CMakeFiles/test.dir/src/avg_pooling.c.i
-
-CMakeFiles/test.dir/src/avg_pooling.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/avg_pooling.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/avg_pooling.c -o CMakeFiles/test.dir/src/avg_pooling.c.s
-
-CMakeFiles/test.dir/src/min_pooling.c.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/min_pooling.c.o: ../src/min_pooling.c
-CMakeFiles/test.dir/src/min_pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/test.dir/src/min_pooling.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/min_pooling.c.o -MF CMakeFiles/test.dir/src/min_pooling.c.o.d -o CMakeFiles/test.dir/src/min_pooling.c.o -c /home/cdaini/IACLIB/lib/src/min_pooling.c
-
-CMakeFiles/test.dir/src/min_pooling.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/min_pooling.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/min_pooling.c > CMakeFiles/test.dir/src/min_pooling.c.i
-
-CMakeFiles/test.dir/src/min_pooling.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/min_pooling.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/min_pooling.c -o CMakeFiles/test.dir/src/min_pooling.c.s
-
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/tools.c.o: ../src/tools.c
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/test.dir/src/tools.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/test.dir/src/tools.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/tools.c.o -MF CMakeFiles/test.dir/src/tools.c.o.d -o CMakeFiles/test.dir/src/tools.c.o -c /home/cdaini/IACLIB/lib/src/tools.c
 
 CMakeFiles/test.dir/src/tools.c.i: cmake_force
@@ -170,7 +156,7 @@ CMakeFiles/test.dir/src/tools.c.s: cmake_force
 CMakeFiles/test.dir/src/inference.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/inference.c.o: ../src/inference.c
 CMakeFiles/test.dir/src/inference.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/test.dir/src/inference.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/test.dir/src/inference.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/inference.c.o -MF CMakeFiles/test.dir/src/inference.c.o.d -o CMakeFiles/test.dir/src/inference.c.o -c /home/cdaini/IACLIB/lib/src/inference.c
 
 CMakeFiles/test.dir/src/inference.c.i: cmake_force
@@ -184,7 +170,7 @@ CMakeFiles/test.dir/src/inference.c.s: cmake_force
 CMakeFiles/test.dir/src/activation.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/activation.c.o: ../src/activation.c
 CMakeFiles/test.dir/src/activation.c.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/test.dir/src/activation.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/test.dir/src/activation.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/activation.c.o -MF CMakeFiles/test.dir/src/activation.c.o.d -o CMakeFiles/test.dir/src/activation.c.o -c /home/cdaini/IACLIB/lib/src/activation.c
 
 CMakeFiles/test.dir/src/activation.c.i: cmake_force
@@ -195,49 +181,31 @@ CMakeFiles/test.dir/src/activation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/activation.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/activation.c -o CMakeFiles/test.dir/src/activation.c.s
 
-CMakeFiles/test.dir/tests/test_main.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/tests/test_main.cpp.o: ../tests/test_main.cpp
-CMakeFiles/test.dir/tests/test_main.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/tests/test_main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_main.cpp.o -MF CMakeFiles/test.dir/tests/test_main.cpp.o.d -o CMakeFiles/test.dir/tests/test_main.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_main.cpp
-
-CMakeFiles/test.dir/tests/test_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test_main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_main.cpp > CMakeFiles/test.dir/tests/test_main.cpp.i
-
-CMakeFiles/test.dir/tests/test_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test_main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_main.cpp -o CMakeFiles/test.dir/tests/test_main.cpp.s
-
 # Object files for target test
 test_OBJECTS = \
+"CMakeFiles/test.dir/tests/test_mnist.cpp.o" \
+"CMakeFiles/test.dir/tests/read_mnist.cpp.o" \
 "CMakeFiles/test.dir/src/conv.c.o" \
 "CMakeFiles/test.dir/src/fc.c.o" \
 "CMakeFiles/test.dir/src/pooling.c.o" \
-"CMakeFiles/test.dir/src/max_pooling.c.o" \
-"CMakeFiles/test.dir/src/avg_pooling.c.o" \
-"CMakeFiles/test.dir/src/min_pooling.c.o" \
 "CMakeFiles/test.dir/src/tools.c.o" \
 "CMakeFiles/test.dir/src/inference.c.o" \
-"CMakeFiles/test.dir/src/activation.c.o" \
-"CMakeFiles/test.dir/tests/test_main.cpp.o"
+"CMakeFiles/test.dir/src/activation.c.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
+test: CMakeFiles/test.dir/tests/test_mnist.cpp.o
+test: CMakeFiles/test.dir/tests/read_mnist.cpp.o
 test: CMakeFiles/test.dir/src/conv.c.o
 test: CMakeFiles/test.dir/src/fc.c.o
 test: CMakeFiles/test.dir/src/pooling.c.o
-test: CMakeFiles/test.dir/src/max_pooling.c.o
-test: CMakeFiles/test.dir/src/avg_pooling.c.o
-test: CMakeFiles/test.dir/src/min_pooling.c.o
 test: CMakeFiles/test.dir/src/tools.c.o
 test: CMakeFiles/test.dir/src/inference.c.o
 test: CMakeFiles/test.dir/src/activation.c.o
-test: CMakeFiles/test.dir/tests/test_main.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

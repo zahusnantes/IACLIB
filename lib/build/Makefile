@@ -153,30 +153,6 @@ src/activation.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/activation.c.s
 .PHONY : src/activation.c.s
 
-src/avg_pooling.o: src/avg_pooling.c.o
-.PHONY : src/avg_pooling.o
-
-# target to build an object file
-src/avg_pooling.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.o
-.PHONY : src/avg_pooling.c.o
-
-src/avg_pooling.i: src/avg_pooling.c.i
-.PHONY : src/avg_pooling.i
-
-# target to preprocess a source file
-src/avg_pooling.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.i
-.PHONY : src/avg_pooling.c.i
-
-src/avg_pooling.s: src/avg_pooling.c.s
-.PHONY : src/avg_pooling.s
-
-# target to generate assembly for a file
-src/avg_pooling.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avg_pooling.c.s
-.PHONY : src/avg_pooling.c.s
-
 src/conv.o: src/conv.c.o
 .PHONY : src/conv.o
 
@@ -249,54 +225,6 @@ src/inference.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/inference.c.s
 .PHONY : src/inference.c.s
 
-src/max_pooling.o: src/max_pooling.c.o
-.PHONY : src/max_pooling.o
-
-# target to build an object file
-src/max_pooling.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.o
-.PHONY : src/max_pooling.c.o
-
-src/max_pooling.i: src/max_pooling.c.i
-.PHONY : src/max_pooling.i
-
-# target to preprocess a source file
-src/max_pooling.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.i
-.PHONY : src/max_pooling.c.i
-
-src/max_pooling.s: src/max_pooling.c.s
-.PHONY : src/max_pooling.s
-
-# target to generate assembly for a file
-src/max_pooling.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/max_pooling.c.s
-.PHONY : src/max_pooling.c.s
-
-src/min_pooling.o: src/min_pooling.c.o
-.PHONY : src/min_pooling.o
-
-# target to build an object file
-src/min_pooling.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.o
-.PHONY : src/min_pooling.c.o
-
-src/min_pooling.i: src/min_pooling.c.i
-.PHONY : src/min_pooling.i
-
-# target to preprocess a source file
-src/min_pooling.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.i
-.PHONY : src/min_pooling.c.i
-
-src/min_pooling.s: src/min_pooling.c.s
-.PHONY : src/min_pooling.s
-
-# target to generate assembly for a file
-src/min_pooling.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/min_pooling.c.s
-.PHONY : src/min_pooling.c.s
-
 src/pooling.o: src/pooling.c.o
 .PHONY : src/pooling.o
 
@@ -345,29 +273,53 @@ src/tools.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.s
 .PHONY : src/tools.c.s
 
-tests/test_main.o: tests/test_main.cpp.o
-.PHONY : tests/test_main.o
+tests/read_mnist.o: tests/read_mnist.cpp.o
+.PHONY : tests/read_mnist.o
 
 # target to build an object file
-tests/test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cpp.o
-.PHONY : tests/test_main.cpp.o
+tests/read_mnist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.o
+.PHONY : tests/read_mnist.cpp.o
 
-tests/test_main.i: tests/test_main.cpp.i
-.PHONY : tests/test_main.i
+tests/read_mnist.i: tests/read_mnist.cpp.i
+.PHONY : tests/read_mnist.i
 
 # target to preprocess a source file
-tests/test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cpp.i
-.PHONY : tests/test_main.cpp.i
+tests/read_mnist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.i
+.PHONY : tests/read_mnist.cpp.i
 
-tests/test_main.s: tests/test_main.cpp.s
-.PHONY : tests/test_main.s
+tests/read_mnist.s: tests/read_mnist.cpp.s
+.PHONY : tests/read_mnist.s
 
 # target to generate assembly for a file
-tests/test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_main.cpp.s
-.PHONY : tests/test_main.cpp.s
+tests/read_mnist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.s
+.PHONY : tests/read_mnist.cpp.s
+
+tests/test_mnist.o: tests/test_mnist.cpp.o
+.PHONY : tests/test_mnist.o
+
+# target to build an object file
+tests/test_mnist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.o
+.PHONY : tests/test_mnist.cpp.o
+
+tests/test_mnist.i: tests/test_mnist.cpp.i
+.PHONY : tests/test_mnist.i
+
+# target to preprocess a source file
+tests/test_mnist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.i
+.PHONY : tests/test_mnist.cpp.i
+
+tests/test_mnist.s: tests/test_mnist.cpp.s
+.PHONY : tests/test_mnist.s
+
+# target to generate assembly for a file
+tests/test_mnist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.s
+.PHONY : tests/test_mnist.cpp.s
 
 # Help Target
 help:
@@ -381,9 +333,6 @@ help:
 	@echo "... src/activation.o"
 	@echo "... src/activation.i"
 	@echo "... src/activation.s"
-	@echo "... src/avg_pooling.o"
-	@echo "... src/avg_pooling.i"
-	@echo "... src/avg_pooling.s"
 	@echo "... src/conv.o"
 	@echo "... src/conv.i"
 	@echo "... src/conv.s"
@@ -393,21 +342,18 @@ help:
 	@echo "... src/inference.o"
 	@echo "... src/inference.i"
 	@echo "... src/inference.s"
-	@echo "... src/max_pooling.o"
-	@echo "... src/max_pooling.i"
-	@echo "... src/max_pooling.s"
-	@echo "... src/min_pooling.o"
-	@echo "... src/min_pooling.i"
-	@echo "... src/min_pooling.s"
 	@echo "... src/pooling.o"
 	@echo "... src/pooling.i"
 	@echo "... src/pooling.s"
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
-	@echo "... tests/test_main.o"
-	@echo "... tests/test_main.i"
-	@echo "... tests/test_main.s"
+	@echo "... tests/read_mnist.o"
+	@echo "... tests/read_mnist.i"
+	@echo "... tests/read_mnist.s"
+	@echo "... tests/test_mnist.o"
+	@echo "... tests/test_mnist.i"
+	@echo "... tests/test_mnist.s"
 .PHONY : help
 
 

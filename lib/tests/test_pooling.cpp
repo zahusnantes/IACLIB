@@ -8,23 +8,18 @@
 #include "../inc/data.h"
 #include "../inc/conv.h"
 #include "../inc/pooling.h"
+#include "test_tools.hpp"
 
 TEST(PoolSizes, PoolSizesTest) {
 
     DATA3D input;
-    input.shape.width = input_shape_width;
-    input.shape.height = input_shape_height;
-    input.shape.depth = input_shape_depth;
-    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
     for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
         input.raw_data[i] = i;
     }
 
     DATA3D kernel;
-    kernel.shape.width = kernel_shape_width;
-    kernel.shape.height = kernel_shape_height;
-    kernel.shape.depth = kernel_shape_depth;
-    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }
@@ -67,22 +62,17 @@ TEST(PoolSizes, PoolSizesTest) {
     free(pool_output.raw_data);
 }
 
+
 TEST(PoolOutput, PoolOutputTest) {
 
     DATA3D input;
-    input.shape.width = input_shape_width;
-    input.shape.height = input_shape_height;
-    input.shape.depth = input_shape_depth;
-    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
     for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
         input.raw_data[i] = i;
     }
 
     DATA3D kernel;
-    kernel.shape.width = kernel_shape_width;
-    kernel.shape.height = kernel_shape_height;
-    kernel.shape.depth = kernel_shape_depth;
-    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
     for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
         kernel.raw_data[i] = i;
     }
@@ -97,7 +87,7 @@ TEST(PoolOutput, PoolOutputTest) {
 
     double expected_MAX_output_values[] = {117.00000, 139.00000};
     double expected_MIN_output_values[] = {19.00000, 51.00000};
-    double expected_AVG_output_values[] = {56.00000, 70.00000};
+    double expected_AVG_output_values[] = {31.00000, 95.00000};
 
     int expected_conv_output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
     int expected_conv_output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;

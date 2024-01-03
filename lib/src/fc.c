@@ -13,7 +13,6 @@ bool fc(Layer *fc_layer, DATA3D *input_data, DATA2D *weights, DATA1D *biases, DA
     int num_neurons = fc_layer->params.fc.shape.length;
     int input_size = layer_data_size(fc_layer->bottom);
     
-    // Check dimensions compatibility
     if (weights->shape.height != num_neurons || weights->shape.width != input_size) {
         fprintf(stderr, "Error: FC layer dimensions mismatch.\n");
         return false;

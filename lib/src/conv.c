@@ -35,7 +35,6 @@ bool conv(Layer *conv_layer, DATA3D *input_data, DATA3D *kernel, DATA3D *output_
                             for (int c_input = 0; c_input < input_channels; ++c_input) {
                                 int input_idx = (h * stride + i) * input_width * input_channels + (w * stride + j) * input_channels + c_input;
                                 int kernel_idx = c_output * (kernel_size * kernel_size * input_channels) + i * (kernel_size * input_channels) + j * input_channels + c_input;
-
                                 double input_pixel = input_data->raw_data[input_idx];
                                 double kernel_value = kernel->raw_data[kernel_idx];
                                 sum += input_pixel * kernel_value;
