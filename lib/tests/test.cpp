@@ -5,7 +5,7 @@
 
 #include "../inc/tools.h"
 #include "../inc/data.h"
-#include "read_mnist.hpp"
+#include "mnist_dataset/read_mnist.hpp"
 #include "../inc/inference.h"
 
 char images_path[] = "../model/MNIST/t10k-images-idx3-ubyte.gz";
@@ -17,23 +17,23 @@ int main() {
     DATA4D mnist_data = read_mnist_images(images_path);
     DATA1D mnist_labels_data = read_mnist_labels(labels_path);
 
-    if (mnist_data.raw_data != nullptr && mnist_labels_data.raw_data != nullptr) {
-        int num_rows = mnist_data.shape.height;
-        int num_cols = mnist_data.shape.width;
+    // if (mnist_data.raw_data != nullptr && mnist_labels_data.raw_data != nullptr) {
+    //     int num_rows = mnist_data.shape.height;
+    //     int num_cols = mnist_data.shape.width;
 
-        printf("num_rows = %d, num_cols = %d\n", num_rows, num_cols);
+    //     printf("num_rows = %d, num_cols = %d\n", num_rows, num_cols);
 
-        for (int i = 0; i < num_rows; ++i) {
-            for (int j = 0; j < num_cols; ++j) {
-                std::cout << std::setw(5) << mnist_data.raw_data[0 * num_rows * num_cols + i * num_cols + j] << " ";
-            }
-            std::cout << " | Label: " << std::setw(5) << mnist_labels_data.raw_data[i] << std::endl;
-        }
-        free_data_4D(mnist_data);
-        free_data_1D(mnist_labels_data);
-    } else {
-        std::cerr << "Failed to load image or label data." << std::endl;
-    }
+    //     for (int i = 0; i < num_rows; ++i) {
+    //         for (int j = 0; j < num_cols; ++j) {
+    //             std::cout << std::setw(5) << mnist_data.raw_data[0 * num_rows * num_cols + i * num_cols + j] << " ";
+    //         }
+    //         std::cout << " | Label: " << std::setw(5) << mnist_labels_data.raw_data[i] << std::endl;
+    //     }
+    //     free_data_4D(mnist_data);
+    //     free_data_1D(mnist_labels_data);
+    // } else {
+    //     std::cerr << "Failed to load image or label data." << std::endl;
+    // }
 
     DATA3D matrix;
     matrix.shape.width = 3;

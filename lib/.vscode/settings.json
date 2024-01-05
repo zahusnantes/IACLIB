@@ -22,7 +22,8 @@
         "tuple": "c",
         "type_traits": "c",
         "variant": "c",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "conv.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

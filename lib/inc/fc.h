@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-bool fc(Layer *fc_layer, DATA3D *input_data, DATA2D *weights, DATA1D *biases, DATA3D *output_data);
+bool fc(Layer *fc_layer, DATA3D *input_data, DATA3D *output_data);
 
 #ifdef __cplusplus
 }

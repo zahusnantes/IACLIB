@@ -409,8 +409,8 @@ CMakeFiles/test.dir/src/tools.c.o
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h
 
-CMakeFiles/test.dir/tests/read_mnist.cpp.o
- /home/cdaini/IACLIB/lib/tests/read_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o
+ /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.cpp
  /usr/include/stdc-predef.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
@@ -618,10 +618,10 @@ CMakeFiles/test.dir/tests/read_mnist.cpp.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
  /home/cdaini/IACLIB/lib/inc/data.h
  /home/cdaini/IACLIB/lib/inc/data.h
- /home/cdaini/IACLIB/lib/tests/read_mnist.hpp
+ /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.hpp
 
-CMakeFiles/test.dir/tests/test_mnist.cpp.o
- /home/cdaini/IACLIB/lib/tests/test_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o
+ /home/cdaini/IACLIB/lib/tests/mnist_dataset/test_mnist.cpp
  /usr/include/stdc-predef.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -826,11 +826,13 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
  /home/cdaini/IACLIB/lib/inc/data.h
  /home/cdaini/IACLIB/lib/inc/data.h
- /home/cdaini/IACLIB/lib/tests/read_mnist.hpp
+ /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.hpp
  /usr/include/c++/11/fstream
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h
  /usr/include/c++/11/bits/fstream.tcc
+ /home/cdaini/IACLIB/lib/inc/tools.h
+ /home/cdaini/IACLIB/lib/inc/data.h
  /home/cdaini/IACLIB/lib/inc/inference.h
  /home/cdaini/IACLIB/lib/inc/tools.h
  /home/cdaini/IACLIB/lib/inc/data.h

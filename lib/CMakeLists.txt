@@ -8,8 +8,8 @@ link_directories("/usr/lib/x86_64-linux-gnu/")
 project(IALIB)
 
 set(SOURCE_FILES
-    tests/test_mnist.cpp
-    tests/read_mnist.cpp
+    tests/mnist_dataset/test_mnist.cpp
+    tests/mnist_dataset/read_mnist.cpp
     src/conv.c
     src/fc.c
     src/pooling.c

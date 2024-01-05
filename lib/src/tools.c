@@ -543,7 +543,7 @@ void parse_first_column(char *token, char *p1, char *p2)
 
 bool fill_array(int size, char *token, WEIGHT_TYPE *array)
 {
-    printf("fill array called with size %d \n", size);
+    //printf("fill array called with size %d \n", size);
     int count = 0;
     while ((token = strtok(NULL, ",")) != NULL)
     {

@@ -69,33 +69,33 @@ include CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test.dir/flags.make
 
-CMakeFiles/test.dir/tests/test_mnist.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp
-CMakeFiles/test.dir/tests/test_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/tests/test_mnist.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_mnist.cpp.o -MF CMakeFiles/test.dir/tests/test_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/test_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o: ../tests/mnist_dataset/test_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o -MF CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/mnist_dataset/test_mnist.cpp
 
-CMakeFiles/test.dir/tests/test_mnist.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test_mnist.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_mnist.cpp > CMakeFiles/test.dir/tests/test_mnist.cpp.i
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/mnist_dataset/test_mnist.cpp > CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.i
 
-CMakeFiles/test.dir/tests/test_mnist.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test_mnist.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_mnist.cpp -o CMakeFiles/test.dir/tests/test_mnist.cpp.s
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/mnist_dataset/test_mnist.cpp -o CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.s
 
-CMakeFiles/test.dir/tests/read_mnist.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/tests/read_mnist.cpp.o: ../tests/read_mnist.cpp
-CMakeFiles/test.dir/tests/read_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/tests/read_mnist.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/read_mnist.cpp.o -MF CMakeFiles/test.dir/tests/read_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/read_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/read_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o: ../tests/mnist_dataset/read_mnist.cpp
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o -MF CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o.d -o CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o -c /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.cpp
 
-CMakeFiles/test.dir/tests/read_mnist.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/read_mnist.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/read_mnist.cpp > CMakeFiles/test.dir/tests/read_mnist.cpp.i
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.cpp > CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.i
 
-CMakeFiles/test.dir/tests/read_mnist.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/read_mnist.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/read_mnist.cpp -o CMakeFiles/test.dir/tests/read_mnist.cpp.s
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.cpp -o CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.s
 
 CMakeFiles/test.dir/src/conv.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/conv.c.o: ../src/conv.c
@@ -183,8 +183,8 @@ CMakeFiles/test.dir/src/activation.c.s: cmake_force
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/tests/test_mnist.cpp.o" \
-"CMakeFiles/test.dir/tests/read_mnist.cpp.o" \
+"CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o" \
+"CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o" \
 "CMakeFiles/test.dir/src/conv.c.o" \
 "CMakeFiles/test.dir/src/fc.c.o" \
 "CMakeFiles/test.dir/src/pooling.c.o" \
@@ -195,8 +195,8 @@ test_OBJECTS = \
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
-test: CMakeFiles/test.dir/tests/test_mnist.cpp.o
-test: CMakeFiles/test.dir/tests/read_mnist.cpp.o
+test: CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o
+test: CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o
 test: CMakeFiles/test.dir/src/conv.c.o
 test: CMakeFiles/test.dir/src/fc.c.o
 test: CMakeFiles/test.dir/src/pooling.c.o

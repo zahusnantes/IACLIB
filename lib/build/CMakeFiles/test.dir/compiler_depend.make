@@ -403,7 +403,7 @@ CMakeFiles/test.dir/src/tools.c.o: ../src/tools.c \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h
 
-CMakeFiles/test.dir/tests/read_mnist.cpp.o: ../tests/read_mnist.cpp \
+CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o: ../tests/mnist_dataset/read_mnist.cpp \
   /usr/include/stdc-predef.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -611,9 +611,9 @@ CMakeFiles/test.dir/tests/read_mnist.cpp.o: ../tests/read_mnist.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../inc/data.h \
   ../inc/data.h \
-  ../tests/read_mnist.hpp
+  ../tests/mnist_dataset/read_mnist.hpp
 
-CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
+CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o: ../tests/mnist_dataset/test_mnist.cpp \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -818,11 +818,13 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../inc/data.h \
   ../inc/data.h \
-  ../tests/read_mnist.hpp \
+  ../tests/mnist_dataset/read_mnist.hpp \
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
+  ../inc/tools.h \
+  ../inc/data.h \
   ../inc/inference.h \
   ../inc/tools.h \
   ../inc/data.h \
@@ -844,9 +846,7 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
 
 /usr/include/c++/11/stdlib.h:
 
-../tests/test_mnist.cpp:
-
-../tests/read_mnist.hpp:
+../tests/mnist_dataset/test_mnist.cpp:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
@@ -879,6 +879,8 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
 /usr/include/limits.h:
 
 /usr/include/c++/11/bits/istream.tcc:
+
+/usr/include/c++/11/istream:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
@@ -1004,6 +1006,8 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
 
 /usr/include/stdio.h:
 
+../tests/mnist_dataset/read_mnist.cpp:
+
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -1096,10 +1100,6 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/c++/11/istream:
-
-../tests/read_mnist.cpp:
-
 ../src/activation.c:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -1107,6 +1107,8 @@ CMakeFiles/test.dir/tests/test_mnist.cpp.o: ../tests/test_mnist.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+../tests/mnist_dataset/read_mnist.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 

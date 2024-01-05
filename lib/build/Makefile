@@ -273,53 +273,53 @@ src/tools.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/tools.c.s
 .PHONY : src/tools.c.s
 
-tests/read_mnist.o: tests/read_mnist.cpp.o
-.PHONY : tests/read_mnist.o
+tests/mnist_dataset/read_mnist.o: tests/mnist_dataset/read_mnist.cpp.o
+.PHONY : tests/mnist_dataset/read_mnist.o
 
 # target to build an object file
-tests/read_mnist.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.o
-.PHONY : tests/read_mnist.cpp.o
+tests/mnist_dataset/read_mnist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o
+.PHONY : tests/mnist_dataset/read_mnist.cpp.o
 
-tests/read_mnist.i: tests/read_mnist.cpp.i
-.PHONY : tests/read_mnist.i
+tests/mnist_dataset/read_mnist.i: tests/mnist_dataset/read_mnist.cpp.i
+.PHONY : tests/mnist_dataset/read_mnist.i
 
 # target to preprocess a source file
-tests/read_mnist.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.i
-.PHONY : tests/read_mnist.cpp.i
+tests/mnist_dataset/read_mnist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.i
+.PHONY : tests/mnist_dataset/read_mnist.cpp.i
 
-tests/read_mnist.s: tests/read_mnist.cpp.s
-.PHONY : tests/read_mnist.s
+tests/mnist_dataset/read_mnist.s: tests/mnist_dataset/read_mnist.cpp.s
+.PHONY : tests/mnist_dataset/read_mnist.s
 
 # target to generate assembly for a file
-tests/read_mnist.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/read_mnist.cpp.s
-.PHONY : tests/read_mnist.cpp.s
+tests/mnist_dataset/read_mnist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.s
+.PHONY : tests/mnist_dataset/read_mnist.cpp.s
 
-tests/test_mnist.o: tests/test_mnist.cpp.o
-.PHONY : tests/test_mnist.o
+tests/mnist_dataset/test_mnist.o: tests/mnist_dataset/test_mnist.cpp.o
+.PHONY : tests/mnist_dataset/test_mnist.o
 
 # target to build an object file
-tests/test_mnist.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.o
-.PHONY : tests/test_mnist.cpp.o
+tests/mnist_dataset/test_mnist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o
+.PHONY : tests/mnist_dataset/test_mnist.cpp.o
 
-tests/test_mnist.i: tests/test_mnist.cpp.i
-.PHONY : tests/test_mnist.i
+tests/mnist_dataset/test_mnist.i: tests/mnist_dataset/test_mnist.cpp.i
+.PHONY : tests/mnist_dataset/test_mnist.i
 
 # target to preprocess a source file
-tests/test_mnist.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.i
-.PHONY : tests/test_mnist.cpp.i
+tests/mnist_dataset/test_mnist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.i
+.PHONY : tests/mnist_dataset/test_mnist.cpp.i
 
-tests/test_mnist.s: tests/test_mnist.cpp.s
-.PHONY : tests/test_mnist.s
+tests/mnist_dataset/test_mnist.s: tests/mnist_dataset/test_mnist.cpp.s
+.PHONY : tests/mnist_dataset/test_mnist.s
 
 # target to generate assembly for a file
-tests/test_mnist.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_mnist.cpp.s
-.PHONY : tests/test_mnist.cpp.s
+tests/mnist_dataset/test_mnist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.s
+.PHONY : tests/mnist_dataset/test_mnist.cpp.s
 
 # Help Target
 help:
@@ -348,12 +348,12 @@ help:
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
-	@echo "... tests/read_mnist.o"
-	@echo "... tests/read_mnist.i"
-	@echo "... tests/read_mnist.s"
-	@echo "... tests/test_mnist.o"
-	@echo "... tests/test_mnist.i"
-	@echo "... tests/test_mnist.s"
+	@echo "... tests/mnist_dataset/read_mnist.o"
+	@echo "... tests/mnist_dataset/read_mnist.i"
+	@echo "... tests/mnist_dataset/read_mnist.s"
+	@echo "... tests/mnist_dataset/test_mnist.o"
+	@echo "... tests/mnist_dataset/test_mnist.i"
+	@echo "... tests/mnist_dataset/test_mnist.s"
 .PHONY : help
 
 
