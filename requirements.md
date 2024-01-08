@@ -7,16 +7,6 @@
 - Specify any required configurations for the models.
 - Include details on input formats, preprocessing steps, etc.
 
-### Models
-
-#### Model 1
-
-- Describe the requirements and specifications for Model 1.
-
-#### Model 2
-
-- Describe the requirements and specifications for Model 2.
-
 ### Inference
 
 #### Layers
