@@ -13,18 +13,13 @@
 TEST(PoolSizes, PoolSizesTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
     Layer *pool_layer = find_layer(cnn, pool1);
@@ -32,9 +27,9 @@ TEST(PoolSizes, PoolSizesTest) {
     CNNKernels *conv_params = &(conv_layer->params.kernels);
     CNNPool *pooling_params = &(pool_layer->params.pool);
 
-    int expected_conv_output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_conv_output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_conv_num_channels = kernel.shape.depth;
+    int expected_conv_output_height = (input.shape.width - kernel_shape_width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_conv_output_width = (input.shape.height - kernel_shape_height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_conv_num_channels = kernel_shape_depth;
 
     int expected_pool_output_height = floor((expected_conv_output_height - pool_layer->params.pool.shape.height + 2 * pool_layer->params.pool.padding) / pool_layer->params.pool.stride) + 1;
     int expected_pool_output_width = floor((expected_conv_output_width - pool_layer->params.pool.shape.width + 2 * pool_layer->params.pool.padding) / pool_layer->params.pool.stride) + 1;
@@ -57,7 +52,6 @@ TEST(PoolSizes, PoolSizesTest) {
     EXPECT_EQ(expected_pool_output_size, pool_output_size);
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_pool_output.raw_data);
     free(pool_output.raw_data);
 }
@@ -66,18 +60,13 @@ TEST(PoolSizes, PoolSizesTest) {
 TEST(PoolOutput, PoolOutputTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
     Layer *pool_layer = find_layer(cnn, pool1);
@@ -89,9 +78,9 @@ TEST(PoolOutput, PoolOutputTest) {
     double expected_MIN_output_values[] = {19.00000, 51.00000};
     double expected_AVG_output_values[] = {31.00000, 95.00000};
 
-    int expected_conv_output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_conv_output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_conv_num_channels = kernel.shape.depth;
+    int expected_conv_output_height = (input.shape.width - kernel_shape_width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_conv_output_width = (input.shape.height - kernel_shape_height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_conv_num_channels = kernel_shape_depth;
     int expected_pool_output_height = floor((expected_conv_output_height - pool_layer->params.pool.shape.height + 2 * pool_layer->params.pool.padding) / pool_layer->params.pool.stride) + 1;
     int expected_pool_output_width = floor((expected_conv_output_width - pool_layer->params.pool.shape.width + 2 * pool_layer->params.pool.padding) / pool_layer->params.pool.stride) + 1;
     int expected_pool_num_channels = expected_conv_num_channels;
@@ -133,7 +122,7 @@ TEST(PoolOutput, PoolOutputTest) {
     DATA3D conv_output;
     initialize_DATA3D(&conv_output, conv_output_height, conv_output_width, conv_num_channels);
 
-    bool conv_result = conv(conv_layer, &input, &kernel, &conv_output);
+    bool conv_result = conv(conv_layer, &input, &conv_output);
     bool result = pooling(pool_layer, &conv_output, &pool_output);
 
     ASSERT_TRUE(result);
@@ -143,7 +132,6 @@ TEST(PoolOutput, PoolOutputTest) {
     }
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_pool_output.raw_data);
     free(pool_output.raw_data);
 }

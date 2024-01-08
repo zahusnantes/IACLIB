@@ -14,8 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cdaini/IACLIB/lib/src/inference.c" "CMakeFiles/test.dir/src/inference.c.o" "gcc" "CMakeFiles/test.dir/src/inference.c.o.d"
   "/home/cdaini/IACLIB/lib/src/pooling.c" "CMakeFiles/test.dir/src/pooling.c.o" "gcc" "CMakeFiles/test.dir/src/pooling.c.o.d"
   "/home/cdaini/IACLIB/lib/src/tools.c" "CMakeFiles/test.dir/src/tools.c.o" "gcc" "CMakeFiles/test.dir/src/tools.c.o.d"
-  "/home/cdaini/IACLIB/lib/tests/mnist_dataset/read_mnist.cpp" "CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o" "gcc" "CMakeFiles/test.dir/tests/mnist_dataset/read_mnist.cpp.o.d"
-  "/home/cdaini/IACLIB/lib/tests/mnist_dataset/test_mnist.cpp" "CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o" "gcc" "CMakeFiles/test.dir/tests/mnist_dataset/test_mnist.cpp.o.d"
+  "/home/cdaini/IACLIB/lib/tests/test_main.cpp" "CMakeFiles/test.dir/tests/test_main.cpp.o" "gcc" "CMakeFiles/test.dir/tests/test_main.cpp.o.d"
+  "/home/cdaini/IACLIB/lib/tests/test_tools.cpp" "CMakeFiles/test.dir/tests/test_tools.cpp.o" "gcc" "CMakeFiles/test.dir/tests/test_tools.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -25,12 +25,12 @@ bool conv(Layer *conv_layer, DATA3D *input_data, DATA3D *output_data) {
     int num_channels = conv_params->shape.depth;
     int output_size = output_height * output_width * num_channels;
 
-    for (int out = 0; out < output_size; ++out){
+    for (int out = 0; out < output_size; ++out) {
         for (int c_output = 0; c_output < num_channels; ++c_output) {
             for (int h = 0; h < output_height; ++h) {
                 for (int w = 0; w < output_width; ++w) {
 
-                    WEIGHT_TYPE sum = 0.0;
+                    WEIGHT_TYPE sum = conv_biases[c_output]; // Initialize with bias
 
                     for (int i = 0; i < kernel_size; ++i) {
                         for (int j = 0; j < kernel_size; ++j) {

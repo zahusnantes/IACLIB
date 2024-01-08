@@ -625,7 +625,7 @@ bool read_weights(CNN *cnn, char *filename)
             {
                 if (!fill_array(current_layer->params.kernels.shape.depth, token, current_layer->params.kernels.bias))
                 {
-                    fatal_error(-112, "Failed to fill weight for the current convolution layer");
+                    fatal_error(-112, "Failed to fill bias for the current convolution layer");
                 }
             }
         }
@@ -635,7 +635,7 @@ bool read_weights(CNN *cnn, char *filename)
             {
                 if (!fill_array(current_layer->params.fc.values_size, token, current_layer->params.fc.values))
                 {
-                    fatal_error(-112, "Failed to fill weight for the current convolution layer");
+                    fatal_error(-112, "Failed to fill weight for the current fc layer");
                 }
             }
 
@@ -643,7 +643,7 @@ bool read_weights(CNN *cnn, char *filename)
             {
                 if (!fill_array(current_layer->params.fc.shape.length, token, current_layer->params.fc.bias))
                 {
-                    fatal_error(-112, "Failed to fill weight for the current convolution layer");
+                    fatal_error(-112, "Failed to fill bias for the current fc layer");
                 }
             }
         }

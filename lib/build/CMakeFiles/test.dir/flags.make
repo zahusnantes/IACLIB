@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/cdaini/IACLIB/lib/inc
+C_INCLUDES = -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cdaini/IACLIB/lib/inc
+CXX_INCLUDES = -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include
 
 CXX_FLAGS = 
 

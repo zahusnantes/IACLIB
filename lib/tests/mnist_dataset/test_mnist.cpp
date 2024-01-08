@@ -34,7 +34,6 @@ int main() {
     int total_samples = mnist_labels_data.shape.length;
 
     for (int sample_index = 0; sample_index < total_samples; ++sample_index) {
-        // Copy image data to input
         for (int d = 0; d < input_depth; ++d) {
             for (int h = 0; h < input_height; ++h) {
                 for (int w = 0; w < input_width; ++w) {
@@ -46,10 +45,8 @@ int main() {
             }
         }
 
-        // Perform inference
         inference(cnn, &input);
 
-        // Check prediction accuracy
         if (mnist_labels_data.raw_data[sample_index] == cnn->out_classes.raw_data[sample_index]) {
             correct_predictions++;
         }

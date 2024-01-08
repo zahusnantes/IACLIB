@@ -11,29 +11,13 @@
 TEST(FcSizes, FcSizesTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
-    DATA2D weight_matrix;
-    initialize_DATA2D(&weight_matrix, 1 * 1 * 2, num_output_neurons);
-    for (int i = 0; i < weight_matrix.shape.height; ++i) {
-        for (int j = 0; j < weight_matrix.shape.width; ++j) {
-            weight_matrix.raw_data[i * weight_matrix.shape.width + j] = i + j;
-        }
-    }
-
-    DATA1D biases;
-    initialize_DATA1D(&biases, num_output_neurons);
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
     Layer *pool_layer = find_layer(cnn, pool1);
@@ -55,7 +39,6 @@ TEST(FcSizes, FcSizesTest) {
     EXPECT_EQ(expected_fc_output_length, fc_output_length);
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_fc_output.raw_data);
     free(fc_output.raw_data);
 }
@@ -63,29 +46,13 @@ TEST(FcSizes, FcSizesTest) {
 TEST(FcOutput, FcOutputTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
-    DATA2D weight_matrix;
-    initialize_DATA2D(&weight_matrix, 1 * 1 * 2, num_output_neurons);
-    for (int i = 0; i < weight_matrix.shape.height; ++i) {
-        for (int j = 0; j < weight_matrix.shape.width; ++j) {
-            weight_matrix.raw_data[i * weight_matrix.shape.width + j] = i + j;
-        }
-    }
-
-    DATA1D biases;
-    initialize_DATA1D(&biases, num_output_neurons);
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
     Layer *pool_layer = find_layer(cnn, pool1);
@@ -137,9 +104,9 @@ TEST(FcOutput, FcOutputTest) {
     DATA3D conv_output;
     initialize_DATA3D(&conv_output, conv_output_height, conv_output_width, conv_num_channels);
 
-    bool conv_result = conv(conv_layer, &input, &kernel, &conv_output);
+    bool conv_result = conv(conv_layer, &input, &conv_output);
     bool pool_result = pooling(pool_layer, &conv_output, &pool_output);
-    bool result = fc(fc_layer, &pool_output, &weight_matrix, &biases, &fc_output);
+    bool result = fc(fc_layer, &pool_output, &fc_output);
 
     ASSERT_TRUE(result);
 
@@ -148,7 +115,6 @@ TEST(FcOutput, FcOutputTest) {
     }
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_fc_output.raw_data);
     free(fc_output.raw_data);
 }

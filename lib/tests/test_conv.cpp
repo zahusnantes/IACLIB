@@ -11,26 +11,22 @@
 TEST(ConvSizes, ConvSizesTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
 
     CNNKernels *conv_params = &(conv_layer->params.kernels);
 
-    int expected_output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_num_channels = kernel.shape.depth;
+    int expected_output_height = (input.shape.width - kernel_shape_width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_output_width = (input.shape.height - kernel_shape_height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_num_channels = kernel_shape_depth;
     int expected_output_size = expected_output_height * expected_num_channels * expected_output_width;
     DATA3D expected_output;
     initialize_DATA3D(&expected_output, expected_output_height, expected_output_width, expected_num_channels);
@@ -48,7 +44,6 @@ TEST(ConvSizes, ConvSizesTest) {
     EXPECT_EQ(expected_output_size, conv_output_size);
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_output.raw_data);
     free(conv_output.raw_data);
 }
@@ -56,27 +51,22 @@ TEST(ConvSizes, ConvSizesTest) {
 TEST(ConvOutput, ConvOutputTest) {
 
     DATA3D input;
-    create_matrix(&input, input_shape_height, input_shape_width, input_shape_depth);
-    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+    initialize_DATA3D(&input, input_shape_height, input_shape_width, input_shape_depth);
+    for (int i = 0; i < input_shape_width * input_shape_height * input_shape_depth; ++i) {
         input.raw_data[i] = i;
     }
 
-    DATA3D kernel;
-    create_matrix(&kernel, kernel_shape_height, kernel_shape_width, kernel_shape_depth);
-    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
-        kernel.raw_data[i] = i;
-    }
-
     CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, nb_classes);
+    bool success = read_weights(cnn, model_parameters_path);
 
     Layer *conv_layer = find_layer(cnn, conv1);
 
     CNNKernels *conv_params = &(conv_layer->params.kernels);
 
     double expected_output_values[] = {19.000000, 25.000000, 37.000000, 43.000000, 51.000000, 73.000000, 117.000000, 139.000000};
-    int expected_output_height = (input.shape.width - kernel.shape.width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_output_width = (input.shape.height - kernel.shape.height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
-    int expected_num_channels = kernel.shape.depth;
+    int expected_output_height = (input.shape.width - kernel_shape_width + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_output_width = (input.shape.height - kernel_shape_height + 2 * conv_layer->params.kernels.padding) / conv_layer->params.kernels.stride + 1;
+    int expected_num_channels = kernel_shape_depth;
     int expected_output_size = expected_output_height * expected_num_channels * expected_output_width;
     DATA3D expected_output;
     initialize_DATA3D(&expected_output, expected_output_height, expected_output_width, expected_num_channels);
@@ -96,7 +86,7 @@ TEST(ConvOutput, ConvOutputTest) {
     DATA3D conv_output;
     initialize_DATA3D(&conv_output, conv_output_height, conv_output_width, conv_num_channels);
 
-    bool result = conv(conv_layer, &input, &kernel, &conv_output);
+    bool result = conv(conv_layer, &input, &conv_output);
 
     ASSERT_TRUE(result);
 
@@ -105,7 +95,6 @@ TEST(ConvOutput, ConvOutputTest) {
     }
 
     free(input.raw_data);
-    free(kernel.raw_data);
     free(expected_output.raw_data);
     free(conv_output.raw_data);
 }
