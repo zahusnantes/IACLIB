@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/IALIB.dir/main.c.o CMakeFiles/IALIB.dir/tools.c.o CMakeFiles/IALIB.dir/cnn_ops.c.o -o IALIB  -ljansson 

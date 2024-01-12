@@ -73,113 +73,113 @@ CMakeFiles/test.dir/src/conv.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/conv.c.o: ../src/conv.c
 CMakeFiles/test.dir/src/conv.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test.dir/src/conv.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/conv.c.o -MF CMakeFiles/test.dir/src/conv.c.o.d -o CMakeFiles/test.dir/src/conv.c.o -c /home/cdaini/IACLIB/lib/src/conv.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/conv.c.o -MF CMakeFiles/test.dir/src/conv.c.o.d -o CMakeFiles/test.dir/src/conv.c.o -c /home/cdaini/IACLIB/lib/src/conv.c
 
 CMakeFiles/test.dir/src/conv.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/conv.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/conv.c > CMakeFiles/test.dir/src/conv.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/conv.c > CMakeFiles/test.dir/src/conv.c.i
 
 CMakeFiles/test.dir/src/conv.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/conv.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/conv.c -o CMakeFiles/test.dir/src/conv.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/conv.c -o CMakeFiles/test.dir/src/conv.c.s
 
 CMakeFiles/test.dir/src/fc.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/fc.c.o: ../src/fc.c
 CMakeFiles/test.dir/src/fc.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test.dir/src/fc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/fc.c.o -MF CMakeFiles/test.dir/src/fc.c.o.d -o CMakeFiles/test.dir/src/fc.c.o -c /home/cdaini/IACLIB/lib/src/fc.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/fc.c.o -MF CMakeFiles/test.dir/src/fc.c.o.d -o CMakeFiles/test.dir/src/fc.c.o -c /home/cdaini/IACLIB/lib/src/fc.c
 
 CMakeFiles/test.dir/src/fc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/fc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/fc.c > CMakeFiles/test.dir/src/fc.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/fc.c > CMakeFiles/test.dir/src/fc.c.i
 
 CMakeFiles/test.dir/src/fc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/fc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/fc.c -o CMakeFiles/test.dir/src/fc.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/fc.c -o CMakeFiles/test.dir/src/fc.c.s
 
 CMakeFiles/test.dir/src/pooling.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/pooling.c.o: ../src/pooling.c
 CMakeFiles/test.dir/src/pooling.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/test.dir/src/pooling.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/pooling.c.o -MF CMakeFiles/test.dir/src/pooling.c.o.d -o CMakeFiles/test.dir/src/pooling.c.o -c /home/cdaini/IACLIB/lib/src/pooling.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/pooling.c.o -MF CMakeFiles/test.dir/src/pooling.c.o.d -o CMakeFiles/test.dir/src/pooling.c.o -c /home/cdaini/IACLIB/lib/src/pooling.c
 
 CMakeFiles/test.dir/src/pooling.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/pooling.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/pooling.c > CMakeFiles/test.dir/src/pooling.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/pooling.c > CMakeFiles/test.dir/src/pooling.c.i
 
 CMakeFiles/test.dir/src/pooling.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/pooling.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/pooling.c -o CMakeFiles/test.dir/src/pooling.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/pooling.c -o CMakeFiles/test.dir/src/pooling.c.s
 
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/tools.c.o: ../src/tools.c
 CMakeFiles/test.dir/src/tools.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/test.dir/src/tools.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/tools.c.o -MF CMakeFiles/test.dir/src/tools.c.o.d -o CMakeFiles/test.dir/src/tools.c.o -c /home/cdaini/IACLIB/lib/src/tools.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/tools.c.o -MF CMakeFiles/test.dir/src/tools.c.o.d -o CMakeFiles/test.dir/src/tools.c.o -c /home/cdaini/IACLIB/lib/src/tools.c
 
 CMakeFiles/test.dir/src/tools.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/tools.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/tools.c > CMakeFiles/test.dir/src/tools.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/tools.c > CMakeFiles/test.dir/src/tools.c.i
 
 CMakeFiles/test.dir/src/tools.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/tools.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/tools.c -o CMakeFiles/test.dir/src/tools.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/tools.c -o CMakeFiles/test.dir/src/tools.c.s
 
 CMakeFiles/test.dir/src/inference.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/inference.c.o: ../src/inference.c
 CMakeFiles/test.dir/src/inference.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/test.dir/src/inference.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/inference.c.o -MF CMakeFiles/test.dir/src/inference.c.o.d -o CMakeFiles/test.dir/src/inference.c.o -c /home/cdaini/IACLIB/lib/src/inference.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/inference.c.o -MF CMakeFiles/test.dir/src/inference.c.o.d -o CMakeFiles/test.dir/src/inference.c.o -c /home/cdaini/IACLIB/lib/src/inference.c
 
 CMakeFiles/test.dir/src/inference.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/inference.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/inference.c > CMakeFiles/test.dir/src/inference.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/inference.c > CMakeFiles/test.dir/src/inference.c.i
 
 CMakeFiles/test.dir/src/inference.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/inference.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/inference.c -o CMakeFiles/test.dir/src/inference.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/inference.c -o CMakeFiles/test.dir/src/inference.c.s
 
 CMakeFiles/test.dir/src/activation.c.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/activation.c.o: ../src/activation.c
 CMakeFiles/test.dir/src/activation.c.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/test.dir/src/activation.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/activation.c.o -MF CMakeFiles/test.dir/src/activation.c.o.d -o CMakeFiles/test.dir/src/activation.c.o -c /home/cdaini/IACLIB/lib/src/activation.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test.dir/src/activation.c.o -MF CMakeFiles/test.dir/src/activation.c.o.d -o CMakeFiles/test.dir/src/activation.c.o -c /home/cdaini/IACLIB/lib/src/activation.c
 
 CMakeFiles/test.dir/src/activation.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test.dir/src/activation.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/activation.c > CMakeFiles/test.dir/src/activation.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cdaini/IACLIB/lib/src/activation.c > CMakeFiles/test.dir/src/activation.c.i
 
 CMakeFiles/test.dir/src/activation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test.dir/src/activation.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/activation.c -o CMakeFiles/test.dir/src/activation.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cdaini/IACLIB/lib/src/activation.c -o CMakeFiles/test.dir/src/activation.c.s
 
 CMakeFiles/test.dir/tests/test_tools.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test_tools.cpp.o: ../tests/test_tools.cpp
 CMakeFiles/test.dir/tests/test_tools.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/tests/test_tools.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_tools.cpp.o -MF CMakeFiles/test.dir/tests/test_tools.cpp.o.d -o CMakeFiles/test.dir/tests/test_tools.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_tools.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_tools.cpp.o -MF CMakeFiles/test.dir/tests/test_tools.cpp.o.d -o CMakeFiles/test.dir/tests/test_tools.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_tools.cpp
 
 CMakeFiles/test.dir/tests/test_tools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test_tools.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_tools.cpp > CMakeFiles/test.dir/tests/test_tools.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_tools.cpp > CMakeFiles/test.dir/tests/test_tools.cpp.i
 
 CMakeFiles/test.dir/tests/test_tools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test_tools.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_tools.cpp -o CMakeFiles/test.dir/tests/test_tools.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_tools.cpp -o CMakeFiles/test.dir/tests/test_tools.cpp.s
 
 CMakeFiles/test.dir/tests/test_main.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test_main.cpp.o: ../tests/test_main.cpp
 CMakeFiles/test.dir/tests/test_main.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdaini/IACLIB/lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/tests/test_main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_main.cpp.o -MF CMakeFiles/test.dir/tests/test_main.cpp.o.d -o CMakeFiles/test.dir/tests/test_main.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_main.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test_main.cpp.o -MF CMakeFiles/test.dir/tests/test_main.cpp.o.d -o CMakeFiles/test.dir/tests/test_main.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_main.cpp
 
 CMakeFiles/test.dir/tests/test_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test_main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_main.cpp > CMakeFiles/test.dir/tests/test_main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdaini/IACLIB/lib/tests/test_main.cpp > CMakeFiles/test.dir/tests/test_main.cpp.i
 
 CMakeFiles/test.dir/tests/test_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test_main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_main.cpp -o CMakeFiles/test.dir/tests/test_main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdaini/IACLIB/lib/tests/test_main.cpp -o CMakeFiles/test.dir/tests/test_main.cpp.s
 
 # Object files for target test
 test_OBJECTS = \

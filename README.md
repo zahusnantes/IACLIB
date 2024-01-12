@@ -2,7 +2,7 @@
 
 **Description:**
 
-Welcome to the CUDA Convolutional Neural Network (CNN) Inference Library!
+Welcome to the Convolutional Neural Network (CNN) Inference Library!
 
 ## Table of Contents
 
@@ -49,6 +49,8 @@ Welcome to the CUDA Convolutional Neural Network (CNN) Inference Library!
 - CUDA Toolkit (Version 10.2): The project relies on CUDA for GPU acceleration. You'll need to install the CUDA Toolkit to compile and run the CUDA code. Visit the [NVIDIA CUDA Toolkit page](https://developer.nvidia.com/cuda-toolkit) for installation instructions.
 - C++ Compiler
 - GPU NVIDIA Jetson Xavier: The project is designed to run on NVIDIA Jetson Xavier or other compatible GPUs.
+- Infineon Aurix C397 Microcontroller: This project also supports execution on the Infineon Aurix C397 microcontroller. Ensure that you have the necessary tools and libraries installed for the Infineon Aurix platform. Refer to the Infineon Aurix documentation for detailed instructions on setting up the development environment.
+- ARM CPU: In addition to GPU and microcontroller support, the project is compatible with ARM CPUs. Make sure you have a compatible ARM CPU, and install the necessary libraries and dependencies for ARM architecture. Consult your system's documentation for ARM-specific setup instructions.
 
 ## Requirements
 

@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/test_fc.dir/tests/test_fc.c.o CMakeFiles/test_fc.dir/src/conv.c.o CMakeFiles/test_fc.dir/src/fc.c.o CMakeFiles/test_fc.dir/src/pooling.c.o CMakeFiles/test_fc.dir/src/max_pooling.c.o CMakeFiles/test_fc.dir/src/avg_pooling.c.o CMakeFiles/test_fc.dir/src/min_pooling.c.o CMakeFiles/test_fc.dir/src/tools.c.o -o test_fc  -lm 

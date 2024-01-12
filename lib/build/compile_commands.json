@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/conv.c.o -c /home/cdaini/IACLIB/lib/src/conv.c",
+  "file": "/home/cdaini/IACLIB/lib/src/conv.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/fc.c.o -c /home/cdaini/IACLIB/lib/src/fc.c",
+  "file": "/home/cdaini/IACLIB/lib/src/fc.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/pooling.c.o -c /home/cdaini/IACLIB/lib/src/pooling.c",
+  "file": "/home/cdaini/IACLIB/lib/src/pooling.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/tools.c.o -c /home/cdaini/IACLIB/lib/src/tools.c",
+  "file": "/home/cdaini/IACLIB/lib/src/tools.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/inference.c.o -c /home/cdaini/IACLIB/lib/src/inference.c",
+  "file": "/home/cdaini/IACLIB/lib/src/inference.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/gcc  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/src/activation.c.o -c /home/cdaini/IACLIB/lib/src/activation.c",
+  "file": "/home/cdaini/IACLIB/lib/src/activation.c"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/g++  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/tests/test_tools.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_tools.cpp",
+  "file": "/home/cdaini/IACLIB/lib/tests/test_tools.cpp"
+},
+{
+  "directory": "/home/cdaini/IACLIB/lib/build",
+  "command": "/usr/bin/g++  -I/home/cdaini/IACLIB/lib/inc -I/home/cdaini/IACLIB/lib/googletest/include -g -o CMakeFiles/test.dir/tests/test_main.cpp.o -c /home/cdaini/IACLIB/lib/tests/test_main.cpp",
+  "file": "/home/cdaini/IACLIB/lib/tests/test_main.cpp"
+}
+]

@@ -30,7 +30,7 @@ bool conv(Layer *conv_layer, DATA3D *input_data, DATA3D *output_data) {
             for (int h = 0; h < output_height; ++h) {
                 for (int w = 0; w < output_width; ++w) {
 
-                    WEIGHT_TYPE sum = conv_biases[c_output]; // Initialize with bias
+                    WEIGHT_TYPE sum = conv_biases[c_output]; 
 
                     for (int i = 0; i < kernel_size; ++i) {
                         for (int j = 0; j < kernel_size; ++j) {
