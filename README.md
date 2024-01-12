@@ -13,7 +13,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
         2. [Inference](requirements.md#inference)
             1. [Layers](requirements.md#layers)
                 1. [Convolution](requirements.md#convolution)
-                2. [Max Pooling](requirements.md#max-pooling)
+                2. [Pooling](requirements.md#max-pooling)
                 3. [Fully Connected](requirements.md#fully-connected)
             2. [Operation Types](requirements.md#operation-types)
                 1. [CPU Operations](requirements.md#cpu-operations)

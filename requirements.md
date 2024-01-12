@@ -71,9 +71,43 @@ The convolution layer in the project performs spatial filtering on input data us
       fprintf(stderr, "Convolution layer failed to execute.\n");
   }
 
-##### Max Pooling
+##### Pooling
 
-- Specify any requirements related to the max pooling layer.
+The pooling layer in the project is responsible for downsampling the input data using pooling operations such as MAX, AVG, or MIN pooling. Here are the key details and requirements related to the pooling layer:
+
+- **Supported Pooling Types:**
+  - The pooling layer supports three types of pooling operations: MAX, AVG, and MIN.
+  - Specify the desired pooling type in the configuration parameters.
+
+- **Input Format:**
+  - The input data should be a 3D tensor with dimensions (depth, height, width) representing the input channels, height, and width, respectively.
+
+- **Pooling Functionality:**
+  - The pooling layer performs downsampling based on the specified pooling type.
+  - Pooling parameters include pool size, padding, and stride, which can be configured in the pooling layer.
+
+- **Implementation Considerations:**
+  - The pooling layer implementation is provided in the `pooling.c` file.
+  - Ensure that the input layer specified is a valid pooling layer before invoking the pooling function.
+
+- **Usage Example:**
+  ```c
+  // Example usage of the pooling layer
+  Layer pooling_layer;
+  // Initialize pooling_layer with appropriate parameters
+  // ...
+
+  DATA3D input_data; // Initialize input_data with proper values
+  DATA3D output_data; // The output_data will be populated after applying the pooling operation
+
+  // Apply pooling
+  bool success = pooling(&pooling_layer, &input_data, &output_data);
+
+  if (success) {
+      // Process the output_data as needed
+  } else {
+      fprintf(stderr, "Pooling layer failed to execute.\n");
+  }
 
 ##### Fully Connected
 
@@ -117,3 +151,4 @@ The convolution layer in the project performs spatial filtering on input data us
 
 - Specify requirements for ARM architecture.
 
+#### Source
