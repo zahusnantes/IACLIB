@@ -117,17 +117,3 @@ The convolution layer in the project performs spatial filtering on input data us
 
 - Specify requirements for ARM architecture.
 
-### Linking
-
-#### Dynamic Binary
-
-- Specify any requirements related to dynamic linking.
-
-#### Static Binary
-
-- Specify any requirements related to static linking.
-
-### Source
-
-- Specify requirements for accessing and using the source code.
-
