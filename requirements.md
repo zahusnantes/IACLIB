@@ -39,7 +39,37 @@ The project utilizes various data structures to handle different types of data:
 
 ##### Convolution
 
-- Specify any requirements related to the convolution layer.
+The convolution layer in the project performs spatial filtering on input data using convolutional kernels. To ensure proper usage and understanding, here are the key details and requirements related to the convolution layer:
+
+- **Input Format:**
+  - The input data should be a 3D tensor with dimensions (depth, height, width) representing the input channels, height, and width, respectively.
+
+- **Convolution Functionality:**
+  - The convolution layer utilizes a set of convolutional kernels to perform spatial filtering.
+  - The convolution operation includes parameters such as kernel size, padding, and stride, which can be configured in the convolution layer.
+
+- **Implementation Considerations:**
+  - The convolution layer implementation is provided in the `conv.c` file.
+  - Ensure that the input layer specified is indeed a convolutional layer before invoking the convolution function.
+
+- **Usage Example:**
+  ```c
+  // Example usage of the convolution layer
+  Layer convolution_layer;
+  // Initialize convolution_layer with appropriate parameters
+  // ...
+
+  DATA3D input_data; // Initialize input_data with proper values
+  DATA3D output_data; // The output_data will be populated after applying the convolution
+
+  // Apply convolution
+  bool success = conv(&convolution_layer, &input_data, &output_data);
+
+  if (success) {
+      // Process the output_data as needed
+  } else {
+      fprintf(stderr, "Convolution layer failed to execute.\n");
+  }
 
 ##### Max Pooling
 
