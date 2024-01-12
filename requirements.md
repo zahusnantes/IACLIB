@@ -44,6 +44,9 @@ The convolution layer in the project performs spatial filtering on input data us
 - **Input Format:**
   - The input data should be a 3D tensor with dimensions (depth, height, width) representing the input channels, height, and width, respectively.
 
+- **Output Format:**
+  - The output of the convolution layer  should be a 3D tensor and is automatically calculated during the layer definition using the `compute_layer_conv_params` function. The dimensions of the output tensor are determined by the configuration parameters of the convolutional kernels, including the number of output channels, height, and width.
+
 - **Convolution Functionality:**
   - The convolution layer utilizes a set of convolutional kernels to perform spatial filtering.
   - The convolution operation includes parameters such as kernel size, padding, and stride, which can be configured in the convolution layer.
@@ -66,14 +69,15 @@ The convolution layer in the project performs spatial filtering on input data us
   bool success = conv(&convolution_layer, &input_data, &output_data);
 
   if (success) {
-      // Process the output_data as needed
+    // The output_data tensor is automatically updated during layer initialization
+    // No separate calculation needed for the output format
   } else {
       fprintf(stderr, "Convolution layer failed to execute.\n");
   }
 
 ##### Pooling
 
-The pooling layer in the project is responsible for downsampling the input data using pooling operations such as MAX, AVG, or MIN pooling. Here are the key details and requirements related to the pooling layer:
+The pooling layer in the project is responsible for downsampling the input data using pooling operations such as max, average, or min pooling. Here are the key details and requirements related to the pooling layer:
 
 - **Supported Pooling Types:**
   - The pooling layer supports three types of pooling operations: MAX, AVG, and MIN.
@@ -81,6 +85,9 @@ The pooling layer in the project is responsible for downsampling the input data 
 
 - **Input Format:**
   - The input data should be a 3D tensor with dimensions (depth, height, width) representing the input channels, height, and width, respectively.
+
+- **Output Format:**
+  - The output of the pooling layer should be a 3D tensor and is automatically calculated during the layer definition using the `compute_layer_pool_params` function. The dimensions of the output tensor are determined by the configuration parameters of the pooling operation, including the pooling type, pool size, padding, and stride.
 
 - **Pooling Functionality:**
   - The pooling layer performs downsampling based on the specified pooling type.
@@ -104,14 +111,50 @@ The pooling layer in the project is responsible for downsampling the input data 
   bool success = pooling(&pooling_layer, &input_data, &output_data);
 
   if (success) {
-      // Process the output_data as needed
+    // The output_data tensor is automatically updated during layer initialization
+    // No separate calculation needed for the output format
   } else {
       fprintf(stderr, "Pooling layer failed to execute.\n");
   }
 
 ##### Fully Connected
 
-- Specify any requirements related to the fully connected layer.
+The fully connected (FC) layer in the project performs a linear transformation on the input data, connecting all neurons of the layer to every input. Here are the key details and requirements related to the fully connected layer:
+
+- **Input Format:**
+  - The input data should be a 3D tensor with dimensions (depth, height, width) representing the input channels, height, and width, respectively.
+
+- **Output Format:**
+  - The output of the fully connected layer should be a 1D tensor and is automatically calculated during the layer definition using the `compute_layer_fc_params` function. The dimensions of the output tensor are determined by the number of neurons specified in the fully connected layer configuration.
+
+- **Fully Connected Layer Functionality:**
+  - The fully connected layer performs a linear transformation on the input data.
+  - The layer is specified by a set of weights and biases.
+
+- **Implementation Considerations:**
+  - The fully connected layer implementation is provided in the `fc.c` file.
+  - Ensure that the input layer specified is indeed a fully connected layer before invoking the `fc` function.
+
+- **Usage Example:**
+  ```c
+  // Example usage of the fully connected layer
+  Layer fc_layer;
+  // Initialize fc_layer with appropriate parameters
+  // ...
+
+  DATA3D input_data; // Initialize input_data with proper values
+  DATA3D output_data; // The output_data will be populated after applying the fully connected layer
+
+  // Apply the fully connected layer
+  bool success = fc(&fc_layer, &input_data, &output_data);
+
+  if (success) {
+    // The output_data tensor is automatically updated during layer initialization
+    // No separate calculation needed for the output format
+  } else {
+      fprintf(stderr, "Fully connected layer failed to execute.\n");
+  }
+
 
 #### Operation Types
 
