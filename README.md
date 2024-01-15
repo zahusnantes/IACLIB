@@ -187,6 +187,17 @@ To load a pre-trained Convolutional Neural Network (CNN) model from a .dat file,
   ```c
   CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, number_of_classes);
   ```
+where the parameters are:
+
+- **model_path**: representing the path to the model file.
+
+- **matrix.shape.height**: representing the height of the input.
+
+- **matrix.shape.width**: representing the width of the input.
+
+- **matrix.shape.depth**: representing the depth of the input.
+
+- **nb_classes**:representing the number of classes in the model.
 
 ### Inference
 
