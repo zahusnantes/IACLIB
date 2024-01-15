@@ -40,7 +40,22 @@ The `network` block encapsulates the entire neural network.
 network {
   // Layers and connections go here
 }
+</pre>
 
+##### Convolution Layer (`conv1`)
+Here is an example of a convolution layer in the neural network:
+
+- **Type:** Convolution
+- **Activation Function:** RELU (Rectified Linear Unit)
+- **Input Layer (`bottom`):** "data"
+- **Output Layer (`top`):** "conv1"
+- **Convolution Parameters:**
+  - Number of Output Channels (`num_output`): 2
+  - Kernel Size (`kernel_size`): 2
+  - Stride (`stride`): 1
+  - Padding (`pad`): 0
+
+<pre>
 layer {
   name: "conv1"
   type: "Convolution"
@@ -54,7 +69,21 @@ layer {
     pad: 1          # Padding for the input data
   }
 }
+<pre>
 
+##### Pooling Layer (`pool1`)
+Here is an example of a pooling layer in the neural network:
+
+- **Type:** Pooling
+- **Activation Function:** RELU
+- **Input Layer (`bottom`):** "conv1"
+- **Output Layer (`top`):** "fc1"
+- **Pooling Parameters:**
+  - Pooling Type (`pool`): AVG (Average Pooling)
+  - Kernel Size (`kernel_size`): 2
+  - Stride (`stride`): 1
+
+<pre>
 layer {
   name: "pool1"
   type: "Pooling"
@@ -67,43 +96,10 @@ layer {
     stride: 2       # Stride for the pooling operation
   }
 }
-
-layer {
-  name: "fc1"
-  type: "InnerProduct"
-  activation: SOFTMAX
-  bottom: "pool1"
-  top: "output"
-  inner_product_param {
-    num_output: 2 # Size output and number of
-  } 
-}
-</pre>
-
-##### Convolution Layer (`conv1`)
-
-- **Type:** Convolution
-- **Activation Function:** RELU (Rectified Linear Unit)
-- **Input Layer (`bottom`):** "data"
-- **Output Layer (`top`):** "conv1"
-- **Convolution Parameters:**
-  - Number of Output Channels (`num_output`): 2
-  - Kernel Size (`kernel_size`): 2
-  - Stride (`stride`): 1
-  - Padding (`pad`): 0
-
-##### Pooling Layer (`pool1`)
-
-- **Type:** Pooling
-- **Activation Function:** RELU
-- **Input Layer (`bottom`):** "conv1"
-- **Output Layer (`top`):** "fc1"
-- **Pooling Parameters:**
-  - Pooling Type (`pool`): AVG (Average Pooling)
-  - Kernel Size (`kernel_size`): 2
-  - Stride (`stride`): 1
+<pre>
 
 ##### Fully Connected Layer (`fc1`)
+Here is an example of a fully connected layer in the neural network:
 
 - **Type:** InnerProduct
 - **Activation Function:** SOFTMAX
@@ -111,6 +107,19 @@ layer {
 - **Output Layer (`top`):** "output"
 - **Inner Product Parameters:**
   - Number of Output Neurons (`num_output`): 2
+<pre>
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  activation: SOFTMAX
+  bottom: "pool1"
+  top: "output"
+  inner_product_param {
+    num_output: 2
+  }
+}
+
+<pre>
 
 ### Inference
 
