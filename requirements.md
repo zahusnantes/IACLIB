@@ -40,50 +40,6 @@ The model architecture is defined in a configuration file named `model.dat`. Thi
 
 The `network` block encapsulates the entire neural network.
 
-```protobuf
-network {
-layer {
-  name: "conv1"
-  type: "Convolution"
-  activation: RELU
-  bottom: "input_layer_name"
-  top: "output_layer_name"
-  convolution_param {
-    num_output: 64  # Number of output channels
-    kernel_size: 3  # Size of the convolutional kernel
-    stride: 1       # Stride for the convolution operation
-    pad: 1          # Padding for the input data
-  }
-}
-
-layer {
-  name: "pool1"
-  type: "Pooling"
-  activation: RELU
-  bottom: "input_layer_name"
-  top: "output_layer_name"
-  pooling_param {
-    pool: AVG  # Pooling type (MAX, AVG, MIN)
-    kernel_size: 2  # Size of the pooling kernel
-    stride: 2       # Stride for the pooling operation
-  }
-}
-
-layer {
-  name: "conv1"
-  type: "Convolution"
-  activation: RELU
-  bottom: "input_layer_name"
-  top: "output_layer_name"
-  convolution_param {
-    num_output: 64  # Number of output channels
-    kernel_size: 3  # Size of the convolutional kernel
-    stride: 1       # Stride for the convolution operation
-    pad: 1          # Padding for the input data
-  }
-}
-}
-
 ### Inference
 
 #### Layers
