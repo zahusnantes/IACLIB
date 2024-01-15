@@ -185,10 +185,7 @@ layer {
 To load a pre-trained Convolutional Neural Network (CNN) model from a .dat file, you can use the following function:
 
   ```c
-  char images_path[] = "../model/MNIST/t10k-images-idx3-ubyte.gz";
-  char labels_path[] = "../model/MNIST/t10k-labels-idx1-ubyte.gz";
-  char model_path[] = "../model/TEST/model_cnn.dat";
-  char model_parameters_path[] = "../model/TEST/model_parameters_test.csv";
+  CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, number_of_classes);
   ```
 
 ### Inference
