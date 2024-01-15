@@ -116,7 +116,7 @@ Here is an example of a convolution layer in the neural network:
   - Stride (`stride`): 1
   - Padding (`pad`): 0
 
-<pre>
+```protobuf
 layer {
   name: "convx"
   type: "Convolution"
@@ -130,7 +130,7 @@ layer {
     pad: 1          # Padding for the input data
   }
 }
-</pre>
+```
 
 ##### Pooling Layer (`poolx`)
 Here is an example of a pooling layer in the neural network:
