@@ -16,6 +16,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
             1. [Convolution Layer](#convolution-layer-conv1)
             2. [Pooling Layer](#pooling-layer-pool1)
             3. [Fully Connected Layer](#fully-connected-layer-fc1)
+            4. [Reading the model](#reading-the-model)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
         1. [Configurations](requirements.md#configurations)
@@ -178,6 +179,17 @@ layer {
   }
 }
 </pre>
+
+##### Reading the Model
+
+To load a pre-trained Convolutional Neural Network (CNN) model from a .dat file, you can use the following function:
+
+  ```c
+  char images_path[] = "../model/MNIST/t10k-images-idx3-ubyte.gz";
+  char labels_path[] = "../model/MNIST/t10k-labels-idx1-ubyte.gz";
+  char model_path[] = "../model/TEST/model_cnn.dat";
+  char model_parameters_path[] = "../model/TEST/model_parameters_test.csv";
+  ```
 
 ### Inference
 
