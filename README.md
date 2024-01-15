@@ -18,6 +18,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
             3. [Fully Connected Layer](#fully-connected-layer-fcx)
             4. [Reading the model](#reading-the-model)
         5. [Model Parameters](#model-parameters)
+            1. [Reading the Parameters](#reading-the-parameters)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
         1. [Configurations](requirements.md#configurations)
@@ -188,17 +189,17 @@ To load a pre-trained Convolutional Neural Network (CNN) model from a .dat file,
   ```c
   CNN *cnn = read_model(model_path, input.shape.height, input.shape.width, input.shape.depth, number_of_classes);
   ```
-where the parameters are:
+where:
 
-- **model_path**: representing the path to the model file.
+- **model_path**: represents the path to the model file.
 
-- **input.shape.height**: representing the height of the input.
+- **input.shape.height**: represent the height of the input.
 
-- **input.shape.width**: representing the width of the input.
+- **input.shape.width**: represent the width of the input.
 
-- **input.shape.depth**: representing the depth of the input.
+- **input.shape.depth**: represent the depth of the input.
 
-- **number_of_classes**:representing the number of classes in the model.
+- **number_of_classes**:represent the number of classes in the model.
 
 #### Model Parameters
 
@@ -214,6 +215,16 @@ fcx.bias, //parameters
 - Each line corresponds to a layer parameter.
 - The first part before the comma represents the layer name and the type of parameter (weight or bias).
 - The subsequent values, separated by commas, are the actual parameter values.
+
+##### Reading the Parameters
+To load the parameters, like kernels, weights and biases, of a pre-trained Convolutional Neural Network (CNN) model from a .csv file, you can use the following function:
+```c
+// Read the model parameters from the CSV file
+bool success = read_weights(cnn, model_parameters_path);
+```
+where:
+- **cnn**: represent the CNN model already loaded.
+- **model_parameters_path**: represents the path to the model parameters file.
 
 ### Inference
 
