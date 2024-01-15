@@ -97,11 +97,11 @@ The project utilizes various data structures to handle different types of data:
 The model architecture is defined in a configuration file named `model.dat`. This file serves as a blueprint for the neural network and includes information about the layers, their types, activation functions, and parameters.
 
 The `network` block encapsulates the entire neural network.
-<pre>
+```protobuf
 network {
   // Layers and connections go here
 }
-</pre>
+```
 
 ##### Convolution Layer (`convx`)
 Here is an example of a convolution layer in the neural network:
