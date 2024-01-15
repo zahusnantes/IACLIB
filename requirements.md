@@ -32,11 +32,8 @@ The project utilizes various data structures to handle different types of data:
 - **DATA3D:** Represents 3-dimensional data with a specified shape.
 - **DATA4D:** Represents 4-dimensional data (batch of images) with a specified shape.
 
-#### Model Configuration
-
+#### Network Definition
 The model architecture is defined in a configuration file named `model.dat`. This file serves as a blueprint for the neural network and includes information about the layers, their types, activation functions, and parameters.
-
-##### Network Definition
 
 The `network` block encapsulates the entire neural network.
 <pre>
@@ -83,7 +80,7 @@ layer {
 }
 </pre>
 
-###### Convolution Layer (`conv1`)
+##### Convolution Layer (`conv1`)
 
 - **Type:** Convolution
 - **Activation Function:** RELU (Rectified Linear Unit)
@@ -95,7 +92,7 @@ layer {
   - Stride (`stride`): 1
   - Padding (`pad`): 0
 
-###### Pooling Layer (`pool1`)
+##### Pooling Layer (`pool1`)
 
 - **Type:** Pooling
 - **Activation Function:** RELU
@@ -106,7 +103,7 @@ layer {
   - Kernel Size (`kernel_size`): 2
   - Stride (`stride`): 1
 
-###### Fully Connected Layer (`fc1`)
+##### Fully Connected Layer (`fc1`)
 
 - **Type:** InnerProduct
 - **Activation Function:** SOFTMAX
