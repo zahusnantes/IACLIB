@@ -40,7 +40,6 @@ The model architecture is defined in a configuration file named `model.dat`. Thi
 
 The `network` block encapsulates the entire neural network.
 <pre>
-```
 network {
   // Layers and connections go here
 }
@@ -73,20 +72,48 @@ layer {
 }
 
 layer {
-  name: "conv1"
-  type: "Convolution"
-  activation: RELU
-  bottom: "input_layer_name"
-  top: "output_layer_name"
-  convolution_param {
-    num_output: 64  # Number of output channels
-    kernel_size: 3  # Size of the convolutional kernel
-    stride: 1       # Stride for the convolution operation
-    pad: 1          # Padding for the input data
-  }
+  name: "fc1"
+  type: "InnerProduct"
+  activation: SOFTMAX
+  bottom: "pool1"
+  top: "output"
+  inner_product_param {
+    num_output: 2 # Size output and number of
+  } 
 }
-```
 </pre>
+
+###### Convolution Layer (`conv1`)
+
+- **Type:** Convolution
+- **Activation Function:** RELU (Rectified Linear Unit)
+- **Input Layer (`bottom`):** "data"
+- **Output Layer (`top`):** "conv1"
+- **Convolution Parameters:**
+  - Number of Output Channels (`num_output`): 2
+  - Kernel Size (`kernel_size`): 2
+  - Stride (`stride`): 1
+  - Padding (`pad`): 0
+
+###### Pooling Layer (`pool1`)
+
+- **Type:** Pooling
+- **Activation Function:** RELU
+- **Input Layer (`bottom`):** "conv1"
+- **Output Layer (`top`):** "fc1"
+- **Pooling Parameters:**
+  - Pooling Type (`pool`): AVG (Average Pooling)
+  - Kernel Size (`kernel_size`): 2
+  - Stride (`stride`): 1
+
+###### Fully Connected Layer (`fc1`)
+
+- **Type:** InnerProduct
+- **Activation Function:** SOFTMAX
+- **Input Layer (`bottom`):** "pool1"
+- **Output Layer (`top`):** "output"
+- **Inner Product Parameters:**
+  - Number of Output Neurons (`num_output`): 2
 
 ### Inference
 
