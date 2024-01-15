@@ -69,7 +69,7 @@ layer {
     pad: 1          # Padding for the input data
   }
 }
-<pre>
+</pre>
 
 ##### Pooling Layer (`pool1`)
 Here is an example of a pooling layer in the neural network:
@@ -96,7 +96,7 @@ layer {
     stride: 2       # Stride for the pooling operation
   }
 }
-<pre>
+</pre>
 
 ##### Fully Connected Layer (`fc1`)
 Here is an example of a fully connected layer in the neural network:
@@ -107,6 +107,7 @@ Here is an example of a fully connected layer in the neural network:
 - **Output Layer (`top`):** "output"
 - **Inner Product Parameters:**
   - Number of Output Neurons (`num_output`): 2
+
 <pre>
 layer {
   name: "fc1"
@@ -118,8 +119,7 @@ layer {
     num_output: 2
   }
 }
-
-<pre>
+</pre>
 
 ### Inference
 
