@@ -41,7 +41,7 @@ The model architecture is defined in a configuration file named `model.dat`. Thi
 The `network` block encapsulates the entire neural network.
 
 network {
-  # Layers and connections go here
+  // Layers and connections go here
 }
 
 layer {
