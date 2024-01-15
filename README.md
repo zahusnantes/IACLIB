@@ -13,10 +13,11 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
         2. [Data Shapes](#data-shapes)
         3. [Data Structures](#data-structures)
         4. [Network Definition](#network-definition)
-            1. [Convolution Layer](#convolution-layer-conv1)
-            2. [Pooling Layer](#pooling-layer-pool1)
-            3. [Fully Connected Layer](#fully-connected-layer-fc1)
+            1. [Convolution Layer](#convolution-layer-convx)
+            2. [Pooling Layer](#pooling-layer-poolx)
+            3. [Fully Connected Layer](#fully-connected-layer-fcx)
             4. [Reading the model](#reading-the-model)
+        5. [Model Parameters](#model-parameters)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
         1. [Configurations](requirements.md#configurations)
@@ -101,13 +102,13 @@ network {
 }
 </pre>
 
-##### Convolution Layer (`conv1`)
+##### Convolution Layer (`convx`)
 Here is an example of a convolution layer in the neural network:
 
 - **Type:** Convolution
 - **Activation Function:** RELU (Rectified Linear Unit)
 - **Input Layer (`bottom`):** "data"
-- **Output Layer (`top`):** "conv1"
+- **Output Layer (`top`):** "convx"
 - **Convolution Parameters:**
   - Number of Output Channels (`num_output`): 2
   - Kernel Size (`kernel_size`): 2
@@ -116,7 +117,7 @@ Here is an example of a convolution layer in the neural network:
 
 <pre>
 layer {
-  name: "conv1"
+  name: "convx"
   type: "Convolution"
   activation: RELU
   bottom: "input_layer_name"
@@ -130,13 +131,13 @@ layer {
 }
 </pre>
 
-##### Pooling Layer (`pool1`)
+##### Pooling Layer (`poolx`)
 Here is an example of a pooling layer in the neural network:
 
 - **Type:** Pooling
 - **Activation Function:** RELU
-- **Input Layer (`bottom`):** "conv1"
-- **Output Layer (`top`):** "fc1"
+- **Input Layer (`bottom`):** "convx"
+- **Output Layer (`top`):** "fcx"
 - **Pooling Parameters:**
   - Pooling Type (`pool`): AVG (Average Pooling)
   - Kernel Size (`kernel_size`): 2
@@ -144,7 +145,7 @@ Here is an example of a pooling layer in the neural network:
 
 <pre>
 layer {
-  name: "pool1"
+  name: "poolx"
   type: "Pooling"
   activation: RELU
   bottom: "input_layer_name"
@@ -157,22 +158,22 @@ layer {
 }
 </pre>
 
-##### Fully Connected Layer (`fc1`)
+##### Fully Connected Layer (`fcx`)
 Here is an example of a fully connected layer in the neural network:
 
 - **Type:** InnerProduct
 - **Activation Function:** SOFTMAX
-- **Input Layer (`bottom`):** "pool1"
+- **Input Layer (`bottom`):** "poolx"
 - **Output Layer (`top`):** "output"
 - **Inner Product Parameters:**
   - Number of Output Neurons (`num_output`): 2
 
 <pre>
 layer {
-  name: "fc1"
+  name: "fcx"
   type: "InnerProduct"
   activation: SOFTMAX
-  bottom: "pool1"
+  bottom: "poolx"
   top: "output"
   inner_product_param {
     num_output: 2
@@ -191,13 +192,28 @@ where the parameters are:
 
 - **model_path**: representing the path to the model file.
 
-- **matrix.shape.height**: representing the height of the input.
+- **input.shape.height**: representing the height of the input.
 
-- **matrix.shape.width**: representing the width of the input.
+- **input.shape.width**: representing the width of the input.
 
-- **matrix.shape.depth**: representing the depth of the input.
+- **input.shape.depth**: representing the depth of the input.
 
-- **nb_classes**:representing the number of classes in the model.
+- **number_of_classes**:representing the number of classes in the model.
+
+#### Model Parameters
+
+The CNN model parameters, including weights and biases, are stored in a CSV file. The file structure follows a specific format, where each line represents a layer parameter.
+The CSV file should have the following structure:
+
+```csv
+convx.weight, //parameters
+convx.bias, //parameters
+fcx.weight, //parameters
+fcx.bias, //parameters
+```
+- Each line corresponds to a layer parameter.
+- The first part before the comma represents the layer name and the type of parameter (weight or bias).
+- The subsequent values, separated by commas, are the actual parameter values.
 
 ### Inference
 
