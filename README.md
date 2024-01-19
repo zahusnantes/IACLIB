@@ -43,7 +43,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
       1. [Data Types](specifications.md#data-types)
       2. [Data Shapes](specifications.md#data-shapes)
       3. [Data Structures](specifications.md#data-structures)
-	2. [Layers](specifications.md#layers-1)
+	2. [Layers](specifications.md#layers)
 		1. [Convolution](specifications.md#convolution)
 		2. [Pooling](specifications.md#pooling)
 		3. [Fully Connected](specifications.md#fully-connected)
