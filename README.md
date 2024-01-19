@@ -12,13 +12,13 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
         1. [Data Types](#data-types)
         2. [Data Shapes](#data-shapes)
         3. [Data Structures](#data-structures)
-        4. [Network Definition](#network-definition)
-            1. [Convolution Layer](#convolution-layer-convx)
-            2. [Pooling Layer](#pooling-layer-poolx)
-            3. [Fully Connected Layer](#fully-connected-layer-fcx)
-            4. [Reading the model](#reading-the-model)
-        5. [Model Parameters](#model-parameters)
-            1. [Reading the Parameters](#reading-the-parameters)
+    2. [Network Definition](#network-definition)
+        1. [Convolution Layer](#convolution-layer-convx)
+        2. [Pooling Layer](#pooling-layer-poolx)
+        3. [Fully Connected Layer](#fully-connected-layer-fcx)
+        4. [Reading the model](#reading-the-model)
+    3. [Model Parameters](#model-parameters)
+        1. [Reading the Parameters](#reading-the-parameters)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
         1. [Configurations](requirements.md#configurations)
@@ -93,7 +93,7 @@ The project utilizes various data structures to handle different types of data:
 - **DATA3D:** Represents 3-dimensional data with a specified shape.
 - **DATA4D:** Represents 4-dimensional data (batch of images) with a specified shape.
 
-#### Network Definition
+### Network Definition
 The model architecture is defined in a configuration file named `model.dat`. This file serves as a blueprint for the neural network and includes information about the layers, their types, activation functions, and parameters.
 
 The `network` block encapsulates the entire neural network.
@@ -103,7 +103,7 @@ network {
 }
 ```
 
-##### Convolution Layer (`convx`)
+#### Convolution Layer (`convx`)
 Here is an example of a convolution layer in the neural network:
 
 - **Type:** Convolution
@@ -132,7 +132,7 @@ layer {
 }
 ```
 
-##### Pooling Layer (`poolx`)
+#### Pooling Layer (`poolx`)
 Here is an example of a pooling layer in the neural network:
 
 - **Type:** Pooling
@@ -159,7 +159,7 @@ layer {
 }
 </pre>
 
-##### Fully Connected Layer (`fcx`)
+#### Fully Connected Layer (`fcx`)
 Here is an example of a fully connected layer in the neural network:
 
 - **Type:** InnerProduct
@@ -201,7 +201,7 @@ where:
 
 - **number_of_classes**:represent the number of classes in the model.
 
-#### Model Parameters
+### Model Parameters
 
 The CNN model parameters, including weights and biases, are stored in a CSV file. The file structure follows a specific format, where each line represents a layer parameter.
 The CSV file should have the following structure:
@@ -216,7 +216,7 @@ fcx.bias, //parameters
 - The first part before the comma represents the layer name and the type of parameter (weight or bias).
 - The subsequent values, separated by commas, are the actual parameter values.
 
-##### Reading the Parameters
+#### Reading the Parameters
 To load the parameters, like kernels, weights and biases, of a pre-trained Convolutional Neural Network (CNN) model from a .csv file, you can use the following function:
 ```c
 // Read the model parameters from the CSV file
