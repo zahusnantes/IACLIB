@@ -40,17 +40,17 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
                 2. [NVIDIA CUDA GPU](requirements.md#nvidia-cuda-gpu)
                 3. [ARM CPU](requirements.md#arm-cpu)
             3. [Source](requirements.md#source)
-4. [Specifications](#specifications)
-	1. [Layers](#layers-1)
-		1. [pooling()](#pooling)
-			1. [Description](#description)
-		2. [max_pooling()](#max_pooling)
-			1. [Description](#description-1)
-			2. [Interface](#interface)
-				1. [Invariants](#invariants)
-				2. [Inputs](#inputs)
-				3. [Outputs](#outputs)
-				4. [Detailed Design](#detailed-design)
+4. [Specifications](specifications.md)
+	1. [Layers](specifications.md#layers-1)
+		1. [pooling()](specifications.md#pooling)
+			1. [Description](specifications.md#description)
+		2. [max_pooling()](specifications.md#max_pooling)
+			1. [Description](specifications.md#description-1)
+			2. [Interface](specifications.md#interface)
+				1. [Invariants](specifications.md#invariants)
+				2. [Inputs](specifications.md#inputs)
+				3. [Outputs](specifications.md#outputs)
+				4. [Detailed Design](specifications.md#detailed-design)
 5. [Testing](#testing)
 
 ## Prerequisites
@@ -352,3 +352,7 @@ The fully connected (FC) layer in the project performs a linear transformation o
 ## Requirements
 
 For detailed functional and non-functional requirements, please refer to the [Requirements](requirements.md) document.
+
+## Specifications
+
+For detailed specifications, please refer to the [Specifications](specifications.md) document.
