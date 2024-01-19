@@ -32,41 +32,7 @@ The project utilizes various data structures to handle different types of data:
 
 ## Layers
 
-### pooling()
-
-#### Description
-
-- The `pooling()` function performs pooling operations on the input data.
-
-### max_pooling()
-
-#### Description
-
-- The `max_pooling()` function performs max pooling operations on the input data.
-
-#### Interface
-
-##### Invariants
-
-- Describe any invariants applicable to the function.
-
-##### Inputs
-
-- Specify the input parameters required by the function.
-
-##### Outputs
-
-- Specify the output parameters produced by the function.
-
-##### Detailed Design
-
-- Provide additional details on the design and implementation of the `max_pooling()` function.
-
-### Inference
-
-#### Layers
-
-##### Convolution
+### Convolution
 
 The convolution layer in the project performs spatial filtering on input data using convolutional kernels. To ensure proper usage and understanding, here are the key details and requirements related to the convolution layer:
 
@@ -104,7 +70,7 @@ The convolution layer in the project performs spatial filtering on input data us
       fprintf(stderr, "Convolution layer failed to execute.\n");
   }
 
-##### Pooling
+### Pooling
 
 The pooling layer in the project is responsible for downsampling the input data using pooling operations such as max, average, or min pooling. Here are the key details and requirements related to the pooling layer:
 
@@ -146,7 +112,7 @@ The pooling layer in the project is responsible for downsampling the input data 
       fprintf(stderr, "Pooling layer failed to execute.\n");
   }
 
-##### Fully Connected
+### Fully Connected
 
 The fully connected (FC) layer in the project performs a linear transformation on the input data, connecting all neurons of the layer to every input. Here are the key details and requirements related to the fully connected layer:
 
