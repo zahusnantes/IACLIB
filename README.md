@@ -16,7 +16,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
     2. [Model Parameters](#model-parameters)
         1. [Reading the Parameters](#reading-the-parameters)
     3. [Inference](#inference)
-      1. [Usage Example][#usage-example]
+        1. [Usage Example](#usage-example)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
         1. [Configurations](requirements.md#configurations)
@@ -154,7 +154,7 @@ layer {
 }
 </pre>
 
-##### Reading the Model
+#### Reading the Model
 
 To load a pre-trained Convolutional Neural Network (CNN) model from a .dat file, you can use the following function:
 
@@ -212,6 +212,7 @@ where:
 - **input**: A DATA3D structure representing the input image for inference.
 
 #### Usage Example
+
 Here's an example of how to perform inference:
 ```c
 // Load the CNN model from the .dat file
@@ -228,7 +229,6 @@ DATA3D input;
 // Perform inference
 inference(cnn, &input);
 ```
-
 
 ## Requirements
 
