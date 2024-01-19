@@ -39,7 +39,7 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
                 3. [ARM CPU](requirements.md#arm-cpu)
             3. [Source](requirements.md#source)
 4. [Specifications](specifications.md)
-  1. [Data](#data)
+  1. [Data](specifications.md#data)
       1. [Data Types](specifications.md#data-types)
       2. [Data Shapes](specifications.md#data-shapes)
       3. [Data Structures](specifications.md#data-structures)
