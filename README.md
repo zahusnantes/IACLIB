@@ -8,16 +8,12 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
 
 1. [Prerequisites](#prerequisites)
 2. [User Guide](#userguide)
-    1. [Data](#data)
-        1. [Data Types](#data-types)
-        2. [Data Shapes](#data-shapes)
-        3. [Data Structures](#data-structures)
-    2. [Network Definition](#network-definition)
+    1. [Network Definition](#network-definition)
         1. [Convolution Layer](#convolution-layer-convx)
         2. [Pooling Layer](#pooling-layer-poolx)
         3. [Fully Connected Layer](#fully-connected-layer-fcx)
         4. [Reading the model](#reading-the-model)
-    3. [Model Parameters](#model-parameters)
+    4. [Model Parameters](#model-parameters)
         1. [Reading the Parameters](#reading-the-parameters)
 3. [Requirements](requirements.md)
     1. [Functional](requirements.md#functional)
@@ -41,6 +37,10 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
                 3. [ARM CPU](requirements.md#arm-cpu)
             3. [Source](requirements.md#source)
 4. [Specifications](specifications.md)
+  1. [Data](#data)
+      1. [Data Types](specifications.md#data-types)
+      2. [Data Shapes](specifications.md#data-shapes)
+      3. [Data Structures](specifications.md#data-structures)
 	1. [Layers](specifications.md#layers-1)
 		1. [pooling()](specifications.md#pooling)
 			1. [Description](specifications.md#description)
@@ -62,36 +62,6 @@ Welcome to the Convolutional Neural Network (CNN) Inference Library!
 - ARM CPU: In addition to GPU and microcontroller support, the project is compatible with ARM CPUs. Make sure you have a compatible ARM CPU, and install the necessary libraries and dependencies for ARM architecture. Consult your system's documentation for ARM-specific setup instructions.
 
 ## User Guide
-
-### Data
-
-The project involves working with various data structures to represent input data for the Convolutional Neural Network (CNN). Here are the key configurations related to the data structures defined in the project:
-
-#### Data Types
-
-The data structures in the project use the following types:
-
-- **WEIGHT_TYPE:** Type for representing weights in the CNN.
-- **DATA_TYPE:** Type for representing raw data.
-- **WEIGHT_PARSE_SIGNATURE:** Signature for parsing weights.
-
-#### Data Shapes
-
-The data structures define shapes to represent different dimensions of the input data:
-
-- **Shape1D:** Represents a 1-dimensional shape.
-- **Shape2D:** Represents a 2-dimensional shape (width, height).
-- **Shape3D:** Represents a 3-dimensional shape (width, height, depth).
-- **Shape4D:** Represents a 4-dimensional shape (width, height, depth, num_images) - designed for image batches.
-
-#### Data Structures
-
-The project utilizes various data structures to handle different types of data:
-
-- **DATA1D:** Represents 1-dimensional data with a specified shape.
-- **DATA2D:** Represents 2-dimensional data with a specified shape.
-- **DATA3D:** Represents 3-dimensional data with a specified shape.
-- **DATA4D:** Represents 4-dimensional data (batch of images) with a specified shape.
 
 ### Network Definition
 The model architecture is defined in a configuration file named `model.dat`. This file serves as a blueprint for the neural network and includes information about the layers, their types, activation functions, and parameters.
