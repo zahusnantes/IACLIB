@@ -9,9 +9,11 @@ Node::Node() {}
 
 Node::~Node() {}
 
-int Node::totalMemorySize() const {
+int Node::totalMemorySize(int* kernel_height, int* kernel_width) const {
     int totalSize = 0;
-    // Calculate total memory size based on your logic
+    if (kernel_height && kernel_width) {
+        totalSize = (*kernel_height) * (*kernel_width) * 2;
+    }
     return totalSize;
 }
 

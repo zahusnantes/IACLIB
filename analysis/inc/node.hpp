@@ -32,7 +32,7 @@ public:
     Node();
     ~Node();
 
-    int totalMemorySize() const;
+    int totalMemorySize(int* kernel_height, int* kernel_width) const;
     int computationTime();
     int memCpyDuration();
 };
