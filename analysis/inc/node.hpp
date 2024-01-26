@@ -33,8 +33,8 @@ public:
     ~Node();
 
     int totalMemorySize(int* kernel_height, int* kernel_width) const;
-    int computationTime();
-    int memCpyDuration();
+    int computationTime(int* kernel_height, int* kernel_width) const;
+    int totalmemCopy(int* kernel_height) const;
 };
 
 #endif

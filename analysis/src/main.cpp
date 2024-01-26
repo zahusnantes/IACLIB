@@ -20,7 +20,11 @@ int main(int argc, char **argv){
 
     Node node;
     int memorySize = node.totalMemorySize(&height, &width);
+    int totalcomputationTime = node.computationTime(&height, &width);
+    int totalmemCopy = node.totalmemCopy(&height);
     std::cout << "Memory Size: " << memorySize << std::endl;
+    std::cout << "Computation Time: " << totalcomputationTime << std::endl;
+    std::cout << "MemCopys: " << totalmemCopy << std::endl;
 
     return 0;
 }

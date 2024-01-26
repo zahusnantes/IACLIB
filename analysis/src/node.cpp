@@ -17,14 +17,18 @@ int Node::totalMemorySize(int* kernel_height, int* kernel_width) const {
     return totalSize;
 }
 
-int Node::computationTime() {
+int Node::computationTime(int* kernel_height, int* kernel_width) const {
     int totalTime = 0;
-    // Calculate computation time based on your logic
+    if (kernel_height && kernel_width) {
+        totalTime = (*kernel_height) * (*kernel_width) + ((*kernel_height) * (*kernel_width) - 1);
+    }
     return totalTime;
 }
 
-int Node::memCpyDuration() {
+int Node::totalmemCopy(int* kernel_height) const {
     int totalDuration = 0;
-    // Calculate memory copy duration based on your logic
+    if (kernel_height) {
+        totalDuration = (*kernel_height);
+    }
     return totalDuration;
 }
