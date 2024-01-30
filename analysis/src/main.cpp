@@ -6,36 +6,63 @@
 
 int main(int argc, char **argv){
 
-    DATA3D matrix;
-    matrix.shape.width = 3;
-    matrix.shape.height = 3;
-    matrix.shape.depth = 1;
-    initialize_DATA3D(&matrix, matrix.shape.height, matrix.shape.width, matrix.shape.depth);
-    for (int i = 0; i < matrix.shape.width * matrix.shape.height * matrix.shape.depth; ++i) {
-        matrix.raw_data[i] = i;
+    DATA3D input;
+    input.shape.width = 3;
+    input.shape.height = 3;
+    input.shape.depth = 1;
+    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+        input.raw_data[i] = i;
     }
 
-    int height = 5;
-    int width = 5;
+    DATA3D kernel;
+    kernel.shape.width = 2;
+    kernel.shape.height = 2;
+    kernel.shape.depth = 1;
+    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
+        kernel.raw_data[i] = i;
+    }
 
-    Node node;
-    int memorySize = node.totalMemorySize(&height, &width);
-    int totalcomputationTime = node.computationTime(&height, &width);
-    int totalmemCopy = node.totalmemCopy(&height);
-    std::cout << "Memory Size: " << memorySize << std::endl;
-    std::cout << "Computation Time: " << totalcomputationTime << std::endl;
-    std::cout << "MemCopys: " << totalmemCopy << std::endl;
+    int padding = 0;
+    int stride = 1;
+
+    DATA3D output;
+    output.shape.depth = kernel.shape.depth;
+    output.shape.width = ((input.shape.width + 2 * padding - kernel.shape.width) / stride) + 1;
+    output.shape.height = ((input.shape.height + 2 * padding - kernel.shape.height) / stride) + 1;
+    initialize_DATA3D(&output, output.shape.height, output.shape.width, output.shape.depth);
+    int output_size = output.shape.height * output.shape.width * output.shape.depth;
+
+    Node AtomicOperation;
+    int memorySize = AtomicOperation.totalMemorySize(&kernel.shape.height, &kernel.shape.width);
+    int totalcomputationTime = AtomicOperation.computationTime(&kernel.shape.height, &kernel.shape.width);
+    int totalbatches = AtomicOperation.totalMemCopy(&kernel.shape.height);
+    int totalmem = AtomicOperation.getMemCopyCount();
+    // std::cout << "Memory Size: " << memorySize << std::endl;
+    // std::cout << "Computation Time: " << totalcomputationTime << std::endl;
+    // std::cout << "Total Batches: " << totalbatches << std::endl;
+    std::cout << "Total Batches: " << totalmem << std::endl;
+
+    std::vector<Node> node_list;
+    for (int i = 0; i < output_size; ++i) {
+        std::string node_name = "Node" + std::to_string(i);
+        Node node(node_name);
+        node_list.push_back(node);
+    }
+
+    for (size_t i = 0; i < node_list.size(); ++i) {
+        std::cout << "Node " << i + 1 << ":\n";
+        std::cout << "Node " << node_list[i].getMemCopyCount() << ":\n";
+        for (size_t j = 0; j < node_list[i].getMemCopyCount(); ++j) {
+            int startIndex = node_list[i].getStartIndexForMemCopy(j);
+            int finishIndex = node_list[i].getFinishIndexForMemCopy(j);
+            std::cout << "  MemCopy " << j + 1 << ": Start Index = " << startIndex << ", Finish Index = " << finishIndex << "\n";
+        }
+    }
 
     return 0;
 }
-
-
-// int i_shape2D_x = 640;
-// int i_shape2D_y = 480;
-
-// int f_shape2D_x = 5;
-// int f_shape2D_y = 5;
-
 
 // int m = 6;
 
