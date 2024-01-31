@@ -1,43 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <yaml-cpp/yaml.h>
+
 #include "../inc/node.hpp"
+#include "../inc/platform.hpp"
 #include "data.h"
 #include "tools.h"
-
-struct PlatformParameters
-{
-    int core_count;
-    int mem_per_core;
-    int copy_cost;
-    int copy_size;
-    int cost_mem_op;
-    int cost_mul_op;
-    int cost_add_op;
-};
-
-bool parsePlatformParameters(const std::string &filename, PlatformParameters &params)
-{
-    try
-    {
-        YAML::Node config = YAML::LoadFile(filename);
-
-        params.core_count = config["platform"]["core_count"].as<int>();
-        params.mem_per_core = config["platform"]["mem_per_core"].as<int>();
-        params.copy_cost = config["platform"]["copy_cost"].as<int>();
-        params.copy_size = config["platform"]["copy_size"].as<int>();
-        params.cost_mem_op = config["platform"]["cost_mem_op"].as<int>();
-        params.cost_mul_op = config["platform"]["cost_mul_op"].as<int>();
-        params.cost_add_op = config["platform"]["cost_add_op"].as<int>();
-
-        return true;
-    }
-    catch (const YAML::Exception &e)
-    {
-        std::cerr << "Error parsing YAML file: " << e.what() << std::endl;
-        return false;
-    }
-}
 
 int main()
 {
@@ -46,6 +14,50 @@ int main()
     {
         std::cerr << "Error parsing YAML file " << std::endl;
     }
+
+    DATA3D input;
+    input.shape.width = 3;
+    input.shape.height = 3;
+    input.shape.depth = 1;
+    initialize_DATA3D(&input, input.shape.height, input.shape.width, input.shape.depth);
+    for (int i = 0; i < input.shape.width * input.shape.height * input.shape.depth; ++i) {
+        input.raw_data[i] = i;
+    }
+
+    DATA3D kernel;
+    kernel.shape.width = 2;
+    kernel.shape.height = 2;
+    kernel.shape.depth = 1;
+    initialize_DATA3D(&kernel, kernel.shape.height, kernel.shape.width, kernel.shape.depth);
+    for (int i = 0; i < kernel.shape.width * kernel.shape.height * kernel.shape.depth; ++i) {
+        kernel.raw_data[i] = i;
+    }
+
+    int padding = 0;
+    int stride = 1;
+
+    DATA3D output;
+    output.shape.depth = kernel.shape.depth;
+    output.shape.width = ((input.shape.width + 2 * padding - kernel.shape.width) / stride) + 1;
+    output.shape.height = ((input.shape.height + 2 * padding - kernel.shape.height) / stride) + 1;
+    initialize_DATA3D(&output, output.shape.height, output.shape.width, output.shape.depth);
+    int output_size = output.shape.height * output.shape.width * output.shape.depth;
+
+    std::vector<Node> node_list;
+    for (int i = 0; i < output_size; ++i) {
+        Node newNode(i + 1);
+        newNode.setOperationCount(MULTIPLICATION, kernel.shape.width * kernel.shape.height);
+        newNode.setOperationCount(ADDITION, kernel.shape.width * kernel.shape.height -1);
+        for (int j = 0; j < kernel.shape.height; ++j) {
+            MemCopy memCopy(i + 1, 0, 2, MM_TO_SM);
+            newNode.addMemCpy(memCopy);
+        }
+        node_list.push_back(newNode);
+    }
+    for (const auto& node : node_list) {
+        node.display();
+    }
+
 
     // Node n1(1);
     // n1.setOperationCount(MULTIPLICATION, 9);

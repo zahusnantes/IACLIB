@@ -1,9 +1,11 @@
 #ifndef PLATFORM_HPP
 #define PLATFORM_HPP
 
-class PlatformParameters
+#include <iostream>
+#include <fstream>
+
+struct PlatformParameters
 {
-    private:
     int core_count;
     int mem_per_core;
     int copy_cost;
@@ -11,10 +13,8 @@ class PlatformParameters
     int cost_mem_op;
     int cost_mul_op;
     int cost_add_op;
-
-    public:
-    PlatformParameters();
-    ~PlatformParameters();
 };
+
+bool parsePlatformParameters(const std::string &filename, PlatformParameters &params);
 
 #endif

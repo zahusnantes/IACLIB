@@ -25,13 +25,14 @@ std::string operation_to_string(enum Operation op);
 class MemCopy
 {
 private:
+    int id;
     int s_index, f_index;
     enum MemCopyDirection direction;
 
 public:
     MemCopy();
     ~MemCopy();
-    MemCopy(int s_index_, int f_index_, enum MemCopyDirection direction_);
+    MemCopy(int id, int s_index_, int f_index_, enum MemCopyDirection direction_);
     std::string to_string() const;
     int getSIndex() const;
     int getFIndex() const;
@@ -58,7 +59,7 @@ public:
     void setOperationCount(enum Operation op, int count);
     int getOperationCount(enum Operation op);
     void addMemCpy(MemCopy &cpy);
-    void display();
+    void display() const;
     void printChildren();
     void addChild(Node &child);
     void mergeChildren();

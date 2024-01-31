@@ -9,7 +9,7 @@ MemCopy::~MemCopy()
 {
 }
 
-MemCopy::MemCopy(int s_index_, int f_index_, enum MemCopyDirection direction_)
+MemCopy::MemCopy(int id, int s_index_, int f_index_, enum MemCopyDirection direction_)
     : s_index(s_index_), f_index(f_index_), direction(direction_)
 {
 }
@@ -19,7 +19,7 @@ MemCopy MemCopy::merge(MemCopy other)
 
         int ss_index = std::min(s_index, other.s_index);
         int ff_index = std::max(f_index, other.f_index);        
-        return MemCopy(ss_index, ff_index, direction);
+        return MemCopy(id, ss_index, ff_index, direction);
 }
 
 int MemCopy::getSIndex() const
@@ -117,7 +117,7 @@ void Node::addMemCpy(MemCopy &cpy)
         mem_copies.push_back(cpy);
 }
 
-void Node::display()
+void Node::display() const
 {
         std::cout << "[Node: " << id << " " << std::endl;
         std::cout << "\t"

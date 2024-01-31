@@ -8,6 +8,7 @@ set(SOURCE_FILES
     src/node.cpp
     src/main.cpp
     ../lib/src/tools.c
+    src/platform.cpp
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../lib/inc ${CMAKE_CURRENT_SOURCE_DIR}/inc)
