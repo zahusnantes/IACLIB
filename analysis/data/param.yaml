@@ -1,0 +1,8 @@
+platform:
+  core_count : 6      #number of cores
+  mem_per_core: 55000 # the size of scratchpad memory per core
+  copy_cost: 2        # the cost of copying a batch of memory to memory of size copy_size
+  copy_size: 128      # the size of single copy batch
+  cost_mem_op: 20     # the cost of each copy operation
+  cost_mul_op: 2      # the cost of the multiplication
+  cost_add_op: 1      # the cost of the addition
